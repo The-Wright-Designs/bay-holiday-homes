@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-black: #3D3D3D;
+  --color-link: #0000FF;
+  --color-navy: #213766;
+  --color-peach: #FCD8CD;
+  --color-teal: #4AB5BB;
+  --color-transparent: transparent;
+  --color-white: #FFFFFF;
+
+  --text-*: initial;
+  --text-heading: 2rem;
+  --text-heading--font-weight: 300;
+  --text-paragraph: 1.125rem;
+  --text-paragraph--font-weight: 300;
+  --text-subheading: 1.125rem;
+  --text-subheading--font-weight: 600;
+
+  --breakpoint-*: initial;
+  --breakpoint-phone: 425px;
+  --breakpoint-tablet: 800px;
+  --breakpoint-desktop: 1280px;
+}
+
+@layer components {
+  * {
+    @apply text-black;
+    font-family: "Roboto", Arial, sans-serif;
+  }
+
+  h1,
+  h2 {
+    @apply text-heading;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-subheading;
+  }
+
+  p,
+  input,
+  textarea,
+  span {
+    @apply text-paragraph;
+  }
+
+  a {
+    @apply text-link ease-in-out duration-300;
+  }
+}
+
+/* spinner styles */
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 3px solid transparent;
+  border-top-color: #000000;
+  animation: spin 1s linear infinite;
+}
+
+.spinner::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* swiper styles */
+
+:root {
+  --swiper-pagination-color: #000000;
+  --swiper-pagination-bullet-inactive-color: #000000;
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+}
+
+.swiper-pagination-v {
+  left: -30px !important;
+}
+
+.swiper,
+.swiper-pagination-bullets-dynamic {
+  overflow: visible !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px !important;
+  height: 100% !important;
+  @apply bg-white/80;
+  top: 22px !important;
+  transition: all 0.2s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  color: #000000;
+  transition: color 0.2s ease;
+}
+
+.swiper-button-next {
+  right: 0 !important;
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  @apply bg-black/80;
+}
+
+.swiper-button-next:hover:after,
+.swiper-button-prev:hover:after {
+  color: white;
+}
+
+.swiper-button-next::after {
+  content: "next";
+}
+
+.swiper-button-prev::after {
+  content: "prev";
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
