@@ -10,15 +10,20 @@ interface DesktopHeaderProps {
 const HeaderDesktop = ({ cssClasses }: DesktopHeaderProps) => {
   return (
     <div className={classNames(cssClasses)}>
-      <div className="flex items-center justify-between">
+      <div className="flex items-end justify-between">
         <Link href="/" className="hover:opacity-90">
-          <Image src="/logo/logo.svg" alt="Bay Holiday Homes Logo" width={50} height={50} />
+          <Image
+            src="/logos/bay-holiday-homes-logo.png"
+            alt="Bay Holiday Homes Logo"
+            width={359}
+            height={84}
+          />
         </Link>
-        <nav className="flex gap-3 items-end">
+        <nav className="flex gap-5 mb-1 items-end">
           {navData.map((item) => (
             <Link
               key={item.title}
-              className="text-white text-base font-light desktop:hover:text-navy"
+              className="text-navy text-base font-light desktop:hover:text-teal desktop:hover:cursor-pointer"
               href={item.url}
             >
               {item.title}

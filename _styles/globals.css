@@ -27,7 +27,7 @@
 @layer components {
   * {
     @apply text-black;
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
   }
 
   h1,

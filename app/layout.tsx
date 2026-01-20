@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
 
-import { Roboto } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 
-const robotoSansSerif = Roboto({
+const openSansSerif = Open_Sans({
   subsets: ["latin"],
-  weight: ["200", "400", "700"],
+  weight: ["300", "600", "700"],
 });
 
 import "@/_styles/globals.css";
+import Header from "@/_components/navigation/header";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bayholidays.co.za"),
   title: "Bay Holiday Homes",
-  description: "Beach and bay-side holiday properties - coastal getaway accommodation",
-  keywords: "bay holiday homes, coastal accommodation, beach holiday rentals, bay-side properties, seaside getaways, ocean view rentals, coastal vacation homes, beach house rentals, waterfront accommodation, holiday homes south africa, plettenberg bay accommodation, beach property rentals",
+  description:
+    "Beach and bay-side holiday properties - coastal getaway accommodation",
+  keywords:
+    "bay holiday homes, coastal accommodation, beach holiday rentals, bay-side properties, seaside getaways, ocean view rentals, coastal vacation homes, beach house rentals, waterfront accommodation, holiday homes south africa, plettenberg bay accommodation, beach property rentals",
   openGraph: {
-    description: "Beach and bay-side holiday properties - coastal getaway accommodation",
+    description:
+      "Beach and bay-side holiday properties - coastal getaway accommodation",
     type: "website",
     locale: "en_ZA",
     siteName: "Bay Holiday Homes",
@@ -34,7 +38,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${robotoSansSerif.className} antialiased`}>
+      <body className={`${openSansSerif.className} antialiased`}>
+        <Header />
         {children}
       </body>
     </html>

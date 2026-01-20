@@ -4,15 +4,31 @@
     "url": "/"
   },
   {
-    "title": "About",
-    "url": "/#about"
+    "title": "Our Properties",
+    "url": "/properties"
   },
   {
-    "title": "Services",
-    "url": "/#services"
+    "title": "Our Services",
+    "url": "/services"
   },
   {
-    "title": "Contact",
-    "url": "/#contact"
+    "title": "Our Story",
+    "url": "/story"
+  },
+  {
+    "title": "Our Team",
+    "url": "/team"
+  },
+  {
+    "title": "Our Sales Division",
+    "url": "/sales"
+  },
+  {
+    "title": "Our Plett",
+    "url": "/plett"
+  },
+  {
+    "title": "Contact Us",
+    "url": "/contact"
   }
 ]

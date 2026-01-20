@@ -6,7 +6,6 @@ import Link from "next/link";
 import classNames from "classnames";
 
 import navData from "@/_data/nav-data.json";
-import { Menu, X } from "lucide-react";
 
 interface MobileHeaderProps {
   cssClasses?: string;
@@ -30,44 +29,50 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
   return (
     <div className={classNames(cssClasses)}>
       <div className="flex w-full items-center justify-between">
-        <Link href="/" className="hover:opacity-90">
-          <Image src="/logo/logo.svg" alt="Bay Holiday Homes Logo" width={50} height={50} />
+        <Link href="/">
+          <Image
+            src="/logos/bay-holiday-homes-logo.png"
+            alt="Bay Holiday Homes Logo"
+            width={300}
+            height={100}
+            className="w-[157px] h-auto tablet:w-[250px]"
+          />
         </Link>
         <button
           onClick={() => setIsOpen(true)}
           className="ease-in-out duration-300 -m-3 p-3"
           aria-label="Open menu"
         >
-          <Menu size={22} color="#FFFFFF" />
+          <Image src="/icons/menu-open.svg" alt="" width={26} height={22} />
         </button>
       </div>
 
       <div
         className={classNames(
-          "fixed inset-0 z-50 transform bg-black transition-transform duration-300 ease-in-out",
+          "fixed inset-0 z-50 transform bg-teal px-5 py-6 transition-transform duration-300 ease-in-out",
           {
             "translate-x-full": !isOpen,
-          }
+          },
         )}
       >
-        <div className="flex w-full py-10 items-center px-5 justify-end">
+        <div className="flex w-full gap-1 items-center justify-end mb-8">
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
             className="p-2 -m-2"
           >
-            <X size={22} color="#FFFFFF" />
+            <Image src="/icons/menu-close.svg" alt="" width={26} height={22} />
           </button>
         </div>
-        <nav className="px-5">
-          <ul className="grid gap-5">
+        <nav>
+          <ul className="grid gap-8">
             {navData.map(({ title, url }, id) => {
               return (
                 <li key={id}>
                   <Link
                     href={url}
                     onClick={() => setIsOpen(false)}
-                    className="text-[18px] text-white font-light p-3 -m-3"
+                    className="text-[20px] text-white"
                   >
                     {title}
                   </Link>
