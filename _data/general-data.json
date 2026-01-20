@@ -29,5 +29,43 @@
       { "value": "sea-view", "label": "Sea View" },
       { "value": "pet-friendly", "label": "Pet Friendly" }
     ]
-  }
+  },
+  "mosaicGalleryItems": [
+    {
+      "id": "town-area",
+      "image": "/images/areas/town-area.jpg",
+      "heading": "Town Area",
+      "large": false
+    },
+    {
+      "id": "central-beach",
+      "image": "/images/areas/central-beach.jpg",
+      "heading": "Central Beach",
+      "large": true
+    },
+    {
+      "id": "beachy-head",
+      "image": "/images/areas/beachy-head.jpg",
+      "heading": "Beachy Head",
+      "large": false
+    },
+    {
+      "id": "keurbooms",
+      "image": "/images/areas/keurbooms.jpg",
+      "heading": "Keurbooms River, Beach & Lagoon",
+      "large": true
+    },
+    {
+      "id": "secure-estates",
+      "image": "/images/areas/secure-estates.jpg",
+      "heading": "Secure Estates",
+      "large": false
+    },
+    {
+      "id": "robberg-and-longships",
+      "image": "/images/areas/robberg-and-longships.jpg",
+      "heading": "Robberg & Longships",
+      "large": false
+    }
+  ]
 }

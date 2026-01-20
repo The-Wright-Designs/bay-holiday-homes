@@ -199,7 +199,7 @@ const FormSelectInput = ({
             const isFocused = index === focusedIndex;
 
             const optionClasses = classNames(
-              "p-[12px] text-navy text-[16px] font-light desktop:hover:cursor-pointer desktop:hover:bg-peach ease-in-out duration-300",
+              "p-[12px] text-navy text-[16px] font-light desktop:hover:cursor-pointer desktop:hover:bg-peach/50 ease-in-out duration-300",
               {
                 "bg-teal text-white": isSelected,
                 "bg-peach": isFocused && !isSelected,
