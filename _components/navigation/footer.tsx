@@ -24,7 +24,7 @@ const Footer = () => {
 
             <div className="flex gap-3 items-center justify-center pt-3 desktop:pt-0">
               <Link
-                href="#"
+                href="https://www.facebook.com/profile.php?id=100094256300725"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-opacity duration-300 desktop:hover:opacity-80 desktop:hover:cursor-pointer"

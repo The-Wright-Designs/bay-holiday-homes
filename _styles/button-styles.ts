@@ -10,7 +10,7 @@ export const buttonStyles = (
   colorPeach?: boolean,
 ) =>
   classNames(
-    "border-2 flex text-[16px] min-w-[150px] text-center px-10 py-3 justify-center ease-in-out duration-300 rounded-md",
+    "border-2 flex text-[16px] min-w-[150px] text-center px-10 py-3 justify-center ease-in-out duration-300 rounded-[2px]",
     cssClasses,
     {
       "opacity-50 cursor-not-allowed": pending || disabled,

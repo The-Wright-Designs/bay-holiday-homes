@@ -49,7 +49,7 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
 
       <div
         className={classNames(
-          "fixed inset-0 z-50 transform bg-teal px-5 py-6 transition-transform duration-300 ease-in-out",
+          "fixed inset-0 z-50 transform bg-teal p-7 transition-transform duration-300 ease-in-out",
           {
             "translate-x-full": !isOpen,
           },
@@ -65,14 +65,14 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
           </button>
         </div>
         <nav>
-          <ul className="grid gap-8">
+          <ul className="grid gap-6">
             {navData.map(({ title, url }, id) => {
               return (
                 <li key={id}>
                   <Link
                     href={url}
                     onClick={() => setIsOpen(false)}
-                    className="text-[20px] text-white"
+                    className="text-[20px] font-normal text-white"
                   >
                     {title}
                   </Link>
