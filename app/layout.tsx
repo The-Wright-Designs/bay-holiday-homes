@@ -9,6 +9,7 @@ const openSansSerif = Open_Sans({
 
 import "@/_styles/globals.css";
 import Header from "@/_components/navigation/header";
+import Footer from "@/_components/navigation/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bayholidays.co.za"),
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body className={`${openSansSerif.className} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
