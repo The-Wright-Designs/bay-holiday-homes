@@ -9,14 +9,17 @@ const ButtonLink = ({
   href = "#",
   disabled,
   ariaLabel,
-  redButton = false,
+  colorWhite = false,
+  navyStroke = false,
+  colorNavy = false,
+  colorPeach = false,
   target = "_self",
 }: ButtonProps) => {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className={buttonStyles(cssClasses, disabled, false, redButton)}
+      className={buttonStyles(cssClasses, disabled, false, colorWhite, navyStroke, colorNavy, colorPeach)}
       aria-label={ariaLabel}
       target={target}
     >

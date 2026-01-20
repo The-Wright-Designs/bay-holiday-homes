@@ -1,5 +1,6 @@
 import PageWrapper from "@/_lib/utils/page-wrapper";
 import HeroComponent from "@/_components/home-page/hero/hero-component";
+import ButtonType from "@/_components/ui/buttons/button-type";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,9 @@ export default function HomePage() {
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </p>
+        <ButtonType type="submit" navyStroke>
+          Submit
+        </ButtonType>
       </PageWrapper>
     </div>
   );
