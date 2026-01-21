@@ -3,15 +3,15 @@
 import { useState } from "react";
 import classNames from "classnames";
 import TestimonialsSlider from "./testimonials-slider";
-import generalData from "@/_data/general-data.json";
+import placeholderData from "@/_data/placeholder-data.json";
 
 const TestimonialsComponent = () => {
   const [activeTab, setActiveTab] = useState<"clients" | "guests">("clients");
 
   const testimonialsData =
     activeTab === "clients"
-      ? generalData.happyClients
-      : generalData.happyGuests;
+      ? placeholderData.happyClients
+      : placeholderData.happyGuests;
 
   return (
     <section className="flex flex-col gap-10 items-center w-full py-15 my-15 border-y border-black/25 desktop:border-none desktop:my-0">

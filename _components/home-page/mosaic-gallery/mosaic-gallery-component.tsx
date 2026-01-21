@@ -4,7 +4,7 @@ import generalData from "@/_data/general-data.json";
 
 const MosaicGalleryComponent = () => {
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex flex-col gap-10 my-15">
       <div className="border-t mx-auto max-w-[768px] border-black/25 pt-10 flex flex-col gap-5 text-center">
         <h2 className="text-[32px]">
           Discover the most beautiful properties to rent in Plett
