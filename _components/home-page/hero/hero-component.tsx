@@ -5,7 +5,7 @@ import PropertySearchWrapper from "./property-search/property-search-wrapper";
 
 export default function HeroComponent() {
   return (
-    <div className="max-w-[1280px] mx-auto">
+    <main className="max-w-[1280px] mx-auto">
       <div className="relative w-full">
         <div className="relative h-[500px] w-full tablet:h-[575px] desktop:h-[672px]">
           <Image
@@ -54,6 +54,6 @@ export default function HeroComponent() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
