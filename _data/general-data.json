@@ -67,5 +67,67 @@
       "heading": "Robberg & Longships",
       "large": false
     }
-  ]
+  ],
+  "ourServices": {
+    "managing": [
+      {
+        "id": "managing-homes",
+        "image": "/images/services/managing-homes.png",
+        "heading": "Managing Homes",
+        "paragraph": "",
+        "flipImage": false,
+        "vertical": true
+      },
+      {
+        "id": "managing-rentals",
+        "image": "/images/services/managing-rentals.png",
+        "heading": "Managing Rentals",
+        "paragraph": "",
+        "flipImage": false,
+        "vertical": true
+      }
+    ],
+    "services": [
+      {
+        "id": "maintenance",
+        "image": "/images/services/maintenance.png",
+        "heading": "Maintenance",
+        "paragraph": "Regular inspections to ensure your property is in top condition and when a matter arises, we will inform you and correspond on the solution and progress.",
+        "flipImage": false,
+        "vertical": false
+      },
+      {
+        "id": "renovations",
+        "image": "/images/services/renovations.png",
+        "heading": "Upgrades, Renovations, Repairs",
+        "paragraph": "Should you like to have any additional maintenance done, such as painting, building etc, we will assist with obtaining quotes on your behalf. We are associated with several of the most professional, reliable and trustworthy contractors with proven track records, who we utilise at all our homes.",
+        "flipImage": true,
+        "vertical": false
+      },
+      {
+        "id": "arrivals-and-departures",
+        "image": "/images/services/arrivals-and-departures.png",
+        "heading": "Arrivals & Departures",
+        "paragraph": "Once you announce your arrival, we will 'spring clean' and ensure that everything is in order. On departure, you simply pack your belongings, and we attend to the rest.",
+        "flipImage": false,
+        "vertical": true
+      },
+      {
+        "id": "admin-and-accounts",
+        "image": "/images/services/admin-and-accounts.png",
+        "heading": "Admin & Accounts",
+        "paragraph": "We send monthly statements of all expenditure, attached with the proof of purchase. All receipts are is kept on hand for any queries you may have. Pay utility bills, take meter readings",
+        "flipImage": false,
+        "vertical": true
+      },
+      {
+        "id": "access-and-security",
+        "image": "/images/services/access-and-security.png",
+        "heading": "Access & Security",
+        "paragraph": "As primary key holder, we will arrange to open the property for any household services, when required. We work closely with local security companies, and can promptly attend to any emergency.",
+        "flipImage": false,
+        "vertical": true
+      }
+    ]
+  }
 }

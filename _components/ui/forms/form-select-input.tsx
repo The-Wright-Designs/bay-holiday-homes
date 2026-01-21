@@ -178,7 +178,7 @@ const FormSelectInput = ({
           </p>
           <Image
             src="/icons/bird-icon.jpg"
-            alt=""
+            alt="Bay Holiday Homes Bird Icon"
             width={36}
             height={14}
             className={classNames("-translate-y-1 ease-in-out duration-300", {

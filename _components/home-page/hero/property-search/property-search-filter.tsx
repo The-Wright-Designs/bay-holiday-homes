@@ -66,7 +66,7 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
       >
         <Image
           src="/icons/search.svg"
-          alt=""
+          alt="Search properties"
           width={18}
           height={18}
           className="object-contain"

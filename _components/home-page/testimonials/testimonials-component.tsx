@@ -14,7 +14,7 @@ const TestimonialsComponent = () => {
       : placeholderData.happyGuests;
 
   return (
-    <section className="flex flex-col gap-10 items-center w-full py-15 my-15 border-y border-black/25 desktop:border-none desktop:my-0">
+    <section className="flex flex-col gap-10 items-center w-full py-15">
       <h2 className="text-[40px] font-light text-black uppercase text-center">
         Testimonials
       </h2>

@@ -19,7 +19,7 @@ export default function TestimonialsSlider({
       <div className="overflow-x-hidden">
         <Swiper
           autoplay={{
-            delay: 6000,
+            delay: 8000,
             disableOnInteraction: true,
           }}
           speed={1000}

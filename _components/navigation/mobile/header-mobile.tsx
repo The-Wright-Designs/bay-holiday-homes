@@ -43,7 +43,12 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
           className="ease-in-out duration-300 -m-3 p-3"
           aria-label="Open menu"
         >
-          <Image src="/icons/menu-open.svg" alt="" width={26} height={22} />
+          <Image
+            src="/icons/menu-open.svg"
+            alt="Open menu"
+            width={26}
+            height={22}
+          />
         </button>
       </div>
 
@@ -61,7 +66,12 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
             aria-label="Close menu"
             className="p-2 -m-2"
           >
-            <Image src="/icons/menu-close.svg" alt="" width={26} height={22} />
+            <Image
+              src="/icons/menu-close.svg"
+              alt="Menu close"
+              width={26}
+              height={22}
+            />
           </button>
         </div>
         <nav>

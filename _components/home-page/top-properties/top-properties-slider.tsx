@@ -17,7 +17,7 @@ export default function TopPropertiesSlider({
 }: TopPropertiesSliderProps) {
   return (
     <div className="relative">
-      <div className="overflow-x-hidden desktop:mx-15">
+      <div className="overflow-x-hidden desktop:mx-20">
         <Swiper
           autoplay={{
             delay: 6000,
