@@ -4,6 +4,7 @@ import MosaicGalleryComponent from "@/_components/home-page/mosaic-gallery/mosai
 import TestimonialsComponent from "@/_components/home-page/testimonials/testimonials-component";
 import TopPropertiesComponent from "@/_components/home-page/top-properties/top-properties-component";
 import OurServicesComponent from "@/_components/home-page/our-services/our-services-component";
+import ContactSectionComponent from "@/_components/home-page/contact/contact-section-component";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
         <TopPropertiesComponent />
         <TestimonialsComponent />
         <OurServicesComponent />
+        <ContactSectionComponent />
       </PageWrapper>
     </div>
   );

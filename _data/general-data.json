@@ -1,7 +1,13 @@
 {
   "contact": {
     "phone": "01234 567890",
-    "email": "example@example.co.za"
+    "email": "example@example.co.za",
+    "address": "5 Gibb Street, Plettenberg Bay, 6600",
+    "social": {
+      "facebook": "https://www.facebook.com/share/1BjrHx8uS6/",
+      "instagram": "#",
+      "whatsapp": "#"
+    }
   },
   "propertySearch": {
     "propertyType": [
