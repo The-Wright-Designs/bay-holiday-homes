@@ -13,7 +13,7 @@ export default function HeroComponent() {
             alt="Bay Holiday Homes Plettenberg Bay coastal view"
             width={1280}
             height={700}
-            className="h-full w-full object-cover object-top"
+            className="h-auto w-full object-cover object-top"
             priority
           />
         </div>

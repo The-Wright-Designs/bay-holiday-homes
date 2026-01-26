@@ -15,6 +15,10 @@ const MosaicGalleryItem = ({
   large,
   cssClasses,
 }: MosaicGalleryItemProps) => {
+  const sizes = large
+    ? "(max-width: 599px) 100vw, (max-width: 999px) 50vw, (max-width: 1279px) 33vw, 50vw"
+    : "(max-width: 599px) 100vw, (max-width: 999px) 50vw, (max-width: 1279px) 33vw, 25vw";
+
   return (
     <Link
       href={`/${heading.replace(/,/g, "").replace(/&/g, "").replace(/\s+/g, "-").toLowerCase()}`}
@@ -31,6 +35,7 @@ const MosaicGalleryItem = ({
         src={image}
         alt={heading}
         fill
+        sizes={sizes}
         className="object-cover transition-transform duration-500 delay-75 desktop:group-hover:scale-105"
       />
       <div className="absolute inset-0 flex items-center justify-center">

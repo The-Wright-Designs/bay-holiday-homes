@@ -181,10 +181,13 @@ const FormSelectInput = ({
             alt="Bay Holiday Homes Bird Icon"
             width={36}
             height={14}
-            className={classNames("-translate-y-1 ease-in-out duration-300", {
-              "scale-120": isOpen,
-              "-translate-y-1.5": isHovered,
-            })}
+            className={classNames(
+              "-translate-y-1 h-auto ease-in-out duration-300",
+              {
+                "scale-120": isOpen,
+                "-translate-y-1.5": isHovered,
+              },
+            )}
           />
         </div>
 

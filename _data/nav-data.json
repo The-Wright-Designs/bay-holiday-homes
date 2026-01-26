@@ -9,26 +9,22 @@
   },
   {
     "title": "Our Services",
-    "url": "/services"
+    "url": "/#services"
   },
   {
     "title": "Our Story",
-    "url": "/story"
+    "url": "/about/#story"
   },
   {
     "title": "Our Team",
-    "url": "/team"
+    "url": "/about/#team"
   },
   {
     "title": "Our Sales Division",
-    "url": "/sales"
-  },
-  {
-    "title": "Our Plett",
-    "url": "/plett"
+    "url": "/about/#sales"
   },
   {
     "title": "Contact Us",
-    "url": "/contact"
+    "url": "/#contact"
   }
 ]

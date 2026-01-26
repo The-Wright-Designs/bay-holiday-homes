@@ -6,7 +6,10 @@ const OurServicesComponent = () => {
   const ourServices = generalData.ourServices;
 
   return (
-    <section className="flex flex-col gap-10">
+    <section
+      className="flex flex-col gap-10 scroll-mt-24 desktop:scroll-mt-36"
+      id="services"
+    >
       <div className="flex flex-col gap-2 items-center text-center">
         <h2 className="text-[40px] font-light text-black uppercase">
           Our Services
@@ -20,6 +23,7 @@ const OurServicesComponent = () => {
               src={ourServices.managing[0].image}
               alt={ourServices.managing[0].heading}
               fill
+              sizes="(max-width: 799px) 100vw, 50vw"
               className="object-cover tablet:rounded-br-[8px]"
             />
             <div className="absolute -bottom-8 right-1/2 translate-x-1/2 bg-white/80 px-5 py-3 rounded-t-[8px] tablet:bottom-0 tablet:right-0 tablet:rounded-tr-none tablet:translate-x-0">
@@ -33,6 +37,7 @@ const OurServicesComponent = () => {
               src={ourServices.managing[1].image}
               alt={ourServices.managing[1].heading}
               fill
+              sizes="(max-width: 799px) 100vw, 50vw"
               className="object-cover tablet:rounded-bl-[8px]"
             />
             <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-black/80 px-5 py-3 rounded-[8px] tablet:bottom-0 tablet:left-0 tablet:rounded-tl-none tablet:translate-x-0 tablet:rounded-br-none">

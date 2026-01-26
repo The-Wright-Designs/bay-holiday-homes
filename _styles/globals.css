@@ -32,6 +32,10 @@
     font-family: "Open Sans", Arial, sans-serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   h1,
   h2 {
     @apply text-heading;

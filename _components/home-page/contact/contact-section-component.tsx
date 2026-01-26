@@ -20,9 +20,10 @@ export default function ContactSectionComponent({ cssClasses }: Props) {
     >
       <div
         className={classNames(
-          "grid gap-10 w-full pt-15 desktop:grid-cols-2",
+          "grid gap-10 w-full pt-15 scroll-mt-12 desktop:scroll-mt-24 desktop:grid-cols-2",
           cssClasses,
         )}
+        id="contact"
       >
         <div className="flex flex-col gap-10">
           <h2 className="text-[40px] font-light uppercase text-center desktop:text-left">

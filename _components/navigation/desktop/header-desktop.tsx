@@ -17,6 +17,8 @@ const HeaderDesktop = ({ cssClasses }: DesktopHeaderProps) => {
             alt="Bay Holiday Homes Logo"
             width={359}
             height={84}
+            className="h-auto"
+            priority
           />
         </Link>
         <nav className="flex gap-5 mb-1 items-end">

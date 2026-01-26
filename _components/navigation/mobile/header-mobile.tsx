@@ -36,6 +36,7 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
             width={300}
             height={100}
             className="w-[157px] h-auto tablet:w-[250px]"
+            priority
           />
         </Link>
         <button
@@ -48,6 +49,7 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
             alt="Open menu"
             width={26}
             height={22}
+            className="h-auto"
           />
         </button>
       </div>
@@ -71,6 +73,7 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
               alt="Menu close"
               width={26}
               height={22}
+              className="h-auto"
             />
           </button>
         </div>

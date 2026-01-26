@@ -29,7 +29,7 @@ const OurServicesCard = ({
           alt={heading}
           width={200}
           height={200}
-          className="object-cover"
+          className="object-cover h-auto"
         />
       </div>
       <div className="flex flex-col gap-3 items-center text-center flex-1">
