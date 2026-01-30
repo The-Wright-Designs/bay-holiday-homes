@@ -2,7 +2,10 @@ import Image from "next/image";
 
 const OurStoryComponent = () => {
   return (
-    <main className="flex flex-col gap-10 items-center py-15">
+    <main
+      className="flex flex-col gap-10 items-center py-15 scroll-mt-12 desktop:scroll-mt-24"
+      id="story"
+    >
       <p className="text-[40px] font-light uppercase text-center">Our Story</p>
       <div className="flex flex-col items-center gap-10 w-full">
         <div className="flex flex-col gap-[20px] w-full">
