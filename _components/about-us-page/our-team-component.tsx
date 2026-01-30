@@ -2,7 +2,10 @@ import Image from "next/image";
 
 const OurTeamComponent = () => {
   return (
-    <section className="flex flex-col gap-10 items-center w-full">
+    <section
+      className="flex flex-col gap-10 items-center w-full scroll-mt-24 desktop:scroll-mt-36"
+      id="team"
+    >
       <h2 className="text-[40px] font-light uppercase text-center">Our Team</h2>
 
       <div className="w-full aspect-[4/3] overflow-hidden desktop:aspect-video">
