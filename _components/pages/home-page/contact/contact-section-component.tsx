@@ -1,9 +1,9 @@
 "use client";
 
 import classNames from "classnames";
-import ContactInfoComponent from "@/_components/home-page/contact/contact-info-component";
-import ContactFormComponent from "@/_components/home-page/contact/contact-form-component";
-import MapComponent from "@/_components/home-page/contact/map-component";
+import ContactInfoComponent from "@/_components/pages/home-page/contact/contact-info-component";
+import ContactFormComponent from "@/_components/pages/home-page/contact/contact-form-component";
+import MapComponent from "@/_components/pages/home-page/contact/map-component";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import SocialIcons from "@/_components/ui/social-icons";
 import generalData from "@/_data/general-data.json";

@@ -3,24 +3,34 @@
 import ButtonType from "@/_components/ui/buttons/button-type";
 import Image from "next/image";
 import PropertySearchFilter from "./property-search-filter";
+import classNames from "classnames";
 
 interface PropertySearchWrapperProps {
   cssClasses?: string;
+  tealButton?: boolean;
 }
 
-const PropertySearchWrapper = ({ cssClasses }: PropertySearchWrapperProps) => {
+const PropertySearchWrapper = ({
+  cssClasses,
+  tealButton,
+}: PropertySearchWrapperProps) => {
   return (
     <div className={cssClasses}>
       <ButtonType
         type="button"
-        colorWhite={true}
+        colorWhite={tealButton ? false : true}
         cssClasses="flex items-center gap-3 desktop:hidden"
       >
-        <span className="text-navy text-[16px] font-light">
+        <span
+          className={classNames(
+            "text-[16px] font-light",
+            tealButton ? "text-white" : "text-navy",
+          )}
+        >
           Property Search
         </span>
         <Image
-          src="/icons/search.svg"
+          src={`/icons/search${tealButton ? "-white" : ""}.svg`}
           alt="Search"
           width={18}
           height={18}

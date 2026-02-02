@@ -16,9 +16,12 @@
       { "value": "villa", "label": "Villa" }
     ],
     "area": [
-      { "value": "plettenberg-bay", "label": "Plettenberg Bay" },
-      { "value": "knysna", "label": "Knysna" },
-      { "value": "george", "label": "George" }
+      { "value": "town-area", "label": "Town Area" },
+      { "value": "central-beach", "label": "Central Beach" },
+      { "value": "beachy-head", "label": "Beachy Head" },
+      { "value": "keurbooms", "label": "Keurbooms River, Beach & Lagoon" },
+      { "value": "secure-estates", "label": "Secure Estates" },
+      { "value": "robberg-longships", "label": "Robberg & Longships" }
     ],
     "budget": [
       { "value": "0-5000", "label": "R0-R5000" },

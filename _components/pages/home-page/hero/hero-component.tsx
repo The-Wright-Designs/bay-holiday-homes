@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import PropertySearchWrapper from "./property-search/property-search-wrapper";
+import PropertySearchWrapper from "@/_components/ui/property-search/property-search-wrapper";
 
 export default function HeroComponent() {
   return (

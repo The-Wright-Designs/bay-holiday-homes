@@ -139,7 +139,7 @@ const ContactFormComponent = () => {
                   ></textarea>
                 </label>
                 {error && (
-                  <div className="bg-red/10 border border-red/50 rounded-md p-3">
+                  <div className="bg-red/10 border border-red/50 rounded-[2px] p-3">
                     <p className="text-[14px] text-red">{error}</p>
                   </div>
                 )}

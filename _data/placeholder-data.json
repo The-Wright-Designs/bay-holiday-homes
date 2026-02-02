@@ -95,5 +95,427 @@
       "author": "Amanda & George Brown",
       "stars": 5
     }
+  ],
+  "propertyList": [
+    {
+      "id": "7k3m9p2x",
+      "slug": "sailor-moon-house",
+      "type": "House",
+      "name": "Sailor Moon",
+      "area": "Central Beach",
+      "description": "A charming family-friendly house in the heart of Central Beach. This 4-bedroom, 3-bathroom home features a sparkling pool perfect for children and direct beach access. Ideal for families seeking a memorable coastal getaway with all the comforts of home and easy access to local amenities.",
+      "image": "/images/placeholders/property-list/_MG_0394.jpg",
+      "pricePerNight": 4500,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "182m²",
+        "parkingSpaces": 2,
+        "security": "Electric fencing & alarm",
+        "tvServices": "Netflix & DSTV"
+      }
+    },
+    {
+      "id": "4n8q1r5t",
+      "slug": "ocean-breeze-house",
+      "type": "House",
+      "name": "Ocean Breeze",
+      "area": "Beachy Head",
+      "description": "Experience luxury living in this stunning 5-bedroom, 4-bathroom beachfront house at iconic Beachy Head. With direct beach access and a refreshing pool, this home is perfect for extended family gatherings and groups. The spacious layout and family-friendly amenities make it an unforgettable destination for your dream vacation.",
+      "image": "/images/placeholders/property-list/_MG_0462.jpg",
+      "pricePerNight": 5200,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "245m²",
+        "parkingSpaces": 3,
+        "security": "24-hour security & alarm",
+        "tvServices": "Netflix, DSTV & Apple TV"
+      }
+    },
+    {
+      "id": "2w6v9h3j",
+      "slug": "sunset-villa-house",
+      "type": "House",
+      "name": "Sunset Villa",
+      "area": "Keurbooms",
+      "description": "A tranquil 3-bedroom, 2-bathroom villa nestled in the peaceful Keurbooms area. Perfect for families, this child-friendly home features a private pool ideal for relaxation. While not directly on the beach, its serene garden setting and family amenities make it an excellent retreat for a quieter getaway.",
+      "image": "/images/placeholders/property-list/_MG_0477.jpg",
+      "pricePerNight": 3800,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "beachAccess": false,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "156m²",
+        "parkingSpaces": 2,
+        "security": "Alarm system",
+        "tvServices": "Netflix & DSTV"
+      }
+    },
+    {
+      "id": "5z7b4n1q",
+      "slug": "seashell-retreat-house",
+      "type": "House",
+      "name": "Seashell Retreat",
+      "area": "Secure Estates",
+      "description": "An elegant 6-bedroom, 5-bathroom luxury retreat in the exclusive Secure Estates. This sophisticated property boasts direct beach access and a stunning pool, catering to discerning travelers seeking privacy and comfort. Perfect for upscale group gatherings and special occasions with high-end amenities throughout.",
+      "image": "/images/placeholders/property-list/_MG_0494-Edit-2.jpg",
+      "pricePerNight": 6000,
+      "bedrooms": 6,
+      "bathrooms": 5,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": false,
+      "details": {
+        "size": "320m²",
+        "parkingSpaces": 4,
+        "security": "Gated estate, electric fencing & alarm",
+        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      }
+    },
+    {
+      "id": "8p3k6m2w",
+      "slug": "coastal-haven-house",
+      "type": "House",
+      "name": "Coastal Haven",
+      "area": "Robberg & Longships",
+      "description": "A welcoming 4-bedroom, 3-bathroom family home in the scenic Robberg & Longships area with direct beach access. This child-friendly property is perfect for families who love outdoor activities and beach exploration. Enjoy easy beach access and the natural beauty of the surrounding coastal landscape.",
+      "image": "/images/placeholders/property-list/_MG_0497-Edit.jpg",
+      "pricePerNight": 4100,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "beachAccess": true,
+      "pool": false,
+      "childFriendly": true,
+      "details": {
+        "size": "195m²",
+        "parkingSpaces": 2,
+        "security": "Electric fencing & alarm",
+        "tvServices": "Netflix & DSTV"
+      }
+    },
+    {
+      "id": "1x9r4t7n",
+      "slug": "beachfront-luxury-apartment",
+      "type": "Apartment",
+      "name": "Beachfront Luxury",
+      "area": "Town Area",
+      "description": "A stylish 2-bedroom, 2-bathroom apartment in the heart of Town Area with direct beach access. This family-friendly luxury apartment features a pool and close proximity to shops and restaurants. Ideal for couples or small families seeking the perfect blend of convenience and coastal charm.",
+      "image": "/images/placeholders/property-list/_MG_0504.jpg",
+      "pricePerNight": 2800,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "95m²",
+        "parkingSpaces": 1,
+        "security": "Secure building & intercom",
+        "tvServices": "Netflix & DSTV"
+      }
+    },
+    {
+      "id": "6h2v8q3p",
+      "slug": "harbour-view-apartment",
+      "type": "Apartment",
+      "name": "Harbour View",
+      "area": "Central Beach",
+      "description": "A cozy 2-bedroom, 1-bathroom family-friendly apartment with picturesque harbour views in Central Beach. Perfect for couples or small families on a budget-conscious holiday. This charming space offers easy access to local attractions and dining while providing a comfortable home base for your coastal exploration.",
+      "image": "/images/placeholders/property-list/_MG_0517-Edit.jpg",
+      "pricePerNight": 2200,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "beachAccess": false,
+      "pool": false,
+      "childFriendly": true,
+      "details": {
+        "size": "78m²",
+        "parkingSpaces": 1,
+        "security": "Secure building",
+        "tvServices": "Netflix"
+      }
+    },
+    {
+      "id": "9m5k1w7r",
+      "slug": "modern-penthouse-apartment",
+      "type": "Apartment",
+      "name": "Modern Penthouse",
+      "area": "Beachy Head",
+      "description": "A contemporary 3-bedroom, 2-bathroom penthouse apartment at exclusive Beachy Head with direct beach access. This upscale retreat features a stylish pool and modern amenities perfect for couples or small groups seeking sophistication and coastal luxury. Experience panoramic views and exceptional comfort.",
+      "image": "/images/placeholders/property-list/_MG_0521.jpg",
+      "pricePerNight": 3500,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": false,
+      "details": {
+        "size": "145m²",
+        "parkingSpaces": 2,
+        "security": "Secure building, biometric access & alarm",
+        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      }
+    },
+    {
+      "id": "3t7n2q6h",
+      "slug": "seaview-studio-apartment",
+      "type": "Apartment",
+      "name": "Seaview Studio",
+      "area": "Keurbooms",
+      "description": "A charming 1-bedroom, 1-bathroom studio apartment in serene Keurbooms with direct beach access and private pool access. Perfect for solo travelers or couples seeking a romantic getaway. This intimate retreat offers stunning sea views and peaceful surroundings ideal for a relaxing escape.",
+      "image": "/images/placeholders/property-list/_MG_0528.jpg",
+      "pricePerNight": 1800,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": false,
+      "details": {
+        "size": "52m²",
+        "parkingSpaces": 1,
+        "security": "Secure complex",
+        "tvServices": "Netflix"
+      }
+    },
+    {
+      "id": "4q8p5m1k",
+      "slug": "marina-apartment",
+      "type": "Apartment",
+      "name": "Marina Apartment",
+      "area": "Secure Estates",
+      "description": "A secure 2-bedroom, 2-bathroom family apartment in exclusive Secure Estates with resort-style amenities. This child-friendly property features a refreshing pool and gated community access, providing peace of mind and comfort. Ideal for families seeking safety and relaxation in a private setting.",
+      "image": "/images/placeholders/property-list/_MG_0530-Edit.jpg",
+      "pricePerNight": 2500,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "beachAccess": false,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "88m²",
+        "parkingSpaces": 1,
+        "security": "Gated estate & 24-hour security",
+        "tvServices": "Netflix & DSTV"
+      }
+    },
+    {
+      "id": "7w3r9n2v",
+      "slug": "garden-townhouse",
+      "type": "Townhouse",
+      "name": "Garden Townhouse",
+      "area": "Robberg & Longships",
+      "description": "A delightful 3-bedroom, 2-bathroom townhouse in scenic Robberg & Longships with beautiful gardens. This child-friendly home is perfect for families who enjoy nature and outdoor activities. The peaceful setting provides a wonderful environment for creating family memories away from the hustle and bustle.",
+      "image": "/images/placeholders/property-list/_MG_0534.jpg",
+      "pricePerNight": 3200,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "beachAccess": false,
+      "pool": false,
+      "childFriendly": true,
+      "details": {
+        "size": "135m²",
+        "parkingSpaces": 2,
+        "security": "Complex security & alarm",
+        "tvServices": "Netflix & DSTV"
+      }
+    },
+    {
+      "id": "2k6h4t8q",
+      "slug": "beachside-townhouse",
+      "type": "Townhouse",
+      "name": "Beachside Townhouse",
+      "area": "Town Area",
+      "description": "A wonderful 3-bedroom, 3-bathroom family townhouse with direct beach access in the vibrant Town Area. This child-friendly property features a sparkling pool and is perfectly positioned for beach lovers seeking convenient access to shops, restaurants, and entertainment. The ideal home base for an action-packed family holiday.",
+      "image": "/images/placeholders/property-list/_MG_0550.jpg",
+      "pricePerNight": 3800,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "165m²",
+        "parkingSpaces": 2,
+        "security": "Electric fencing & alarm",
+        "tvServices": "Netflix, DSTV & Apple TV"
+      }
+    },
+    {
+      "id": "5n1m7p3w",
+      "slug": "coastal-cottage-townhouse",
+      "type": "Townhouse",
+      "name": "Coastal Cottage",
+      "area": "Central Beach",
+      "description": "A charming 2-bedroom, 2-bathroom cottage in picturesque Central Beach with direct beach access. This family-friendly townhouse is perfect for couples or small families seeking a cozy coastal escape. Enjoy the peaceful beach lifestyle with easy access to shops and attractions.",
+      "image": "/images/placeholders/property-list/_MG_0551.jpg",
+      "pricePerNight": 2900,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "beachAccess": true,
+      "pool": false,
+      "childFriendly": true,
+      "details": {
+        "size": "105m²",
+        "parkingSpaces": 1,
+        "security": "Alarm system",
+        "tvServices": "Netflix & DSTV"
+      }
+    },
+    {
+      "id": "8v4q2k6r",
+      "slug": "lagoon-townhouse",
+      "type": "Townhouse",
+      "name": "Lagoon Townhouse",
+      "area": "Beachy Head",
+      "description": "A sophisticated 4-bedroom, 3-bathroom townhouse nestled at Beachy Head with a stunning pool. Perfect for discerning travelers seeking elegance and tranquility. The private setting and luxury amenities make it an ideal choice for couples or groups of friends seeking an upscale getaway.",
+      "image": "/images/placeholders/property-list/_MG_0553.jpg",
+      "pricePerNight": 3600,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "beachAccess": false,
+      "pool": true,
+      "childFriendly": false,
+      "details": {
+        "size": "185m²",
+        "parkingSpaces": 2,
+        "security": "Electric fencing, alarm & CCTV",
+        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      }
+    },
+    {
+      "id": "1h9t5n3m",
+      "slug": "bay-retreat-townhouse",
+      "type": "Townhouse",
+      "name": "Bay Retreat",
+      "area": "Keurbooms",
+      "description": "A serene 3-bedroom, 2-bathroom family townhouse in peaceful Keurbooms with direct beach access. This child-friendly retreat is perfect for families seeking a quiet coastal escape. Enjoy easy beach access and the natural beauty of the area while creating wonderful family memories.",
+      "image": "/images/placeholders/property-list/_MG_0557.jpg",
+      "pricePerNight": 3300,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "beachAccess": true,
+      "pool": false,
+      "childFriendly": true,
+      "details": {
+        "size": "142m²",
+        "parkingSpaces": 2,
+        "security": "Complex security & alarm",
+        "tvServices": "Netflix & DSTV"
+      }
+    },
+    {
+      "id": "6p2w8r4k",
+      "slug": "royal-estate",
+      "type": "Estate",
+      "name": "Royal Estate",
+      "area": "Secure Estates",
+      "description": "An opulent 8-bedroom, 7-bathroom estate in exclusive Secure Estates with direct beach access and a magnificent pool. This child-friendly luxury property is perfect for large family gatherings and group celebrations. Experience premium service, privacy, and world-class amenities that define true coastal luxury.",
+      "image": "/images/placeholders/property-list/_MG_0559.jpg",
+      "pricePerNight": 12000,
+      "bedrooms": 8,
+      "bathrooms": 7,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "650m²",
+        "parkingSpaces": 6,
+        "security": "Gated estate, 24-hour security, electric fencing & CCTV",
+        "tvServices": "Netflix, DSTV Premium, Apple TV & home cinema"
+      }
+    },
+    {
+      "id": "3m7k1q5t",
+      "slug": "paradise-estate",
+      "type": "Estate",
+      "name": "Paradise Estate",
+      "area": "Robberg & Longships",
+      "description": "The ultimate 10-bedroom, 8-bathroom luxury estate in stunning Robberg & Longships with pristine beach access and resort-style pool. This sophisticated property is designed for discerning guests seeking the pinnacle of coastal elegance. Perfect for special events, milestone celebrations, and unforgettable group experiences.",
+      "image": "/images/placeholders/property-list/_MG_0562.jpg",
+      "pricePerNight": 15000,
+      "bedrooms": 10,
+      "bathrooms": 8,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": false,
+      "details": {
+        "size": "850m²",
+        "parkingSpaces": 8,
+        "security": "Private security, biometric access, electric fencing & CCTV",
+        "tvServices": "Netflix, DSTV Premium, Apple TV & dedicated home cinema"
+      }
+    },
+    {
+      "id": "9r5n2h6v",
+      "slug": "oceanfront-manor-estate",
+      "type": "Estate",
+      "name": "Oceanfront Manor",
+      "area": "Town Area",
+      "description": "A grand 7-bedroom, 6-bathroom oceanfront manor in vibrant Town Area with direct beach access and resort-style pool. This family-friendly luxury estate combines elegance with convenience, perfect for large families and group celebrations. Enjoy premium amenities while being close to shops, restaurants, and entertainment.",
+      "image": "/images/placeholders/property-list/_MG_0575.jpg",
+      "pricePerNight": 10500,
+      "bedrooms": 7,
+      "bathrooms": 6,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "520m²",
+        "parkingSpaces": 5,
+        "security": "24-hour security, electric fencing & alarm",
+        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      }
+    },
+    {
+      "id": "4t8q3p7w",
+      "slug": "luxury-cliffside-estate",
+      "type": "Estate",
+      "name": "Luxury Cliffside",
+      "area": "Central Beach",
+      "description": "A breathtaking 9-bedroom, 7-bathroom cliffside estate with spectacular views over Central Beach. This child-friendly luxury property features a stunning pool and premium amenities throughout. Ideal for families and large groups seeking an unforgettable luxury experience with panoramic coastal vistas.",
+      "image": "/images/placeholders/property-list/_MG_0582.jpg",
+      "pricePerNight": 13500,
+      "bedrooms": 9,
+      "bathrooms": 7,
+      "beachAccess": false,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "720m²",
+        "parkingSpaces": 6,
+        "security": "Electric fencing, alarm, CCTV & panic buttons",
+        "tvServices": "Netflix, DSTV Premium, Apple TV & home cinema"
+      }
+    },
+    {
+      "id": "2w6k9m1r",
+      "slug": "grand-bay-estate",
+      "type": "Estate",
+      "name": "Grand Bay Estate",
+      "area": "Beachy Head",
+      "description": "An impressive 8-bedroom, 6-bathroom estate at iconic Beachy Head with direct beach access and beautiful pool. This child-friendly property offers spacious accommodations and luxury amenities perfect for extended family gatherings. Create lasting memories in this stunning beachfront setting with all the comforts you could desire.",
+      "image": "/images/placeholders/property-list/_MG_0598.jpg",
+      "pricePerNight": 11000,
+      "bedrooms": 8,
+      "bathrooms": 6,
+      "beachAccess": true,
+      "pool": true,
+      "childFriendly": true,
+      "details": {
+        "size": "580m²",
+        "parkingSpaces": 5,
+        "security": "24-hour security, electric fencing & CCTV",
+        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      }
+    }
   ]
 }
