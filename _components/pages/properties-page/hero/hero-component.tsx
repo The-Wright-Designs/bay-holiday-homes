@@ -31,7 +31,7 @@ export default function HeroComponent() {
 
         <PropertySearchWrapper
           tealButton
-          cssClasses="absolute w-full flex justify-center left-1/2 bottom-15 -translate-x-1/2"
+          cssClasses="absolute w-full flex justify-center left-1/2 bottom-15 -translate-x-1/2 z-[60]"
         />
       </div>
     </main>

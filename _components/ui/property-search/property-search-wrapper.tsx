@@ -2,7 +2,7 @@
 
 import ButtonType from "@/_components/ui/buttons/button-type";
 import Image from "next/image";
-import PropertySearchFilter from "./property-search-filter";
+import PropertySearchFilterSuspenseWrapper from "./property-search-filter-suspense-wrapper";
 import classNames from "classnames";
 
 interface PropertySearchWrapperProps {
@@ -37,7 +37,7 @@ const PropertySearchWrapper = ({
           className="animate-bounce"
         />
       </ButtonType>
-      <PropertySearchFilter cssClasses="hidden desktop:flex" />
+      <PropertySearchFilterSuspenseWrapper cssClasses="hidden desktop:flex" />
     </div>
   );
 };

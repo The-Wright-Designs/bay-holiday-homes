@@ -17,5 +17,7 @@ export interface PropertyProps {
   beachAccess?: boolean;
   pool?: boolean;
   childFriendly?: boolean;
+  seaView?: boolean;
+  petFriendly?: boolean;
   cssClasses?: string;
 }

@@ -11,6 +11,7 @@ interface FormSelectInputProps {
   cssClasses?: string;
   required?: boolean;
   defaultValue?: string;
+  value?: string;
   onChange?: (value: string) => void;
   ariaLabel?: string;
   label: string;
@@ -23,12 +24,13 @@ const FormSelectInput = ({
   cssClasses,
   required = false,
   defaultValue,
+  value,
   onChange,
   ariaLabel,
   label,
 }: FormSelectInputProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(defaultValue || "");
+  const [selectedValue, setSelectedValue] = useState(value || defaultValue || "");
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -36,6 +38,12 @@ const FormSelectInput = ({
 
   const selectedLabel =
     options.find((opt) => opt.value === selectedValue)?.label || placeholder;
+
+  useEffect(() => {
+    if (value !== undefined) {
+      setSelectedValue(value);
+    }
+  }, [value]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -141,7 +149,7 @@ const FormSelectInput = ({
   );
 
   const dropdownClasses = classNames(
-    "absolute left-0 right-0 top-full mt-3 bg-white rounded-[2px] max-h-[200px] overflow-y-auto z-10",
+    "absolute left-0 right-0 top-full mt-3 bg-white rounded-[2px] max-h-[200px] overflow-y-auto z-50",
     {
       hidden: !isOpen,
     },

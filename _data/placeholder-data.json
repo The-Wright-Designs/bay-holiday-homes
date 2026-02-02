@@ -116,7 +116,9 @@
         "parkingSpaces": 2,
         "security": "Electric fencing & alarm",
         "tvServices": "Netflix & DSTV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "4n8q1r5t",
@@ -137,7 +139,9 @@
         "parkingSpaces": 3,
         "security": "24-hour security & alarm",
         "tvServices": "Netflix, DSTV & Apple TV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "2w6v9h3j",
@@ -158,7 +162,9 @@
         "parkingSpaces": 2,
         "security": "Alarm system",
         "tvServices": "Netflix & DSTV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "5z7b4n1q",
@@ -179,7 +185,9 @@
         "parkingSpaces": 4,
         "security": "Gated estate, electric fencing & alarm",
         "tvServices": "Netflix, DSTV Premium & Apple TV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": true
     },
     {
       "id": "8p3k6m2w",
@@ -200,7 +208,9 @@
         "parkingSpaces": 2,
         "security": "Electric fencing & alarm",
         "tvServices": "Netflix & DSTV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": true
     },
     {
       "id": "1x9r4t7n",
@@ -221,7 +231,9 @@
         "parkingSpaces": 1,
         "security": "Secure building & intercom",
         "tvServices": "Netflix & DSTV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "6h2v8q3p",
@@ -242,7 +254,9 @@
         "parkingSpaces": 1,
         "security": "Secure building",
         "tvServices": "Netflix"
-      }
+      },
+      "seaView": false,
+      "petFriendly": false
     },
     {
       "id": "9m5k1w7r",
@@ -263,7 +277,9 @@
         "parkingSpaces": 2,
         "security": "Secure building, biometric access & alarm",
         "tvServices": "Netflix, DSTV Premium & Apple TV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "3t7n2q6h",
@@ -284,7 +300,9 @@
         "parkingSpaces": 1,
         "security": "Secure complex",
         "tvServices": "Netflix"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "4q8p5m1k",
@@ -305,7 +323,9 @@
         "parkingSpaces": 1,
         "security": "Gated estate & 24-hour security",
         "tvServices": "Netflix & DSTV"
-      }
+      },
+      "seaView": false,
+      "petFriendly": true
     },
     {
       "id": "7w3r9n2v",
@@ -326,7 +346,9 @@
         "parkingSpaces": 2,
         "security": "Complex security & alarm",
         "tvServices": "Netflix & DSTV"
-      }
+      },
+      "seaView": false,
+      "petFriendly": true
     },
     {
       "id": "2k6h4t8q",
@@ -347,7 +369,9 @@
         "parkingSpaces": 2,
         "security": "Electric fencing & alarm",
         "tvServices": "Netflix, DSTV & Apple TV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "5n1m7p3w",
@@ -368,7 +392,9 @@
         "parkingSpaces": 1,
         "security": "Alarm system",
         "tvServices": "Netflix & DSTV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "8v4q2k6r",
@@ -389,7 +415,9 @@
         "parkingSpaces": 2,
         "security": "Electric fencing, alarm & CCTV",
         "tvServices": "Netflix, DSTV Premium & Apple TV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "1h9t5n3m",
@@ -410,7 +438,9 @@
         "parkingSpaces": 2,
         "security": "Complex security & alarm",
         "tvServices": "Netflix & DSTV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "6p2w8r4k",
@@ -431,7 +461,9 @@
         "parkingSpaces": 6,
         "security": "Gated estate, 24-hour security, electric fencing & CCTV",
         "tvServices": "Netflix, DSTV Premium, Apple TV & home cinema"
-      }
+      },
+      "seaView": true,
+      "petFriendly": true
     },
     {
       "id": "3m7k1q5t",
@@ -452,7 +484,9 @@
         "parkingSpaces": 8,
         "security": "Private security, biometric access, electric fencing & CCTV",
         "tvServices": "Netflix, DSTV Premium, Apple TV & dedicated home cinema"
-      }
+      },
+      "seaView": true,
+      "petFriendly": true
     },
     {
       "id": "9r5n2h6v",
@@ -473,7 +507,9 @@
         "parkingSpaces": 5,
         "security": "24-hour security, electric fencing & alarm",
         "tvServices": "Netflix, DSTV Premium & Apple TV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     },
     {
       "id": "4t8q3p7w",
@@ -494,7 +530,9 @@
         "parkingSpaces": 6,
         "security": "Electric fencing, alarm, CCTV & panic buttons",
         "tvServices": "Netflix, DSTV Premium, Apple TV & home cinema"
-      }
+      },
+      "seaView": false,
+      "petFriendly": false
     },
     {
       "id": "2w6k9m1r",
@@ -515,7 +553,9 @@
         "parkingSpaces": 5,
         "security": "24-hour security, electric fencing & CCTV",
         "tvServices": "Netflix, DSTV Premium & Apple TV"
-      }
+      },
+      "seaView": true,
+      "petFriendly": false
     }
   ]
 }

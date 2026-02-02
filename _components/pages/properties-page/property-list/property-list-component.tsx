@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import PropertyCard from "./property-card";
 import placeholderData from "@/_data/placeholder-data.json";
 import classNames from "classnames";
 import PropertyListSorting from "./property-list-sorting";
 import PropertyListSearch from "./property-list-search";
 import { PropertyProps } from "@/_types/property-types";
+import { filterProperties } from "@/_lib/utils/property-filter-utils";
 
 interface PropertyListComponentProps {
   cssClasses?: string;
@@ -15,9 +17,11 @@ interface PropertyListComponentProps {
 export default function PropertyListComponent({
   cssClasses,
 }: PropertyListComponentProps) {
+  const searchParams = useSearchParams();
   const [sortOption, setSortOption] = useState<string>("a-z");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isSearching, setIsSearching] = useState<boolean>(false);
+  const [filteredByUrl, setFilteredByUrl] = useState<PropertyProps[]>([]);
 
   const handleSearch = (query: string) => {
     setIsSearching(true);
@@ -30,6 +34,12 @@ export default function PropertyListComponent({
   const handleClearSearch = () => {
     setSearchQuery("");
   };
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(searchParams.toString());
+    const filtered = filterProperties(placeholderData.propertyList, urlParams);
+    setFilteredByUrl(filtered);
+  }, [searchParams]);
 
   const searchProperties = (properties: PropertyProps[]): PropertyProps[] => {
     if (!searchQuery) return properties;
@@ -70,11 +80,13 @@ export default function PropertyListComponent({
     ];
   };
 
+  const baseProperties = filteredByUrl.length > 0 || searchParams.toString()
+    ? filteredByUrl
+    : placeholderData.propertyList;
+
   const filteredProperties = searchQuery
-    ? searchProperties(placeholderData.propertyList)
-    : placeholderData.propertyList.filter(
-        (property) => property.type === "House",
-      );
+    ? searchProperties(baseProperties)
+    : baseProperties;
 
   const sortedProperties = [...filteredProperties].sort((a, b) => {
     if (sortOption === "a-z") {
@@ -101,24 +113,33 @@ export default function PropertyListComponent({
           hasActiveSearch={!!searchQuery}
         />
       </div>
-      <div className={classNames("grid gap-10 tablet:grid-cols-2", cssClasses)}>
-        {sortedProperties.map((property) => (
-          <PropertyCard
-            key={property.id}
-            id={property.id}
-            type={property.type}
-            name={property.name}
-            area={property.area}
-            image={property.image}
-            pricePerNight={property.pricePerNight}
-            bedrooms={property.bedrooms}
-            bathrooms={property.bathrooms}
-            beachAccess={property.beachAccess}
-            pool={property.pool}
-            childFriendly={property.childFriendly}
-          />
-        ))}
-      </div>
+      {sortedProperties.length === 0 ? (
+        <div className="flex items-center justify-center py-20">
+          <p className="text-center text-navy">
+            Sorry, we have no properties that match your filter or search.
+            Please adjust and try again.
+          </p>
+        </div>
+      ) : (
+        <div className={classNames("grid gap-10 tablet:grid-cols-2", cssClasses)}>
+          {sortedProperties.map((property) => (
+            <PropertyCard
+              key={property.id}
+              id={property.id}
+              type={property.type}
+              name={property.name}
+              area={property.area}
+              image={property.image}
+              pricePerNight={property.pricePerNight}
+              bedrooms={property.bedrooms}
+              bathrooms={property.bathrooms}
+              beachAccess={property.beachAccess}
+              pool={property.pool}
+              childFriendly={property.childFriendly}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
