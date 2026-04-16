@@ -6,29 +6,28 @@ import Link from "next/link";
 import classNames from "classnames";
 import { PropertyProps } from "@/_types/property-types";
 
+interface PropertyCardProps {
+  slug: string;
+  property: PropertyProps;
+  cssClasses?: string;
+}
+
 export default function PropertyCard({
-  id,
-  type,
-  name,
-  area,
-  image,
-  pricePerNight,
-  bedrooms,
-  bathrooms,
-  beachAccess,
-  pool,
-  childFriendly,
+  slug,
+  property,
   cssClasses,
-}: PropertyProps) {
+}: PropertyCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("en-ZA").format(price);
+  const { general, specialFeatures } = property;
+
+  const formatPrice = (price: string) => {
+    return new Intl.NumberFormat("en-ZA").format(Number(price));
   };
 
   return (
     <Link
-      href={`/properties/${id}`}
+      href={`/properties/${slug}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={classNames(
@@ -38,8 +37,8 @@ export default function PropertyCard({
     >
       <div className="relative aspect-[4/2.6] w-full shrink-0 overflow-hidden">
         <Image
-          src={image}
-          alt={name}
+          src={general.images[0]}
+          alt={general.propertyName}
           fill
           className={classNames(
             "object-cover ease-in-out duration-500 delay-75",
@@ -48,7 +47,9 @@ export default function PropertyCard({
           sizes="(max-width: 800px) 100vw, 50vw"
         />
         <p className="absolute text-[14px] top-5 right-5 py-1.5 px-2.5 rounded-[2px] bg-teal text-white">
-          {area}
+          {general.area
+            .replace(/-/g, " ")
+            .replace(/\b\w/g, (c) => c.toUpperCase())}
         </p>
       </div>
 
@@ -60,14 +61,18 @@ export default function PropertyCard({
       >
         <div className="flex gap-3 items-center w-full">
           <div className="flex flex-col flex-1 min-w-0">
-            <p className="text-[18px] font-semibold">{type}</p>
-            <p className="text-[14px] font-light">{name}</p>
+            <p className="text-[18px] font-semibold">
+              {general.type.replace(/\b\w/g, (c) => c.toUpperCase())}
+            </p>
+            <p className="text-[14px] font-light">
+              {general.propertyName.replace(/\b\w/g, (c) => c.toUpperCase())}
+            </p>
           </div>
 
           <div className="flex flex-col flex-1 min-w-0 items-end tablet:items-start">
             <p className="font-light text-[14px]">Starting from:</p>
             <p className="font-semibold text-[14px]">
-              R{formatPrice(pricePerNight)} / night
+              R{formatPrice(general.pricePerNight.from)} / night
             </p>
           </div>
         </div>
@@ -81,7 +86,8 @@ export default function PropertyCard({
               height={24}
             />
             <p className="text-[14px] font-light">
-              {bedrooms} {bedrooms === 1 ? "bedroom" : "bedrooms"}
+              {general.beds}{" "}
+              {Number(general.beds) === 1 ? "bedroom" : "bedrooms"}
             </p>
           </div>
 
@@ -93,11 +99,12 @@ export default function PropertyCard({
               height={24}
             />
             <p className="text-[14px] font-light">
-              {bathrooms} {bathrooms === 1 ? "bathroom" : "bathrooms"}
+              {general.baths}{" "}
+              {Number(general.baths) === 1 ? "bathroom" : "bathrooms"}
             </p>
           </div>
 
-          {beachAccess && (
+          {specialFeatures?.directBeachAccess && (
             <div className="flex gap-1.5 items-center">
               <Image
                 src="/icons/listings/surfing.svg"
@@ -109,7 +116,7 @@ export default function PropertyCard({
             </div>
           )}
 
-          {pool && (
+          {specialFeatures && Number(specialFeatures.pool.numberOf) > 0 && (
             <div className="flex gap-1.5 items-center">
               <Image
                 src="/icons/listings/pool.svg"
@@ -121,7 +128,7 @@ export default function PropertyCard({
             </div>
           )}
 
-          {childFriendly && (
+          {specialFeatures?.childFriendly && (
             <div className="flex gap-1.5 items-center">
               <Image
                 src="/icons/listings/child-friendly.svg"

@@ -100,462 +100,856 @@
     {
       "id": "7k3m9p2x",
       "slug": "sailor-moon-house",
-      "type": "House",
-      "name": "Sailor Moon",
-      "area": "Central Beach",
-      "description": "A charming family-friendly house in the heart of Central Beach. This 4-bedroom, 3-bathroom home features a sparkling pool perfect for children and direct beach access. Ideal for families seeking a memorable coastal getaway with all the comforts of home and easy access to local amenities.",
-      "image": "/images/placeholders/property-list/_MG_0394.jpg",
-      "pricePerNight": 4500,
-      "bedrooms": 4,
-      "bathrooms": 3,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "182m²",
-        "parkingSpaces": 2,
-        "security": "Electric fencing & alarm",
-        "tvServices": "Netflix & DSTV"
+      "general": {
+        "propertyName": "Sailor Moon",
+        "area": "central-beach",
+        "type": "house",
+        "beds": "4",
+        "baths": "3",
+        "totalLounges": "2",
+        "loungeTypes": { "openPlan": true, "outside": false },
+        "pricePerNight": { "from": "4200", "to": "4800" },
+        "sizeSquareMeters": "182",
+        "description": "A charming family-friendly house in the heart of Central Beach. This 4-bedroom home features direct beach access and easy access to local amenities.",
+        "availableDates": [{"start": "2026-07-01", "end": "2026-07-14"}, {"start": "2026-08-01", "end": "2026-08-10"}, {"start": "2026-12-10", "end": "2026-12-20"}],
+        "images": ["/images/placeholders/property-list/_MG_0462.jpg", "/images/placeholders/property-list/_MG_0530-Edit.jpg", "/images/placeholders/property-list/_MG_0553.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": false, "weber": true, "builtIn": true, "pizzaOven": false },
+          "fireplace": { "wood": false, "gas": false }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "1", "undercover": "0", "street": "1" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": false, "externalBeams": false, "electricFence": true, "other": "" },
+        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "4n8q1r5t",
       "slug": "ocean-breeze-house",
-      "type": "House",
-      "name": "Ocean Breeze",
-      "area": "Beachy Head",
-      "description": "Experience luxury living in this stunning 5-bedroom, 4-bathroom beachfront house at iconic Beachy Head. With direct beach access and a refreshing pool, this home is perfect for extended family gatherings and groups. The spacious layout and family-friendly amenities make it an unforgettable destination for your dream vacation.",
-      "image": "/images/placeholders/property-list/_MG_0462.jpg",
-      "pricePerNight": 5200,
-      "bedrooms": 5,
-      "bathrooms": 4,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "245m²",
-        "parkingSpaces": 3,
-        "security": "24-hour security & alarm",
-        "tvServices": "Netflix, DSTV & Apple TV"
+      "general": {
+        "propertyName": "Ocean Breeze",
+        "area": "beachy-head",
+        "type": "house",
+        "beds": "5",
+        "baths": "4",
+        "totalLounges": "3",
+        "loungeTypes": { "openPlan": true, "outside": true },
+        "pricePerNight": { "from": "5000", "to": "5500" },
+        "sizeSquareMeters": "245",
+        "description": "Experience luxury living in this stunning 5-bedroom beachfront house at iconic Beachy Head. Perfect for extended family gatherings and groups.",
+        "availableDates": [{"start": "2026-06-15", "end": "2026-06-28"}, {"start": "2026-07-20", "end": "2026-08-02"}, {"start": "2026-09-01", "end": "2026-09-14"}],
+        "images": ["/images/placeholders/property-list/_MG_0477.jpg", "/images/placeholders/property-list/_MG_0562.jpg", "/images/placeholders/property-list/_MG_0557.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": true, "weber": false, "builtIn": true, "pizzaOven": false },
+          "fireplace": { "wood": true, "gas": false }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "2", "undercover": "1", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "" },
+        "securityService": { "none": false, "adt": false, "smhart": true, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": true,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": true,
+        "sauna": false
+      }
     },
     {
       "id": "2w6v9h3j",
       "slug": "sunset-villa-house",
-      "type": "House",
-      "name": "Sunset Villa",
-      "area": "Keurbooms",
-      "description": "A tranquil 3-bedroom, 2-bathroom villa nestled in the peaceful Keurbooms area. Perfect for families, this child-friendly home features a private pool ideal for relaxation. While not directly on the beach, its serene garden setting and family amenities make it an excellent retreat for a quieter getaway.",
-      "image": "/images/placeholders/property-list/_MG_0477.jpg",
-      "pricePerNight": 3800,
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "beachAccess": false,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "156m²",
-        "parkingSpaces": 2,
-        "security": "Alarm system",
-        "tvServices": "Netflix & DSTV"
+      "general": {
+        "propertyName": "Sunset Villa",
+        "area": "keurbooms",
+        "type": "house",
+        "beds": "3",
+        "baths": "2",
+        "totalLounges": "1",
+        "pricePerNight": { "from": "3600", "to": "4000" },
+        "sizeSquareMeters": "156",
+        "description": "A tranquil 3-bedroom villa nestled in the peaceful Keurbooms area. Perfect for families, this home features a private pool ideal for relaxation.",
+        "availableDates": [{"start": "2026-07-05", "end": "2026-07-18"}, {"start": "2026-08-12", "end": "2026-08-25"}, {"start": "2026-12-01", "end": "2026-12-15"}],
+        "images": ["/images/placeholders/property-list/_MG_0528.jpg", "/images/placeholders/property-list/_MG_0598.jpg", "/images/placeholders/property-list/_MG_0551.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": null,
+      "parking": {
+        "available": true,
+        "type": { "garage": "1", "undercover": "1", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "basic", "tenantToPayExtra": true },
+      "security": null,
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": false,
+        "view": { "ocean": true, "mountain": true, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "5z7b4n1q",
       "slug": "seashell-retreat-house",
-      "type": "House",
-      "name": "Seashell Retreat",
-      "area": "Secure Estates",
-      "description": "An elegant 6-bedroom, 5-bathroom luxury retreat in the exclusive Secure Estates. This sophisticated property boasts direct beach access and a stunning pool, catering to discerning travelers seeking privacy and comfort. Perfect for upscale group gatherings and special occasions with high-end amenities throughout.",
-      "image": "/images/placeholders/property-list/_MG_0494-Edit-2.jpg",
-      "pricePerNight": 6000,
-      "bedrooms": 6,
-      "bathrooms": 5,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": false,
-      "details": {
-        "size": "320m²",
-        "parkingSpaces": 4,
-        "security": "Gated estate, electric fencing & alarm",
-        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      "general": {
+        "propertyName": "Seashell Retreat",
+        "area": "secure-estate",
+        "type": "house",
+        "beds": "6",
+        "baths": "5",
+        "totalLivingAreas": "4",
+        "totalLounges": "3",
+        "loungeTypes": { "openPlan": false, "outside": true },
+        "pricePerNight": { "from": "5800", "to": "6500" },
+        "sizeSquareMeters": "320",
+        "description": "An elegant 6-bedroom luxury retreat in the exclusive Secure Estate. This sophisticated property boasts direct beach access and a stunning pool.",
+        "availableDates": [{"start": "2026-06-20", "end": "2026-06-30"}, {"start": "2026-07-10", "end": "2026-07-24"}, {"start": "2026-11-15", "end": "2026-11-28"}],
+        "images": ["/images/placeholders/property-list/_MG_0504.jpg", "/images/placeholders/property-list/_MG_0494-Edit-2.jpg", "/images/placeholders/property-list/_MG_0550.jpg"]
       },
-      "seaView": true,
-      "petFriendly": true
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": true, "weber": false, "builtIn": true, "pizzaOven": true },
+          "fireplace": { "wood": false, "gas": true }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "3", "undercover": "1", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "CCTV" },
+        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": false,
+        "petFriendly": true,
+        "wheelChairFriendly": false,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": true, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": true,
+        "sauna": true
+      }
     },
     {
       "id": "8p3k6m2w",
       "slug": "coastal-haven-house",
-      "type": "House",
-      "name": "Coastal Haven",
-      "area": "Robberg & Longships",
-      "description": "A welcoming 4-bedroom, 3-bathroom family home in the scenic Robberg & Longships area with direct beach access. This child-friendly property is perfect for families who love outdoor activities and beach exploration. Enjoy easy beach access and the natural beauty of the surrounding coastal landscape.",
-      "image": "/images/placeholders/property-list/_MG_0497-Edit.jpg",
-      "pricePerNight": 4100,
-      "bedrooms": 4,
-      "bathrooms": 3,
-      "beachAccess": true,
-      "pool": false,
-      "childFriendly": true,
-      "details": {
-        "size": "195m²",
-        "parkingSpaces": 2,
-        "security": "Electric fencing & alarm",
-        "tvServices": "Netflix & DSTV"
+      "general": {
+        "propertyName": "Coastal Haven",
+        "area": "robberg-longships",
+        "type": "house",
+        "beds": "4",
+        "baths": "3",
+        "totalLounges": "2",
+        "loungeTypes": { "openPlan": true, "outside": false },
+        "pricePerNight": { "from": "3900", "to": "4300" },
+        "description": "A welcoming 4-bedroom family home in the scenic Robberg & Longships area with direct beach access. Perfect for families who love outdoor activities.",
+        "availableDates": [{"start": "2026-07-01", "end": "2026-07-12"}, {"start": "2026-08-05", "end": "2026-08-18"}, {"start": "2026-12-20", "end": "2027-01-02"}],
+        "images": ["/images/placeholders/property-list/_MG_0530-Edit.jpg", "/images/placeholders/property-list/_MG_0559.jpg", "/images/placeholders/property-list/_MG_0534.jpg"]
       },
-      "seaView": true,
-      "petFriendly": true
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": false, "weber": true, "builtIn": false, "pizzaOven": false },
+          "fireplace": { "wood": true, "gas": false }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "0", "undercover": "2", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": false, "externalBeams": true, "electricFence": true, "other": "" },
+        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": true,
+        "wheelChairFriendly": false,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": true, "lagoon": false, "fynbos": true },
+        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "1x9r4t7n",
       "slug": "beachfront-luxury-apartment",
-      "type": "Apartment",
-      "name": "Beachfront Luxury",
-      "area": "Town Area",
-      "description": "A stylish 2-bedroom, 2-bathroom apartment in the heart of Town Area with direct beach access. This family-friendly luxury apartment features a pool and close proximity to shops and restaurants. Ideal for couples or small families seeking the perfect blend of convenience and coastal charm.",
-      "image": "/images/placeholders/property-list/_MG_0504.jpg",
-      "pricePerNight": 2800,
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "95m²",
-        "parkingSpaces": 1,
-        "security": "Secure building & intercom",
-        "tvServices": "Netflix & DSTV"
+      "general": {
+        "propertyName": "Beachfront Luxury",
+        "area": "town-area",
+        "type": "flat-apartment",
+        "beds": "2",
+        "baths": "2",
+        "totalLounges": "1",
+        "loungeTypes": { "openPlan": true, "outside": false },
+        "pricePerNight": { "from": "2600", "to": "3000" },
+        "sizeSquareMeters": "95",
+        "description": "A stylish 2-bedroom apartment in the heart of Town Area with direct beach access. Ideal for couples or small families seeking coastal charm.",
+        "availableDates": [{"start": "2026-06-10", "end": "2026-06-22"}, {"start": "2026-07-25", "end": "2026-08-07"}, {"start": "2026-11-01", "end": "2026-11-14"}],
+        "images": ["/images/placeholders/property-list/_MG_0575.jpg", "/images/placeholders/property-list/_MG_0497-Edit.jpg", "/images/placeholders/property-list/_MG_0517-Edit.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": null,
+      "parking": {
+        "available": true,
+        "type": { "garage": "0", "undercover": "1", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": false, "internal": true, "externalBeams": false, "electricFence": false, "other": "Intercom" },
+        "securityService": { "none": true, "adt": false, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": true,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "6h2v8q3p",
       "slug": "harbour-view-apartment",
-      "type": "Apartment",
-      "name": "Harbour View",
-      "area": "Central Beach",
-      "description": "A cozy 2-bedroom, 1-bathroom family-friendly apartment with picturesque harbour views in Central Beach. Perfect for couples or small families on a budget-conscious holiday. This charming space offers easy access to local attractions and dining while providing a comfortable home base for your coastal exploration.",
-      "image": "/images/placeholders/property-list/_MG_0517-Edit.jpg",
-      "pricePerNight": 2200,
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "beachAccess": false,
-      "pool": false,
-      "childFriendly": true,
-      "details": {
-        "size": "78m²",
-        "parkingSpaces": 1,
-        "security": "Secure building",
-        "tvServices": "Netflix"
+      "general": {
+        "propertyName": "Harbour View",
+        "area": "central-beach",
+        "type": "flat-apartment",
+        "beds": "2",
+        "baths": "1",
+        "totalLounges": "1",
+        "pricePerNight": { "from": "2000", "to": "2400" },
+        "sizeSquareMeters": "78",
+        "description": "A cozy 2-bedroom apartment with picturesque harbour views in Central Beach. Perfect for couples or small families on a budget-conscious holiday.",
+        "availableDates": [{"start": "2026-07-08", "end": "2026-07-21"}, {"start": "2026-08-20", "end": "2026-09-02"}, {"start": "2026-12-15", "end": "2026-12-28"}],
+        "images": ["/images/placeholders/property-list/_MG_0562.jpg", "/images/placeholders/property-list/_MG_0582.jpg", "/images/placeholders/property-list/_MG_0521.jpg"]
       },
-      "seaView": false,
-      "petFriendly": false
+      "braaiFireplace": null,
+      "parking": null,
+      "wiFi": { "available": true, "type": "basic", "tenantToPayExtra": true },
+      "security": {
+        "available": true,
+        "type": { "alarm": false, "internal": true, "externalBeams": false, "electricFence": false, "other": "" },
+        "securityService": { "none": true, "adt": false, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": false,
+        "view": { "ocean": false, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "9m5k1w7r",
       "slug": "modern-penthouse-apartment",
-      "type": "Apartment",
-      "name": "Modern Penthouse",
-      "area": "Beachy Head",
-      "description": "A contemporary 3-bedroom, 2-bathroom penthouse apartment at exclusive Beachy Head with direct beach access. This upscale retreat features a stylish pool and modern amenities perfect for couples or small groups seeking sophistication and coastal luxury. Experience panoramic views and exceptional comfort.",
-      "image": "/images/placeholders/property-list/_MG_0521.jpg",
-      "pricePerNight": 3500,
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": false,
-      "details": {
-        "size": "145m²",
-        "parkingSpaces": 2,
-        "security": "Secure building, biometric access & alarm",
-        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      "general": {
+        "propertyName": "Modern Penthouse",
+        "area": "beachy-head",
+        "type": "flat-apartment",
+        "beds": "3",
+        "baths": "2",
+        "totalLivingAreas": "2",
+        "totalLounges": "2",
+        "loungeTypes": { "openPlan": true, "outside": true },
+        "pricePerNight": { "from": "3300", "to": "3800" },
+        "sizeSquareMeters": "145",
+        "description": "A contemporary 3-bedroom penthouse at exclusive Beachy Head with direct beach access. Experience panoramic views and exceptional comfort.",
+        "availableDates": [{"start": "2026-06-25", "end": "2026-07-05"}, {"start": "2026-07-18", "end": "2026-07-31"}, {"start": "2026-09-05", "end": "2026-09-18"}],
+        "images": ["/images/placeholders/property-list/_MG_0598.jpg", "/images/placeholders/property-list/_MG_0553.jpg", "/images/placeholders/property-list/_MG_0462.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": true, "weber": false, "builtIn": false, "pizzaOven": false },
+          "fireplace": { "wood": false, "gas": true }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "0", "undercover": "2", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": true, "externalBeams": false, "electricFence": false, "other": "Biometric access" },
+        "securityService": { "none": false, "adt": false, "smhart": true, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": false,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": true,
+        "sauna": false
+      }
     },
     {
       "id": "3t7n2q6h",
       "slug": "seaview-studio-apartment",
-      "type": "Apartment",
-      "name": "Seaview Studio",
-      "area": "Keurbooms",
-      "description": "A charming 1-bedroom, 1-bathroom studio apartment in serene Keurbooms with direct beach access and private pool access. Perfect for solo travelers or couples seeking a romantic getaway. This intimate retreat offers stunning sea views and peaceful surroundings ideal for a relaxing escape.",
-      "image": "/images/placeholders/property-list/_MG_0528.jpg",
-      "pricePerNight": 1800,
-      "bedrooms": 1,
-      "bathrooms": 1,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": false,
-      "details": {
-        "size": "52m²",
-        "parkingSpaces": 1,
-        "security": "Secure complex",
-        "tvServices": "Netflix"
+      "general": {
+        "propertyName": "Seaview Studio",
+        "area": "keurbooms",
+        "type": "flat-apartment",
+        "beds": "1",
+        "baths": "1",
+        "totalLounges": "1",
+        "loungeTypes": { "openPlan": true, "outside": false },
+        "pricePerNight": { "from": "1600", "to": "2000" },
+        "sizeSquareMeters": "52",
+        "description": "A charming 1-bedroom studio in serene Keurbooms with direct beach access. Perfect for solo travelers or couples seeking a romantic getaway.",
+        "availableDates": [{"start": "2026-07-12", "end": "2026-07-22"}, {"start": "2026-08-25", "end": "2026-09-05"}, {"start": "2026-11-20", "end": "2026-11-30"}],
+        "images": ["/images/placeholders/property-list/_MG_0494-Edit-2.jpg", "/images/placeholders/property-list/_MG_0551.jpg", "/images/placeholders/property-list/_MG_0575.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": null,
+      "parking": null,
+      "wiFi": { "available": true, "type": "basic", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": false, "internal": true, "externalBeams": false, "electricFence": false, "other": "" },
+        "securityService": { "none": true, "adt": false, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": false,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "4q8p5m1k",
       "slug": "marina-apartment",
-      "type": "Apartment",
-      "name": "Marina Apartment",
-      "area": "Secure Estates",
-      "description": "A secure 2-bedroom, 2-bathroom family apartment in exclusive Secure Estates with resort-style amenities. This child-friendly property features a refreshing pool and gated community access, providing peace of mind and comfort. Ideal for families seeking safety and relaxation in a private setting.",
-      "image": "/images/placeholders/property-list/_MG_0530-Edit.jpg",
-      "pricePerNight": 2500,
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "beachAccess": false,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "88m²",
-        "parkingSpaces": 1,
-        "security": "Gated estate & 24-hour security",
-        "tvServices": "Netflix & DSTV"
+      "general": {
+        "propertyName": "Marina Apartment",
+        "area": "secure-estate",
+        "type": "flat-apartment",
+        "beds": "2",
+        "baths": "2",
+        "totalLounges": "1",
+        "pricePerNight": { "from": "2300", "to": "2700" },
+        "sizeSquareMeters": "88",
+        "description": "A secure 2-bedroom family apartment in exclusive Secure Estate with resort-style amenities. Ideal for families seeking safety and relaxation.",
+        "availableDates": [{"start": "2026-06-30", "end": "2026-07-10"}, {"start": "2026-08-08", "end": "2026-08-20"}, {"start": "2026-12-05", "end": "2026-12-18"}],
+        "images": ["/images/placeholders/property-list/_MG_0559.jpg", "/images/placeholders/property-list/_MG_0534.jpg", "/images/placeholders/property-list/_MG_0528.jpg"]
       },
-      "seaView": false,
-      "petFriendly": true
+      "braaiFireplace": null,
+      "parking": {
+        "available": true,
+        "type": { "garage": "0", "undercover": "1", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": false, "externalBeams": false, "electricFence": true, "other": "" },
+        "securityService": { "none": false, "adt": false, "smhart": false, "other": "24-hour estate security" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": true,
+        "wheelChairFriendly": true,
+        "directBeachAccess": false,
+        "view": { "ocean": false, "mountain": false, "lagoon": true, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "7w3r9n2v",
       "slug": "garden-townhouse",
-      "type": "Townhouse",
-      "name": "Garden Townhouse",
-      "area": "Robberg & Longships",
-      "description": "A delightful 3-bedroom, 2-bathroom townhouse in scenic Robberg & Longships with beautiful gardens. This child-friendly home is perfect for families who enjoy nature and outdoor activities. The peaceful setting provides a wonderful environment for creating family memories away from the hustle and bustle.",
-      "image": "/images/placeholders/property-list/_MG_0534.jpg",
-      "pricePerNight": 3200,
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "beachAccess": false,
-      "pool": false,
-      "childFriendly": true,
-      "details": {
-        "size": "135m²",
-        "parkingSpaces": 2,
-        "security": "Complex security & alarm",
-        "tvServices": "Netflix & DSTV"
+      "general": {
+        "propertyName": "Garden Townhouse",
+        "area": "robberg-longships",
+        "type": "townhouse",
+        "beds": "3",
+        "baths": "2",
+        "totalLounges": "2",
+        "loungeTypes": { "openPlan": false, "outside": true },
+        "pricePerNight": { "from": "3000", "to": "3400" },
+        "sizeSquareMeters": "135",
+        "description": "A delightful 3-bedroom townhouse in scenic Robberg & Longships with beautiful gardens. Perfect for families who enjoy nature and outdoor activities.",
+        "availableDates": [{"start": "2026-07-03", "end": "2026-07-16"}, {"start": "2026-08-15", "end": "2026-08-28"}, {"start": "2026-10-20", "end": "2026-11-02"}],
+        "images": ["/images/placeholders/property-list/_MG_0582.jpg", "/images/placeholders/property-list/_MG_0477.jpg", "/images/placeholders/property-list/_MG_0559.jpg"]
       },
-      "seaView": false,
-      "petFriendly": true
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": false, "weber": true, "builtIn": false, "pizzaOven": false },
+          "fireplace": { "wood": true, "gas": false }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "1", "undercover": "0", "street": "1" }
+      },
+      "wiFi": { "available": true, "type": "basic", "tenantToPayExtra": false },
+      "security": null,
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": true,
+        "wheelChairFriendly": false,
+        "directBeachAccess": false,
+        "view": { "ocean": false, "mountain": true, "lagoon": false, "fynbos": true },
+        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "2k6h4t8q",
       "slug": "beachside-townhouse",
-      "type": "Townhouse",
-      "name": "Beachside Townhouse",
-      "area": "Town Area",
-      "description": "A wonderful 3-bedroom, 3-bathroom family townhouse with direct beach access in the vibrant Town Area. This child-friendly property features a sparkling pool and is perfectly positioned for beach lovers seeking convenient access to shops, restaurants, and entertainment. The ideal home base for an action-packed family holiday.",
-      "image": "/images/placeholders/property-list/_MG_0550.jpg",
-      "pricePerNight": 3800,
-      "bedrooms": 3,
-      "bathrooms": 3,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "165m²",
-        "parkingSpaces": 2,
-        "security": "Electric fencing & alarm",
-        "tvServices": "Netflix, DSTV & Apple TV"
+      "general": {
+        "propertyName": "Beachside Townhouse",
+        "area": "town-area",
+        "type": "townhouse",
+        "beds": "3",
+        "baths": "3",
+        "totalLivingAreas": "2",
+        "totalLounges": "2",
+        "loungeTypes": { "openPlan": true, "outside": true },
+        "pricePerNight": { "from": "3600", "to": "4000" },
+        "sizeSquareMeters": "165",
+        "description": "A wonderful 3-bedroom family townhouse with direct beach access in the vibrant Town Area. Perfectly positioned for beach lovers close to shops and restaurants.",
+        "availableDates": [{"start": "2026-06-18", "end": "2026-07-01"}, {"start": "2026-07-30", "end": "2026-08-12"}, {"start": "2026-12-22", "end": "2027-01-04"}],
+        "images": ["/images/placeholders/property-list/_MG_0557.jpg", "/images/placeholders/property-list/_MG_0521.jpg", "/images/placeholders/property-list/_MG_0504.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": false, "weber": false, "builtIn": true, "pizzaOven": false },
+          "fireplace": { "wood": false, "gas": false }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "1", "undercover": "0", "street": "1" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": false, "externalBeams": true, "electricFence": true, "other": "" },
+        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "5n1m7p3w",
       "slug": "coastal-cottage-townhouse",
-      "type": "Townhouse",
-      "name": "Coastal Cottage",
-      "area": "Central Beach",
-      "description": "A charming 2-bedroom, 2-bathroom cottage in picturesque Central Beach with direct beach access. This family-friendly townhouse is perfect for couples or small families seeking a cozy coastal escape. Enjoy the peaceful beach lifestyle with easy access to shops and attractions.",
-      "image": "/images/placeholders/property-list/_MG_0551.jpg",
-      "pricePerNight": 2900,
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "beachAccess": true,
-      "pool": false,
-      "childFriendly": true,
-      "details": {
-        "size": "105m²",
-        "parkingSpaces": 1,
-        "security": "Alarm system",
-        "tvServices": "Netflix & DSTV"
+      "general": {
+        "propertyName": "Coastal Cottage",
+        "area": "central-beach",
+        "type": "townhouse",
+        "beds": "2",
+        "baths": "2",
+        "totalLounges": "1",
+        "loungeTypes": { "openPlan": true, "outside": false },
+        "pricePerNight": { "from": "2700", "to": "3100" },
+        "sizeSquareMeters": "105",
+        "description": "A charming 2-bedroom cottage in picturesque Central Beach with direct beach access. Perfect for couples or small families seeking a cozy coastal escape.",
+        "availableDates": [{"start": "2026-07-14", "end": "2026-07-26"}, {"start": "2026-08-28", "end": "2026-09-09"}, {"start": "2026-11-25", "end": "2026-12-07"}],
+        "images": ["/images/placeholders/property-list/_MG_0551.jpg", "/images/placeholders/property-list/_MG_0517-Edit.jpg", "/images/placeholders/property-list/_MG_0582.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": null,
+      "parking": {
+        "available": true,
+        "type": { "garage": "0", "undercover": "0", "street": "1" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": false, "externalBeams": false, "electricFence": false, "other": "" },
+        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": true,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "8v4q2k6r",
       "slug": "lagoon-townhouse",
-      "type": "Townhouse",
-      "name": "Lagoon Townhouse",
-      "area": "Beachy Head",
-      "description": "A sophisticated 4-bedroom, 3-bathroom townhouse nestled at Beachy Head with a stunning pool. Perfect for discerning travelers seeking elegance and tranquility. The private setting and luxury amenities make it an ideal choice for couples or groups of friends seeking an upscale getaway.",
-      "image": "/images/placeholders/property-list/_MG_0553.jpg",
-      "pricePerNight": 3600,
-      "bedrooms": 4,
-      "bathrooms": 3,
-      "beachAccess": false,
-      "pool": true,
-      "childFriendly": false,
-      "details": {
-        "size": "185m²",
-        "parkingSpaces": 2,
-        "security": "Electric fencing, alarm & CCTV",
-        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      "general": {
+        "propertyName": "Lagoon Townhouse",
+        "area": "beachy-head",
+        "type": "townhouse",
+        "beds": "4",
+        "baths": "3",
+        "totalLivingAreas": "3",
+        "totalLounges": "2",
+        "loungeTypes": { "openPlan": false, "outside": true },
+        "pricePerNight": { "from": "3400", "to": "3800" },
+        "sizeSquareMeters": "185",
+        "description": "A sophisticated 4-bedroom townhouse nestled at Beachy Head with stunning lagoon views and a pool. Ideal for couples or groups seeking elegance and tranquility.",
+        "availableDates": [{"start": "2026-06-22", "end": "2026-07-04"}, {"start": "2026-08-02", "end": "2026-08-15"}, {"start": "2026-09-18", "end": "2026-10-01"}],
+        "images": ["/images/placeholders/property-list/_MG_0550.jpg", "/images/placeholders/property-list/_MG_0462.jpg", "/images/placeholders/property-list/_MG_0497-Edit.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": true, "weber": false, "builtIn": false, "pizzaOven": false },
+          "fireplace": { "wood": false, "gas": true }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "2", "undercover": "0", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "CCTV" },
+        "securityService": { "none": false, "adt": false, "smhart": true, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": false,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": false,
+        "view": { "ocean": false, "mountain": false, "lagoon": true, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": true,
+        "sauna": false
+      }
     },
     {
       "id": "1h9t5n3m",
       "slug": "bay-retreat-townhouse",
-      "type": "Townhouse",
-      "name": "Bay Retreat",
-      "area": "Keurbooms",
-      "description": "A serene 3-bedroom, 2-bathroom family townhouse in peaceful Keurbooms with direct beach access. This child-friendly retreat is perfect for families seeking a quiet coastal escape. Enjoy easy beach access and the natural beauty of the area while creating wonderful family memories.",
-      "image": "/images/placeholders/property-list/_MG_0557.jpg",
-      "pricePerNight": 3300,
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "beachAccess": true,
-      "pool": false,
-      "childFriendly": true,
-      "details": {
-        "size": "142m²",
-        "parkingSpaces": 2,
-        "security": "Complex security & alarm",
-        "tvServices": "Netflix & DSTV"
+      "general": {
+        "propertyName": "Bay Retreat",
+        "area": "keurbooms",
+        "type": "townhouse",
+        "beds": "3",
+        "baths": "2",
+        "totalLounges": "1",
+        "pricePerNight": { "from": "3100", "to": "3500" },
+        "sizeSquareMeters": "142",
+        "description": "A serene 3-bedroom family townhouse in peaceful Keurbooms with direct beach access. Perfect for families seeking a quiet coastal escape.",
+        "availableDates": [{"start": "2026-07-07", "end": "2026-07-19"}, {"start": "2026-08-22", "end": "2026-09-03"}, {"start": "2026-12-08", "end": "2026-12-20"}],
+        "images": ["/images/placeholders/property-list/_MG_0534.jpg", "/images/placeholders/property-list/_MG_0598.jpg", "/images/placeholders/property-list/_MG_0528.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": {
+        "available": false,
+        "type": {
+          "braai": { "gas": false, "weber": false, "builtIn": false, "pizzaOven": false },
+          "fireplace": { "wood": false, "gas": false }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "1", "undercover": "0", "street": "1" }
+      },
+      "wiFi": { "available": true, "type": "basic", "tenantToPayExtra": true },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": false, "externalBeams": false, "electricFence": false, "other": "" },
+        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": true, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "hotTub": false,
+        "sauna": false
+      }
     },
     {
       "id": "6p2w8r4k",
       "slug": "royal-estate",
-      "type": "Estate",
-      "name": "Royal Estate",
-      "area": "Secure Estates",
-      "description": "An opulent 8-bedroom, 7-bathroom estate in exclusive Secure Estates with direct beach access and a magnificent pool. This child-friendly luxury property is perfect for large family gatherings and group celebrations. Experience premium service, privacy, and world-class amenities that define true coastal luxury.",
-      "image": "/images/placeholders/property-list/_MG_0559.jpg",
-      "pricePerNight": 12000,
-      "bedrooms": 8,
-      "bathrooms": 7,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "650m²",
-        "parkingSpaces": 6,
-        "security": "Gated estate, 24-hour security, electric fencing & CCTV",
-        "tvServices": "Netflix, DSTV Premium, Apple TV & home cinema"
+      "general": {
+        "propertyName": "Royal Estate",
+        "area": "secure-estate",
+        "type": "house",
+        "beds": "8",
+        "baths": "7",
+        "totalLivingAreas": "6",
+        "totalLounges": "4",
+        "loungeTypes": { "openPlan": true, "outside": true },
+        "pricePerNight": { "from": "11500", "to": "12500" },
+        "sizeSquareMeters": "650",
+        "description": "An opulent 8-bedroom estate in exclusive Secure Estate with direct beach access and a magnificent pool. Perfect for large family gatherings and group celebrations.",
+        "availableDates": [{"start": "2026-06-28", "end": "2026-07-11"}, {"start": "2026-07-22", "end": "2026-08-04"}, {"start": "2026-08-30", "end": "2026-09-12"}],
+        "images": ["/images/placeholders/property-list/_MG_0517-Edit.jpg", "/images/placeholders/property-list/_MG_0550.jpg", "/images/placeholders/property-list/_MG_0562.jpg"]
       },
-      "seaView": true,
-      "petFriendly": true
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": true, "weber": true, "builtIn": true, "pizzaOven": true },
+          "fireplace": { "wood": true, "gas": true }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "4", "undercover": "2", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "CCTV & panic buttons" },
+        "securityService": { "none": false, "adt": false, "smhart": false, "other": "24-hour private security" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": true,
+        "wheelChairFriendly": true,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "2", "type": { "indoor": true, "outdoor": true } },
+        "hotTub": true,
+        "sauna": true
+      }
     },
     {
       "id": "3m7k1q5t",
       "slug": "paradise-estate",
-      "type": "Estate",
-      "name": "Paradise Estate",
-      "area": "Robberg & Longships",
-      "description": "The ultimate 10-bedroom, 8-bathroom luxury estate in stunning Robberg & Longships with pristine beach access and resort-style pool. This sophisticated property is designed for discerning guests seeking the pinnacle of coastal elegance. Perfect for special events, milestone celebrations, and unforgettable group experiences.",
-      "image": "/images/placeholders/property-list/_MG_0562.jpg",
-      "pricePerNight": 15000,
-      "bedrooms": 10,
-      "bathrooms": 8,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": false,
-      "details": {
-        "size": "850m²",
-        "parkingSpaces": 8,
-        "security": "Private security, biometric access, electric fencing & CCTV",
-        "tvServices": "Netflix, DSTV Premium, Apple TV & dedicated home cinema"
+      "general": {
+        "propertyName": "Paradise Estate",
+        "area": "robberg-longships",
+        "type": "house",
+        "beds": "10",
+        "baths": "8",
+        "totalLivingAreas": "8",
+        "totalLounges": "5",
+        "loungeTypes": { "openPlan": true, "outside": true },
+        "pricePerNight": { "from": "14000", "to": "16000" },
+        "sizeSquareMeters": "850",
+        "description": "The ultimate 10-bedroom luxury estate in stunning Robberg & Longships with pristine beach access and resort-style pool. Perfect for special events and milestone celebrations.",
+        "availableDates": [{"start": "2026-07-17", "end": "2026-07-31"}, {"start": "2026-09-12", "end": "2026-09-26"}],
+        "images": ["/images/placeholders/property-list/_MG_0521.jpg", "/images/placeholders/property-list/_MG_0557.jpg", "/images/placeholders/property-list/_MG_0494-Edit-2.jpg"]
       },
-      "seaView": true,
-      "petFriendly": true
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": true, "weber": false, "builtIn": true, "pizzaOven": true },
+          "fireplace": { "wood": true, "gas": false }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "5", "undercover": "3", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "Biometric access & CCTV" },
+        "securityService": { "none": false, "adt": false, "smhart": false, "other": "Private security" }
+      },
+      "specialFeatures": {
+        "childFriendly": false,
+        "petFriendly": true,
+        "wheelChairFriendly": false,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": true, "lagoon": true, "fynbos": false },
+        "pool": { "numberOf": "2", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": true,
+        "sauna": true
+      }
     },
     {
       "id": "9r5n2h6v",
-      "slug": "oceanfront-manor-estate",
-      "type": "Estate",
-      "name": "Oceanfront Manor",
-      "area": "Town Area",
-      "description": "A grand 7-bedroom, 6-bathroom oceanfront manor in vibrant Town Area with direct beach access and resort-style pool. This family-friendly luxury estate combines elegance with convenience, perfect for large families and group celebrations. Enjoy premium amenities while being close to shops, restaurants, and entertainment.",
-      "image": "/images/placeholders/property-list/_MG_0575.jpg",
-      "pricePerNight": 10500,
-      "bedrooms": 7,
-      "bathrooms": 6,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "520m²",
-        "parkingSpaces": 5,
-        "security": "24-hour security, electric fencing & alarm",
-        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      "slug": "oceanfront-manor",
+      "general": {
+        "propertyName": "Oceanfront Manor",
+        "area": "town-area",
+        "type": "house",
+        "beds": "7",
+        "baths": "6",
+        "totalLivingAreas": "5",
+        "totalLounges": "4",
+        "loungeTypes": { "openPlan": true, "outside": true },
+        "pricePerNight": { "from": "10000", "to": "11000" },
+        "sizeSquareMeters": "520",
+        "description": "A grand 7-bedroom oceanfront manor in vibrant Town Area with direct beach access. Combines elegance with convenience, perfect for large families and group celebrations.",
+        "availableDates": [{"start": "2026-06-12", "end": "2026-06-25"}, {"start": "2026-08-10", "end": "2026-08-23"}, {"start": "2026-11-08", "end": "2026-11-21"}],
+        "images": ["/images/placeholders/property-list/_MG_0497-Edit.jpg", "/images/placeholders/property-list/_MG_0530-Edit.jpg", "/images/placeholders/property-list/_MG_0553.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": true, "weber": false, "builtIn": true, "pizzaOven": false },
+          "fireplace": { "wood": false, "gas": true }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "3", "undercover": "2", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": true, "externalBeams": false, "electricFence": true, "other": "" },
+        "securityService": { "none": false, "adt": false, "smhart": true, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": true,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": true,
+        "sauna": false
+      }
     },
     {
       "id": "4t8q3p7w",
       "slug": "luxury-cliffside-estate",
-      "type": "Estate",
-      "name": "Luxury Cliffside",
-      "area": "Central Beach",
-      "description": "A breathtaking 9-bedroom, 7-bathroom cliffside estate with spectacular views over Central Beach. This child-friendly luxury property features a stunning pool and premium amenities throughout. Ideal for families and large groups seeking an unforgettable luxury experience with panoramic coastal vistas.",
-      "image": "/images/placeholders/property-list/_MG_0582.jpg",
-      "pricePerNight": 13500,
-      "bedrooms": 9,
-      "bathrooms": 7,
-      "beachAccess": false,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "720m²",
-        "parkingSpaces": 6,
-        "security": "Electric fencing, alarm, CCTV & panic buttons",
-        "tvServices": "Netflix, DSTV Premium, Apple TV & home cinema"
+      "general": {
+        "propertyName": "Luxury Cliffside",
+        "area": "central-beach",
+        "type": "house",
+        "beds": "9",
+        "baths": "7",
+        "totalLivingAreas": "7",
+        "totalLounges": "4",
+        "loungeTypes": { "openPlan": true, "outside": true },
+        "pricePerNight": { "from": "13000", "to": "14000" },
+        "sizeSquareMeters": "720",
+        "description": "A breathtaking 9-bedroom cliffside estate with spectacular views over Central Beach. Features a stunning pool and premium amenities throughout.",
+        "availableDates": [{"start": "2026-07-26", "end": "2026-08-08"}, {"start": "2026-09-08", "end": "2026-09-22"}],
+        "images": ["/images/placeholders/property-list/_MG_0394.jpg", "/images/placeholders/property-list/_MG_0477.jpg", "/images/placeholders/property-list/_MG_0575.jpg"]
       },
-      "seaView": false,
-      "petFriendly": false
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": true, "weber": true, "builtIn": true, "pizzaOven": false },
+          "fireplace": { "wood": true, "gas": true }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "4", "undercover": "2", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "CCTV & panic buttons" },
+        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": false,
+        "view": { "ocean": true, "mountain": true, "lagoon": false, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": true, "outdoor": true } },
+        "hotTub": true,
+        "sauna": true
+      }
     },
     {
       "id": "2w6k9m1r",
       "slug": "grand-bay-estate",
-      "type": "Estate",
-      "name": "Grand Bay Estate",
-      "area": "Beachy Head",
-      "description": "An impressive 8-bedroom, 6-bathroom estate at iconic Beachy Head with direct beach access and beautiful pool. This child-friendly property offers spacious accommodations and luxury amenities perfect for extended family gatherings. Create lasting memories in this stunning beachfront setting with all the comforts you could desire.",
-      "image": "/images/placeholders/property-list/_MG_0598.jpg",
-      "pricePerNight": 11000,
-      "bedrooms": 8,
-      "bathrooms": 6,
-      "beachAccess": true,
-      "pool": true,
-      "childFriendly": true,
-      "details": {
-        "size": "580m²",
-        "parkingSpaces": 5,
-        "security": "24-hour security, electric fencing & CCTV",
-        "tvServices": "Netflix, DSTV Premium & Apple TV"
+      "general": {
+        "propertyName": "Grand Bay Estate",
+        "area": "beachy-head",
+        "type": "house",
+        "beds": "8",
+        "baths": "6",
+        "totalLivingAreas": "6",
+        "totalLounges": "3",
+        "loungeTypes": { "openPlan": true, "outside": false },
+        "pricePerNight": { "from": "10500", "to": "11500" },
+        "sizeSquareMeters": "580",
+        "description": "An impressive 8-bedroom estate at iconic Beachy Head with direct beach access and a beautiful pool. Spacious accommodations perfect for extended family gatherings.",
+        "availableDates": [{"start": "2026-06-05", "end": "2026-06-18"}, {"start": "2026-07-28", "end": "2026-08-10"}, {"start": "2026-10-25", "end": "2026-11-07"}],
+        "images": ["/images/placeholders/property-list/_MG_0504.jpg", "/images/placeholders/property-list/_MG_0394.jpg", "/images/placeholders/property-list/_MG_0521.jpg"]
       },
-      "seaView": true,
-      "petFriendly": false
+      "braaiFireplace": {
+        "available": true,
+        "type": {
+          "braai": { "gas": false, "weber": true, "builtIn": true, "pizzaOven": false },
+          "fireplace": { "wood": true, "gas": false }
+        }
+      },
+      "parking": {
+        "available": true,
+        "type": { "garage": "3", "undercover": "2", "street": "0" }
+      },
+      "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
+      "security": {
+        "available": true,
+        "type": { "alarm": true, "internal": false, "externalBeams": true, "electricFence": true, "other": "CCTV" },
+        "securityService": { "none": false, "adt": false, "smhart": false, "other": "24-hour estate security" }
+      },
+      "specialFeatures": {
+        "childFriendly": true,
+        "petFriendly": false,
+        "wheelChairFriendly": false,
+        "directBeachAccess": true,
+        "view": { "ocean": true, "mountain": false, "lagoon": true, "fynbos": false },
+        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "hotTub": false,
+        "sauna": false
+      }
     }
   ]
 }

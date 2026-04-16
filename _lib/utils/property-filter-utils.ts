@@ -21,29 +21,19 @@ export const buildFilterUrl = (filters: PropertyFilterState): string => {
   return queryString ? `/properties?${queryString}` : "/properties";
 };
 
-const areaToSlug = (area: string): string => {
-  return area.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
-};
-
-const matchesBudget = (price: number, budgetRange: string): boolean => {
-  if (budgetRange === "0-5000") {
-    return price >= 0 && price <= 5000;
-  } else if (budgetRange === "5000-10000") {
-    return price >= 5000 && price <= 10000;
-  } else if (budgetRange === "10000+") {
-    return price >= 10000;
-  }
+const matchesBudget = (priceFrom: string, budgetRange: string): boolean => {
+  const price = Number(priceFrom);
+  if (budgetRange === "0-5000") return price >= 0 && price <= 5000;
+  if (budgetRange === "5000-10000") return price >= 5000 && price <= 10000;
+  if (budgetRange === "10000+") return price >= 10000;
   return true;
 };
 
-const matchesBedrooms = (bedrooms: number, bedroomRange: string): boolean => {
-  if (bedroomRange === "1-2") {
-    return bedrooms >= 1 && bedrooms <= 2;
-  } else if (bedroomRange === "3-4") {
-    return bedrooms >= 3 && bedrooms <= 4;
-  } else if (bedroomRange === "5+") {
-    return bedrooms >= 5;
-  }
+const matchesBedrooms = (beds: string, bedroomRange: string): boolean => {
+  const count = Number(beds);
+  if (bedroomRange === "1-2") return count >= 1 && count <= 2;
+  if (bedroomRange === "3-4") return count >= 3 && count <= 4;
+  if (bedroomRange === "5+") return count >= 5;
   return true;
 };
 
@@ -58,32 +48,20 @@ export const filterProperties = (
   const extras = searchParams.get("extras");
 
   return properties.filter((property) => {
-    if (propertyType && property.type.toLowerCase() !== propertyType) {
-      return false;
-    }
+    const { general, specialFeatures } = property;
 
-    if (area && areaToSlug(property.area) !== area) {
-      return false;
-    }
+    if (propertyType && general.type !== propertyType) return false;
 
-    if (budget && !matchesBudget(property.pricePerNight, budget)) {
-      return false;
-    }
+    if (area && general.area !== area) return false;
 
-    if (bedrooms && !matchesBedrooms(property.bedrooms, bedrooms)) {
-      return false;
-    }
+    if (budget && !matchesBudget(general.pricePerNight.from, budget)) return false;
+
+    if (bedrooms && !matchesBedrooms(general.beds, bedrooms)) return false;
 
     if (extras) {
-      if (extras === "pool" && !property.pool) {
-        return false;
-      }
-      if (extras === "sea-view" && !property.seaView) {
-        return false;
-      }
-      if (extras === "pet-friendly" && !property.petFriendly) {
-        return false;
-      }
+      if (extras === "pool" && (!specialFeatures || Number(specialFeatures.pool.numberOf) === 0)) return false;
+      if (extras === "sea-view" && !specialFeatures?.view.ocean) return false;
+      if (extras === "pet-friendly" && !specialFeatures?.petFriendly) return false;
     }
 
     return true;

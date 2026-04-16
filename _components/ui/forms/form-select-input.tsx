@@ -30,7 +30,9 @@ const FormSelectInput = ({
   label,
 }: FormSelectInputProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(value || defaultValue || "");
+  const [selectedValue, setSelectedValue] = useState(
+    value || defaultValue || "",
+  );
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -179,7 +181,7 @@ const FormSelectInput = ({
           <p
             className={classNames("text-[16px] font-light flex-1 truncate", {
               "text-navy": selectedValue,
-              "text-black/50 italic": !selectedValue,
+              "text-black/60 font-normal italic": !selectedValue,
             })}
           >
             {selectedLabel}
