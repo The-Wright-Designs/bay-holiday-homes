@@ -11,6 +11,7 @@ import {
   buildFilterUrl,
   PropertyFilterState,
 } from "@/_lib/utils/property-filter-utils";
+import { X } from "lucide-react";
 
 interface PropertySearchFilterProps {
   cssClasses?: string;
@@ -27,21 +28,21 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
   const extrasOptions = propertySearch.extras;
 
   const [filters, setFilters] = useState<PropertyFilterState>({
-    propertyType: searchParams.get("propertyType") || "",
-    area: searchParams.get("area") || "",
+    propertyType: searchParams.getAll("propertyType"),
+    area: searchParams.getAll("area"),
     budget: searchParams.get("budget") || "",
     bedrooms: searchParams.get("bedrooms") || "",
-    extras: searchParams.get("extras") || "",
+    extras: searchParams.getAll("extras"),
   });
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setFilters({
-      propertyType: searchParams.get("propertyType") || "",
-      area: searchParams.get("area") || "",
+      propertyType: searchParams.getAll("propertyType"),
+      area: searchParams.getAll("area"),
       budget: searchParams.get("budget") || "",
       bedrooms: searchParams.get("bedrooms") || "",
-      extras: searchParams.get("extras") || "",
+      extras: searchParams.getAll("extras"),
     });
   }, [searchParams]);
 
@@ -51,13 +52,34 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
     };
   }, []);
 
-  const handleFilterChange = (field: keyof PropertyFilterState) => {
-    return (value: string) => {
-      setFilters((prev) => ({
-        ...prev,
-        [field]: value,
-      }));
+  const handleMultiFilterChange = (field: "propertyType" | "area" | "extras") => {
+    return (value: string[]) => {
+      setFilters((prev) => ({ ...prev, [field]: value }));
     };
+  };
+
+  const handleSingleFilterChange = (field: "budget" | "bedrooms") => {
+    return (value: string[]) => {
+      setFilters((prev) => ({ ...prev, [field]: value[0] ?? "" }));
+    };
+  };
+
+  const hasActiveFilters =
+    filters.propertyType.length > 0 ||
+    filters.area.length > 0 ||
+    filters.budget !== "" ||
+    filters.bedrooms !== "" ||
+    filters.extras.length > 0;
+
+  const handleClear = () => {
+    setFilters({
+      propertyType: [],
+      area: [],
+      budget: "",
+      bedrooms: "",
+      extras: [],
+    });
+    router.push("/properties");
   };
 
   const handleSearch = () => {
@@ -82,7 +104,8 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
         ariaLabel="Select property type"
         label="Property Type:"
         value={filters.propertyType}
-        onChange={handleFilterChange("propertyType")}
+        onChange={handleMultiFilterChange("propertyType")}
+        multiple
       />
       <FormSelectInput
         name="area"
@@ -91,7 +114,8 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
         ariaLabel="Select area"
         label="Area:"
         value={filters.area}
-        onChange={handleFilterChange("area")}
+        onChange={handleMultiFilterChange("area")}
+        multiple
       />
       <FormSelectInput
         name="budget"
@@ -99,8 +123,8 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
         placeholder="Select"
         ariaLabel="Select budget"
         label="Budget:"
-        value={filters.budget}
-        onChange={handleFilterChange("budget")}
+        value={filters.budget ? [filters.budget] : []}
+        onChange={handleSingleFilterChange("budget")}
       />
       <FormSelectInput
         name="bedrooms"
@@ -108,8 +132,8 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
         placeholder="Select"
         ariaLabel="Number of bedrooms"
         label="Bedrooms:"
-        value={filters.bedrooms}
-        onChange={handleFilterChange("bedrooms")}
+        value={filters.bedrooms ? [filters.bedrooms] : []}
+        onChange={handleSingleFilterChange("bedrooms")}
       />
       <FormSelectInput
         name="extras"
@@ -118,12 +142,13 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
         ariaLabel="Select extras"
         label="Extras:"
         value={filters.extras}
-        onChange={handleFilterChange("extras")}
+        onChange={handleMultiFilterChange("extras")}
+        multiple
       />
       <ButtonType
         type="button"
         colorPeach
-        cssClasses="!p-[12px] z-10 !min-w-[46px] !h-[46px]"
+        cssClasses="!p-[12px] !min-w-[46px] !h-[46px] z-10"
         ariaLabel="Search properties"
         onClick={handleSearch}
         disabled={isLoading}
@@ -140,6 +165,16 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
           />
         )}
       </ButtonType>
+      {hasActiveFilters && (
+        <button
+          type="button"
+          onClick={handleClear}
+          className="absolute flex gap-1 items-center -bottom-11 px-3 py-1 left-1/2 -translate-x-1/2 bg-white text-navy text-[13px] hover:cursor-pointer hover:opacity-80 ease-in-out duration-300"
+        >
+          <X width={14} color="#213766" />
+          Clear
+        </button>
+      )}
     </div>
   );
 };

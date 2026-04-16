@@ -12,16 +12,15 @@
   "propertySearch": {
     "propertyType": [
       { "value": "house", "label": "House" },
-      { "value": "apartment", "label": "Apartment" },
-      { "value": "townhouse", "label": "Townhouse" },
-      { "value": "estate", "label": "Estate" }
+      { "value": "flat-apartment", "label": "Flat / Apartment" },
+      { "value": "townhouse", "label": "Townhouse" }
     ],
     "area": [
       { "value": "town-area", "label": "Town Area" },
       { "value": "central-beach", "label": "Central Beach" },
       { "value": "beachy-head", "label": "Beachy Head" },
       { "value": "keurbooms", "label": "Keurbooms River, Beach & Lagoon" },
-      { "value": "secure-estates", "label": "Secure Estates" },
+      { "value": "secure-estate", "label": "Secure Estate" },
       { "value": "robberg-longships", "label": "Robberg & Longships" }
     ],
     "budget": [
@@ -35,9 +34,17 @@
       { "value": "5+", "label": "5+" }
     ],
     "extras": [
+      { "value": "childFriendly", "label": "Child Friendly" },
+      { "value": "petFriendly", "label": "Pet Friendly" },
+      { "value": "wheelChairFriendly", "label": "Wheelchair Friendly" },
+      { "value": "directBeachAccess", "label": "Direct Beach Access" },
       { "value": "pool", "label": "Pool" },
-      { "value": "sea-view", "label": "Sea View" },
-      { "value": "pet-friendly", "label": "Pet Friendly" }
+      { "value": "hotTub", "label": "Hot Tub" },
+      { "value": "sauna", "label": "Sauna" },
+      { "value": "oceanView", "label": "Ocean View" },
+      { "value": "mountainView", "label": "Mountain View" },
+      { "value": "lagoonView", "label": "Lagoon View" },
+      { "value": "fynbosView", "label": "Fynbos View" }
     ]
   },
   "mosaicGalleryItems": [

@@ -29,7 +29,7 @@ export default function HeroComponent() {
           </p>
         </div>
 
-        <PropertySearchWrapper cssClasses="absolute w-full flex justify-center left-1/2 bottom-15 -translate-x-1/2" />
+        <PropertySearchWrapper cssClasses="absolute w-full flex justify-center inset-x-0 bottom-15" />
       </div>
 
       <div className="bg-teal p-10 flex flex-col items-center w-full desktop:rounded-b-[16px]">

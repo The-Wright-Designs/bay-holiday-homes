@@ -60,7 +60,7 @@ export default function PropertyListSearch({
         <button
           type="button"
           onClick={handleSearch}
-          className="max-w-[80px] px-6 py-[7px] rounded-[2px] min-[550px]:w-auto bg-teal"
+          className="max-w-[80px] px-6 py-[7px] rounded-[2px] min-[550px]:w-auto bg-teal tablet:hover:opacity-90 tablet:hover:cursor-pointer ease-in-out duration-300"
           aria-label="Search properties"
         >
           <div className="flex items-center gap-2">

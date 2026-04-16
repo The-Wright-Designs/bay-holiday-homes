@@ -25,7 +25,7 @@ export default function PropertyListSorting({
 
         <div className="relative w-full">
           <select
-            className="w-full bg-navy/10 rounded-[2px] px-2 py-1 text-[16px] font-light appearance-none desktop:hover:cursor-pointer"
+            className="w-full bg-navy/10 rounded-[2px] pl-2 pr-8 py-1 text-[16px] font-light appearance-none desktop:hover:cursor-pointer"
             defaultValue="a-z"
             onChange={(e) => onSortChange(e.target.value)}
           >

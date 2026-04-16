@@ -4,6 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
+import {
+  WavesLadder,
+  Baby,
+  PawPrint,
+  Accessibility,
+  Shrub,
+} from "lucide-react";
 import { PropertyProps } from "@/_types/property-types";
 
 interface PropertyCardProps {
@@ -41,8 +48,8 @@ export default function PropertyCard({
           alt={general.propertyName}
           fill
           className={classNames(
-            "object-cover ease-in-out duration-500 delay-75",
-            { "desktop:scale-[102%]": isHovered },
+            "object-cover ease-in-out duration-500 delay-150",
+            { "desktop:scale-[103%]": isHovered },
           )}
           sizes="(max-width: 800px) 100vw, 50vw"
         />
@@ -62,7 +69,9 @@ export default function PropertyCard({
         <div className="flex gap-3 items-center w-full">
           <div className="flex flex-col flex-1 min-w-0">
             <p className="text-[18px] font-semibold">
-              {general.type.replace(/\b\w/g, (c) => c.toUpperCase())}
+              {general.type
+                .replace(/-/g, "/")
+                .replace(/\b\w/g, (c) => c.toUpperCase())}
             </p>
             <p className="text-[14px] font-light">
               {general.propertyName.replace(/\b\w/g, (c) => c.toUpperCase())}
@@ -81,9 +90,9 @@ export default function PropertyCard({
           <div className="flex gap-1.5 items-center">
             <Image
               src="/icons/listings/bed.svg"
-              alt=""
-              width={24}
-              height={24}
+              alt="Bedrooms"
+              width={20}
+              height={20}
             />
             <p className="text-[14px] font-light">
               {general.beds}{" "}
@@ -94,9 +103,9 @@ export default function PropertyCard({
           <div className="flex gap-1.5 items-center">
             <Image
               src="/icons/listings/bath.svg"
-              alt=""
-              width={24}
-              height={24}
+              alt="Bathrooms"
+              width={20}
+              height={20}
             />
             <p className="text-[14px] font-light">
               {general.baths}{" "}
@@ -108,9 +117,9 @@ export default function PropertyCard({
             <div className="flex gap-1.5 items-center">
               <Image
                 src="/icons/listings/surfing.svg"
-                alt=""
-                width={24}
-                height={24}
+                alt="Beach access"
+                width={20}
+                height={20}
               />
               <p className="text-[14px] font-light">Beach access</p>
             </div>
@@ -118,25 +127,96 @@ export default function PropertyCard({
 
           {specialFeatures && Number(specialFeatures.pool.numberOf) > 0 && (
             <div className="flex gap-1.5 items-center">
-              <Image
-                src="/icons/listings/pool.svg"
-                alt=""
-                width={24}
-                height={24}
-              />
+              <WavesLadder size={20} color="#4AB5BB" />
               <p className="text-[14px] font-light">Pool</p>
             </div>
           )}
 
           {specialFeatures?.childFriendly && (
             <div className="flex gap-1.5 items-center">
-              <Image
-                src="/icons/listings/child-friendly.svg"
-                alt=""
-                width={24}
-                height={24}
-              />
+              <Baby size={20} color="#4AB5BB" />
               <p className="text-[14px] font-light">Child friendly</p>
+            </div>
+          )}
+
+          {specialFeatures?.petFriendly && (
+            <div className="flex gap-1.5 items-center">
+              <PawPrint size={20} color="#4AB5BB" />
+              <p className="text-[14px] font-light">Pet friendly</p>
+            </div>
+          )}
+
+          {specialFeatures?.wheelChairFriendly && (
+            <div className="flex gap-1.5 items-center">
+              <Accessibility size={20} color="#4AB5BB" />
+              <p className="text-[14px] font-light">Wheelchair accessible</p>
+            </div>
+          )}
+
+          {specialFeatures?.hotTub && (
+            <div className="flex gap-1.5 items-center">
+              <Image
+                src="/icons/listings/hot-tub.svg"
+                alt="Hot tub"
+                width={20}
+                height={20}
+              />
+              <p className="text-[14px] font-light">Hot tub</p>
+            </div>
+          )}
+
+          {specialFeatures?.sauna && (
+            <div className="flex gap-1.5 items-center">
+              <Image
+                src="/icons/listings/sauna.svg"
+                alt="Sauna"
+                width={20}
+                height={20}
+              />
+              <p className="text-[14px] font-light">Sauna</p>
+            </div>
+          )}
+
+          {specialFeatures?.view.ocean && (
+            <div className="flex gap-1.5 items-center">
+              <Image
+                src="/icons/listings/ocean.svg"
+                alt="Ocean view"
+                width={20}
+                height={20}
+              />
+              <p className="text-[14px] font-light">Ocean view</p>
+            </div>
+          )}
+
+          {specialFeatures?.view.mountain && (
+            <div className="flex gap-1.5 items-center">
+              <Image
+                src="/icons/listings/mountain.svg"
+                alt="Mountain view"
+                width={20}
+                height={20}
+              />
+              <p className="text-[14px] font-light">Mountain view</p>
+            </div>
+          )}
+
+          {specialFeatures?.view.lagoon && (
+            <div className="flex gap-1.5 items-center">
+              <Image
+                src="/icons/listings/lagoon.svg"
+                alt="Lagoon view"
+                width={20}
+                height={20}
+              />
+              <p className="text-[14px] font-light">Lagoon view</p>
+            </div>
+          )}
+
+          {specialFeatures?.view.fynbos && (
+            <div className="flex gap-1.5 items-center">
+              <Shrub size={20} color="#4AB5BB" />
+              <p className="text-[14px] font-light">Fynbos view</p>
             </div>
           )}
         </div>

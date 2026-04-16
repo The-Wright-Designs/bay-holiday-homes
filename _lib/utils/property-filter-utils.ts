@@ -1,21 +1,21 @@
 import { PropertyProps } from "@/_types/property-types";
 
 export interface PropertyFilterState {
-  propertyType?: string;
-  area?: string;
-  budget?: string;
-  bedrooms?: string;
-  extras?: string;
+  propertyType: string[];
+  area: string[];
+  budget: string;
+  bedrooms: string;
+  extras: string[];
 }
 
 export const buildFilterUrl = (filters: PropertyFilterState): string => {
   const params = new URLSearchParams();
 
-  if (filters.propertyType) params.append("propertyType", filters.propertyType);
-  if (filters.area) params.append("area", filters.area);
+  filters.propertyType.forEach((v) => params.append("propertyType", v));
+  filters.area.forEach((v) => params.append("area", v));
   if (filters.budget) params.append("budget", filters.budget);
   if (filters.bedrooms) params.append("bedrooms", filters.bedrooms);
-  if (filters.extras) params.append("extras", filters.extras);
+  filters.extras.forEach((v) => params.append("extras", v));
 
   const queryString = params.toString();
   return queryString ? `/properties?${queryString}` : "/properties";
@@ -37,32 +37,45 @@ const matchesBedrooms = (beds: string, bedroomRange: string): boolean => {
   return true;
 };
 
+const matchesExtra = (extra: string, property: PropertyProps): boolean => {
+  const { specialFeatures } = property;
+  if (!specialFeatures) return false;
+  if (extra === "childFriendly") return specialFeatures.childFriendly;
+  if (extra === "petFriendly") return specialFeatures.petFriendly;
+  if (extra === "wheelChairFriendly") return specialFeatures.wheelChairFriendly;
+  if (extra === "directBeachAccess") return specialFeatures.directBeachAccess;
+  if (extra === "pool") return Number(specialFeatures.pool.numberOf) > 0;
+  if (extra === "hotTub") return specialFeatures.hotTub;
+  if (extra === "sauna") return specialFeatures.sauna;
+  if (extra === "oceanView") return specialFeatures.view.ocean;
+  if (extra === "mountainView") return specialFeatures.view.mountain;
+  if (extra === "lagoonView") return specialFeatures.view.lagoon;
+  if (extra === "fynbosView") return specialFeatures.view.fynbos;
+  return false;
+};
+
 export const filterProperties = (
   properties: PropertyProps[],
   searchParams: URLSearchParams,
 ): PropertyProps[] => {
-  const propertyType = searchParams.get("propertyType");
-  const area = searchParams.get("area");
+  const propertyTypes = searchParams.getAll("propertyType");
+  const areas = searchParams.getAll("area");
   const budget = searchParams.get("budget");
   const bedrooms = searchParams.get("bedrooms");
-  const extras = searchParams.get("extras");
+  const extras = searchParams.getAll("extras");
 
   return properties.filter((property) => {
-    const { general, specialFeatures } = property;
+    const { general } = property;
 
-    if (propertyType && general.type !== propertyType) return false;
+    if (propertyTypes.length && !propertyTypes.includes(general.type)) return false;
 
-    if (area && general.area !== area) return false;
+    if (areas.length && !areas.includes(general.area)) return false;
 
     if (budget && !matchesBudget(general.pricePerNight.from, budget)) return false;
 
     if (bedrooms && !matchesBedrooms(general.beds, bedrooms)) return false;
 
-    if (extras) {
-      if (extras === "pool" && (!specialFeatures || Number(specialFeatures.pool.numberOf) === 0)) return false;
-      if (extras === "sea-view" && !specialFeatures?.view.ocean) return false;
-      if (extras === "pet-friendly" && !specialFeatures?.petFriendly) return false;
-    }
+    if (extras.length && !extras.some((e) => matchesExtra(e, property))) return false;
 
     return true;
   });

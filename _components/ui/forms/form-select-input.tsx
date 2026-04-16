@@ -10,11 +10,12 @@ interface FormSelectInputProps {
   placeholder?: string;
   cssClasses?: string;
   required?: boolean;
-  defaultValue?: string;
-  value?: string;
-  onChange?: (value: string) => void;
+  defaultValue?: string[];
+  value?: string[];
+  onChange?: (value: string[]) => void;
   ariaLabel?: string;
   label: string;
+  multiple?: boolean;
 }
 
 const FormSelectInput = ({
@@ -28,22 +29,31 @@ const FormSelectInput = ({
   onChange,
   ariaLabel,
   label,
+  multiple = false,
 }: FormSelectInputProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(
-    value || defaultValue || "",
+  const [selectedValues, setSelectedValues] = useState<string[]>(
+    value || defaultValue || [],
   );
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLUListElement>(null);
 
-  const selectedLabel =
-    options.find((opt) => opt.value === selectedValue)?.label || placeholder;
+  const getDisplayLabel = () => {
+    if (selectedValues.length === 0) return placeholder;
+    if (selectedValues.length === 1) {
+      return (
+        options.find((opt) => opt.value === selectedValues[0])?.label ||
+        placeholder
+      );
+    }
+    return `${selectedValues.length} selected`;
+  };
 
   useEffect(() => {
     if (value !== undefined) {
-      setSelectedValue(value);
+      setSelectedValues(value);
     }
   }, [value]);
 
@@ -71,19 +81,27 @@ const FormSelectInput = ({
     setIsOpen(!isOpen);
     if (!isOpen) {
       setFocusedIndex(
-        selectedValue
-          ? options.findIndex((opt) => opt.value === selectedValue)
+        selectedValues.length > 0
+          ? options.findIndex((opt) => opt.value === selectedValues[0])
           : 0,
       );
     }
   };
 
-  const handleSelect = (value: string) => {
-    setSelectedValue(value);
-    setIsOpen(false);
-    setFocusedIndex(-1);
+  const handleSelect = (optionValue: string) => {
+    let next: string[];
+    if (multiple) {
+      next = selectedValues.includes(optionValue)
+        ? selectedValues.filter((v) => v !== optionValue)
+        : [...selectedValues, optionValue];
+    } else {
+      next = selectedValues.includes(optionValue) ? [] : [optionValue];
+      setIsOpen(false);
+      setFocusedIndex(-1);
+    }
+    setSelectedValues(next);
     if (onChange) {
-      onChange(value);
+      onChange(next);
     }
   };
 
@@ -92,8 +110,8 @@ const FormSelectInput = ({
       e.preventDefault();
       setIsOpen(true);
       setFocusedIndex(
-        selectedValue
-          ? options.findIndex((opt) => opt.value === selectedValue)
+        selectedValues.length > 0
+          ? options.findIndex((opt) => opt.value === selectedValues[0])
           : 0,
       );
       return;
@@ -180,11 +198,11 @@ const FormSelectInput = ({
         >
           <p
             className={classNames("text-[16px] font-light flex-1 truncate", {
-              "text-navy": selectedValue,
-              "text-black/60 font-normal italic": !selectedValue,
+              "text-navy": selectedValues.length > 0,
+              "text-black/60 font-normal italic": selectedValues.length === 0,
             })}
           >
-            {selectedLabel}
+            {getDisplayLabel()}
           </p>
           <Image
             src="/icons/bird-icon.jpg"
@@ -206,16 +224,17 @@ const FormSelectInput = ({
           className={dropdownClasses}
           role="listbox"
           aria-label={ariaLabel || name}
+          aria-multiselectable={multiple}
         >
           {options.map((option, index) => {
-            const isSelected = option.value === selectedValue;
+            const isSelected = selectedValues.includes(option.value);
             const isFocused = index === focusedIndex;
 
             const optionClasses = classNames(
-              "p-[12px] text-navy text-[16px] font-light desktop:hover:cursor-pointer desktop:hover:bg-peach/50 ease-in-out duration-300",
+              "p-[12px] text-navy text-[16px] font-light desktop:hover:cursor-pointer ease-in-out duration-300",
               {
-                "bg-teal text-white": isSelected,
-                "bg-peach": isFocused && !isSelected,
+                "bg-teal text-white desktop:hover:bg-teal/90": isSelected,
+                "desktop:hover:bg-teal/50": !isSelected,
               },
             );
 
@@ -236,9 +255,17 @@ const FormSelectInput = ({
         <select
           id={name}
           name={name}
-          value={selectedValue}
-          onChange={(e) => handleSelect(e.target.value)}
+          value={selectedValues}
+          onChange={(e) => {
+            const selected = Array.from(
+              e.target.selectedOptions,
+              (o) => o.value,
+            );
+            setSelectedValues(selected);
+            if (onChange) onChange(selected);
+          }}
           required={required}
+          multiple={multiple}
           className="visually-hidden"
           tabIndex={-1}
           aria-hidden="true"
