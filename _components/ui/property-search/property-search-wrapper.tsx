@@ -1,9 +1,5 @@
-"use client";
-
-import ButtonType from "@/_components/ui/buttons/button-type";
-import Image from "next/image";
 import PropertySearchFilterSuspenseWrapper from "./property-search-filter-suspense-wrapper";
-import classNames from "classnames";
+import MobilePropertySearchFilterSuspenseWrapper from "./mobile/mobile-property-search-filter-suspense-wrapper";
 
 interface PropertySearchWrapperProps {
   cssClasses?: string;
@@ -16,27 +12,10 @@ const PropertySearchWrapper = ({
 }: PropertySearchWrapperProps) => {
   return (
     <div className={cssClasses}>
-      <ButtonType
-        type="button"
-        colorWhite={tealButton ? false : true}
-        cssClasses="flex items-center gap-3 desktop:hidden"
-      >
-        <span
-          className={classNames(
-            "text-[16px] font-light",
-            tealButton ? "text-white" : "text-navy",
-          )}
-        >
-          Property Search
-        </span>
-        <Image
-          src={`/icons/search${tealButton ? "-white" : ""}.svg`}
-          alt="Search"
-          width={18}
-          height={18}
-          className="animate-bounce"
-        />
-      </ButtonType>
+      <MobilePropertySearchFilterSuspenseWrapper
+        tealButton={tealButton}
+        cssClasses="desktop:hidden"
+      />
       <PropertySearchFilterSuspenseWrapper cssClasses="hidden desktop:flex" />
     </div>
   );

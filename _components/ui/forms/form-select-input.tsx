@@ -16,12 +16,13 @@ interface FormSelectInputProps {
   ariaLabel?: string;
   label: string;
   multiple?: boolean;
+  mobileFilter?: boolean;
 }
 
 const FormSelectInput = ({
   name,
   options,
-  placeholder = "Select an option",
+  placeholder,
   cssClasses,
   required = false,
   defaultValue,
@@ -30,7 +31,10 @@ const FormSelectInput = ({
   ariaLabel,
   label,
   multiple = false,
+  mobileFilter = false,
 }: FormSelectInputProps) => {
+  const resolvedPlaceholder = mobileFilter ? label : (placeholder ?? "Select an option");
+
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValues, setSelectedValues] = useState<string[]>(
     value || defaultValue || [],
@@ -41,11 +45,11 @@ const FormSelectInput = ({
   const dropdownRef = useRef<HTMLUListElement>(null);
 
   const getDisplayLabel = () => {
-    if (selectedValues.length === 0) return placeholder;
+    if (selectedValues.length === 0) return resolvedPlaceholder;
     if (selectedValues.length === 1) {
       return (
         options.find((opt) => opt.value === selectedValues[0])?.label ||
-        placeholder
+        resolvedPlaceholder
       );
     }
     return `${selectedValues.length} selected`;
@@ -177,7 +181,12 @@ const FormSelectInput = ({
 
   return (
     <div className="flex flex-col gap-[18px]">
-      <label htmlFor={name} className="text-white text-[16px] font-medium">
+      <label
+        htmlFor={name}
+        className={classNames("text-white text-[16px] font-medium", {
+          "visually-hidden": mobileFilter,
+        })}
+      >
         {label}
       </label>
       <div ref={containerRef} className="relative">
@@ -274,7 +283,7 @@ const FormSelectInput = ({
           aria-hidden="true"
         >
           <option value="" disabled>
-            {placeholder}
+            {resolvedPlaceholder}
           </option>
           {options.map((option) => (
             <option key={option.value} value={option.value}>
