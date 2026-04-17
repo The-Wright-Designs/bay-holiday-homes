@@ -6,6 +6,7 @@ import Link from "next/link";
 import classNames from "classnames";
 
 import navData from "@/_data/nav-data.json";
+import { Menu, X } from "lucide-react";
 
 interface MobileHeaderProps {
   cssClasses?: string;
@@ -44,13 +45,7 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
           className="ease-in-out duration-300 -m-3 p-3"
           aria-label="Open menu"
         >
-          <Image
-            src="/icons/menu-open.svg"
-            alt="Open menu"
-            width={26}
-            height={22}
-            className="h-auto"
-          />
+          <Menu color="#213766" size={28} />
         </button>
       </div>
 
@@ -62,30 +57,24 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
           },
         )}
       >
-        <div className="flex w-full gap-1 items-center justify-end mb-8">
+        <div className="flex w-full gap-1 items-center justify-end mb-8 translate-x-[9px] -translate-y-1.5">
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
             className="p-2 -m-2"
           >
-            <Image
-              src="/icons/menu-close.svg"
-              alt="Menu close"
-              width={26}
-              height={22}
-              className="h-auto"
-            />
+            <X color="#213766" size={30} />
           </button>
         </div>
         <nav>
-          <ul className="grid gap-6">
+          <ul className="grid gap-4">
             {navData.map(({ title, url }, id) => {
               return (
                 <li key={id}>
                   <Link
                     href={url}
                     onClick={() => setIsOpen(false)}
-                    className="text-[20px] font-normal text-white"
+                    className="text-[18px] font-normal text-white"
                   >
                     {title}
                   </Link>

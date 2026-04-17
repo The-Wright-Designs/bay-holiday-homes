@@ -25,7 +25,7 @@ export default function PropertyListSorting({
 
         <div className="relative w-full">
           <select
-            className="w-full bg-navy/10 rounded-[2px] pl-2 pr-8 py-1 text-[16px] font-light appearance-none desktop:hover:cursor-pointer"
+            className="w-full bg-navy/10 rounded-[2px] pl-2 pr-8 py-2 text-[16px] font-light appearance-none desktop:hover:cursor-pointer"
             defaultValue="a-z"
             onChange={(e) => onSortChange(e.target.value)}
           >
@@ -37,7 +37,7 @@ export default function PropertyListSorting({
           <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
             <Image
               src="/icons/chevron_right.svg"
-              alt=""
+              alt="Open select box"
               width={24}
               height={24}
             />

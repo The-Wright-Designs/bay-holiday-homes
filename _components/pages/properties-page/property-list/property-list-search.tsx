@@ -48,7 +48,7 @@ export default function PropertyListSearch({
             onChange={(e) => setSearchInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             placeholder="Search properties..."
-            className="w-full bg-navy/10 rounded-[2px] px-2 py-1 text-[16px] font-light pr-10 min-[550px]:w-auto"
+            className="w-full bg-navy/10 rounded-[2px] px-2 py-2 text-[16px] font-light pr-10 min-[550px]:w-auto"
           />
           {isSearching && (
             <div className="absolute right-2 top-1/2 -translate-y-1/2">
@@ -60,7 +60,7 @@ export default function PropertyListSearch({
         <button
           type="button"
           onClick={handleSearch}
-          className="max-w-[80px] px-6 py-[7px] rounded-[2px] min-[550px]:w-auto bg-teal tablet:hover:opacity-90 tablet:hover:cursor-pointer ease-in-out duration-300"
+          className="max-w-[80px] px-6 py-[11px] rounded-[2px] min-[550px]:w-auto bg-teal tablet:hover:opacity-90 tablet:hover:cursor-pointer ease-in-out duration-300"
           aria-label="Search properties"
         >
           <div className="flex items-center gap-2">

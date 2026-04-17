@@ -177,7 +177,7 @@ const FormSelectInput = ({
 
   return (
     <div className="flex flex-col gap-[18px]">
-      <label htmlFor={name} className="text-white text-[16px] font-normal">
+      <label htmlFor={name} className="text-white text-[16px] font-medium">
         {label}
       </label>
       <div ref={containerRef} className="relative">
@@ -197,10 +197,13 @@ const FormSelectInput = ({
           aria-label={ariaLabel || name}
         >
           <p
-            className={classNames("text-[16px] font-light flex-1 truncate", {
-              "text-navy": selectedValues.length > 0,
-              "text-black/60 font-normal italic": selectedValues.length === 0,
-            })}
+            className={classNames(
+              "text-[16px] font-light flex-1 truncate pl-0.5",
+              {
+                "text-navy": selectedValues.length > 0,
+                "text-black/60 font-normal italic": selectedValues.length === 0,
+              },
+            )}
           >
             {getDisplayLabel()}
           </p>
@@ -255,7 +258,7 @@ const FormSelectInput = ({
         <select
           id={name}
           name={name}
-          value={selectedValues}
+          value={multiple ? selectedValues : (selectedValues[0] ?? "")}
           onChange={(e) => {
             const selected = Array.from(
               e.target.selectedOptions,

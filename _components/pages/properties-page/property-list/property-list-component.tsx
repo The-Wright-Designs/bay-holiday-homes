@@ -49,7 +49,9 @@ export default function PropertyListComponent({
     setFilteredByUrl(filtered as PropertyListItem[]);
   }, [searchParams]);
 
-  const searchProperties = (properties: PropertyListItem[]): PropertyListItem[] => {
+  const searchProperties = (
+    properties: PropertyListItem[],
+  ): PropertyListItem[] => {
     if (!searchQuery) return properties;
 
     const nameMatches: PropertyListItem[] = [];
@@ -58,9 +60,13 @@ export default function PropertyListComponent({
 
     properties.forEach((property) => {
       const { general } = property;
-      const matchesName = general.propertyName.toLowerCase().includes(searchQuery);
+      const matchesName = general.propertyName
+        .toLowerCase()
+        .includes(searchQuery);
       const matchesArea = general.area.toLowerCase().includes(searchQuery);
-      const matchesDescription = general.description.toLowerCase().includes(searchQuery);
+      const matchesDescription = general.description
+        .toLowerCase()
+        .includes(searchQuery);
 
       if (matchesName) {
         nameMatches.push(property);
@@ -87,16 +93,22 @@ export default function PropertyListComponent({
     if (sortOption === "a-z") {
       return a.general.propertyName.localeCompare(b.general.propertyName);
     } else if (sortOption === "price-high-low") {
-      return Number(b.general.pricePerNight.from) - Number(a.general.pricePerNight.from);
+      return (
+        Number(b.general.pricePerNight.from) -
+        Number(a.general.pricePerNight.from)
+      );
     } else if (sortOption === "price-low-high") {
-      return Number(a.general.pricePerNight.from) - Number(b.general.pricePerNight.from);
+      return (
+        Number(a.general.pricePerNight.from) -
+        Number(b.general.pricePerNight.from)
+      );
     }
     return 0;
   });
 
   return (
     <div className="flex flex-col gap-10 pt-15">
-      <div className="flex flex-wrap gap-10 items-end">
+      <div className="flex flex-wrap gap-5 items-end">
         <PropertyListSorting
           resultCount={filteredProperties.length}
           onSortChange={setSortOption}
@@ -116,7 +128,9 @@ export default function PropertyListComponent({
           </p>
         </div>
       ) : (
-        <div className={classNames("grid gap-10 tablet:grid-cols-2", cssClasses)}>
+        <div
+          className={classNames("grid gap-10 tablet:grid-cols-2", cssClasses)}
+        >
           {sortedProperties.map((property) => (
             <PropertyCard
               key={property.id}

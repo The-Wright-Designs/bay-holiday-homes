@@ -18,7 +18,7 @@ export default function HeroComponent() {
           />
         </div>
 
-        <div className="absolute w-[80%] max-w-[250px] left-1/2 top-[37px] -translate-x-1/2 bg-white/75 p-3 rounded-[2px] flex flex-col gap-2 items-center tablet:max-w-[660px] desktop:top-[81px]">
+        <div className="absolute w-[80%] max-w-[250px] left-1/2 top-[37px] -translate-x-1/2 bg-white/85 p-4 rounded-[2px] flex flex-col gap-2 items-center tablet:max-w-[660px] desktop:top-[81px]">
           <div className="relative w-full">
             <h1 className="text-black text-[40px] font-light text-center uppercase leading-tight">
               Plett Holiday Rentals
