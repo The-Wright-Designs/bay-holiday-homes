@@ -115,7 +115,7 @@ const MobilePropertySearchFilter = ({
 
       <div
         className={classNames(
-          "fixed inset-0 z-50 transform bg-teal p-7 transition-transform duration-300 ease-in-out flex flex-col gap-10",
+          "fixed inset-0 z-50 overflow-y-auto max-h-full transform bg-teal p-7 transition-transform duration-300 ease-in-out flex flex-col gap-10",
           { "translate-x-full": !isOpen },
         )}
       >
@@ -127,7 +127,9 @@ const MobilePropertySearchFilter = ({
               setActiveFilter(null);
             }}
             aria-label="Close filters"
-            className="p-2 -m-2 desktop:hover:cursor-pointer"
+            className={classNames("p-2 -m-2 desktop:hover:cursor-pointer", {
+              "invisible": activeFilter !== null,
+            })}
           >
             <X color="#213766" size={26} />
           </button>
