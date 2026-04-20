@@ -70,7 +70,7 @@ export default function TopPropertiesSlider({
                   alt={property.title}
                   fill
                   className="object-cover transition-transform duration-500 delay-75 desktop:group-hover:scale-105"
-                  sizes="(max-width: 425px) 100vw, (max-width: 800px) 50vw, 25vw"
+                  sizes="(max-width: 600px) 100vw, (max-width: 800px) 50vw, 25vw"
                 />
                 <div className="relative bg-white/80 rounded-lg p-4 w-[200px] flex items-center justify-center desktop:group-hover:bg-teal ease-in-out duration-500 delay-150">
                   <p className="text-[20px] text-center text-black desktop:group-hover:text-white ease-in-out duration-500 delay-200">

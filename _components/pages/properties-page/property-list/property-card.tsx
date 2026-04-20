@@ -42,7 +42,7 @@ export default function PropertyCard({
         cssClasses,
       )}
     >
-      <div className="relative aspect-[4/2.6] w-full h-auto shrink-0 overflow-hidden">
+      <div className="relative aspect-[4/2.6] w-full h-auto shrink-0 overflow-hidden desktop:aspect-[4/2.25]">
         <Image
           src={general.images[0]}
           alt={general.propertyName}
