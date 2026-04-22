@@ -115,7 +115,7 @@ export default function PropertyLightboxSliderComponent({
             <X size={32} color="#FFFFFF" />
           </button>
 
-          <div className="relative w-full max-w-[1280px] px-14">
+          <div className="relative w-full max-w-[1280px] px-14 overflow-hidden">
             <Swiper
               modules={[Navigation, Pagination]}
               navigation={{
@@ -133,7 +133,6 @@ export default function PropertyLightboxSliderComponent({
                   "--swiper-pagination-bullet-inactive-opacity": "0.5",
                 } as React.CSSProperties
               }
-              className="overflow-hidden"
             >
               {images.map((src, index) => (
                 <SwiperSlide key={index} className="pb-10">
@@ -150,7 +149,7 @@ export default function PropertyLightboxSliderComponent({
               ))}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-0 -right-7 z-10 hover:cursor-pointer hover:opacity-90 ease-in-out duration-300 p-2 -m-2 rounded-md bg-teal/80"
+                className="absolute top-2 -right-7 z-10 hover:cursor-pointer hover:opacity-90 ease-in-out duration-300 p-2 -m-2 rounded-md bg-teal/80"
                 aria-label="Close gallery"
               >
                 <X size={32} color="#FFFFFF" />

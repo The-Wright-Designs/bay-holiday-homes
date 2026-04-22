@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import placeholderData from "@/_data/placeholder-data.json";
 import PropertyLightboxSliderComponent from "@/_components/pages/property-page/property-lightbox-slider-component";
 import PropertyDetailsComponent from "@/_components/pages/property-page/property-details-component";
+import PropertyEnquiryForm from "@/_components/pages/property-page/property-enquiry-form";
 
 interface PropertyPageProps {
   params: Promise<{ slug: string }>;
@@ -20,16 +21,19 @@ const PropertyPage = async ({ params }: PropertyPageProps) => {
         propertyName={property!.general.propertyName}
         cssClasses="max-w-[1280px] mx-auto"
       />
-      <PropertyDetailsComponent
-        slug={slug}
-        propertyName={property!.general.propertyName}
-        area={property!.general.area}
-        general={property!.general as never}
-        specialFeatures={property!.specialFeatures as never}
-        parking={property!.parking as never}
-        security={property!.security as never}
-        wiFi={property!.wiFi as never}
-      />
+      <div className="grid gap-15 max-w-[1280px] mx-auto desktop:gap-10 desktop:grid-cols-2 desktop:pt-10 min-[1360px]:px-0">
+        <PropertyDetailsComponent
+          slug={slug}
+          propertyName={property!.general.propertyName}
+          area={property!.general.area}
+          general={property!.general as never}
+          specialFeatures={property!.specialFeatures as never}
+          parking={property!.parking as never}
+          security={property!.security as never}
+          wiFi={property!.wiFi as never}
+        />
+        <PropertyEnquiryForm propertyName={property!.general.propertyName} />
+      </div>
     </div>
   );
 };

@@ -25,7 +25,7 @@ const HeaderDesktop = ({ cssClasses }: DesktopHeaderProps) => {
           {navData.map((item) => (
             <Link
               key={item.title}
-              className="text-navy text-base font-light desktop:hover:text-teal desktop:hover:cursor-pointer"
+              className="text-navy text-base font-light desktop:hover:text-teal desktop:hover:cursor-pointer duration-200"
               href={item.url}
             >
               {item.title}

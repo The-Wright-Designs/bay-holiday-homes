@@ -27,7 +27,7 @@ const PropertyDetailsComponent = ({
   wiFi,
 }: Props) => {
   return (
-    <div className="py-10 px-5 grid gap-10 max-w-[1280px] mx-auto tablet:px-10 desktop:grid-cols-2 min-[1360px]:px-0">
+    <div className="pt-10 grid px-5 gap-10 tablet:px-10 desktop:p-0">
       <ButtonLink
         href={`/${slug}/#enquire`}
         ariaLabel="Enquire about property"
@@ -36,7 +36,7 @@ const PropertyDetailsComponent = ({
         Enquire Now
       </ButtonLink>
       <main className="flex flex-col gap-10">
-        <div className="border-t border-black/25 pt-5 flex gap-10 justify-between items-center desktop:border-none desktop:pt-0">
+        <div className="border-t border-black/25 pt-5 flex gap-10 justify-between items-center tablet:border-none tablet:pt-0">
           <div className="flex flex-col gap-1">
             <h1 className="uppercase">{propertyName}</h1>
             <div className="flex items-center gap-2">
@@ -81,7 +81,6 @@ const PropertyDetailsComponent = ({
           wiFi={wiFi}
         />
       </main>
-      <div>f</div>
     </div>
   );
 };
