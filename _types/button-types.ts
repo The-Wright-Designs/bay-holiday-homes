@@ -10,6 +10,7 @@ export interface ButtonProps {
   navyStroke?: boolean;
   colorNavy?: boolean;
   colorPeach?: boolean;
+  tealStroke?: boolean;
   target?: "_self" | "_blank";
   title?: string;
 }

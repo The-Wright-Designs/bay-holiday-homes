@@ -54,9 +54,7 @@ export default function PropertyCard({
           sizes="(max-width: 800px) 100vw, 50vw"
         />
         <p className="absolute text-[14px] top-5 right-5 py-1.5 px-2.5 rounded-[2px] bg-teal text-white">
-          {general.area
-            .replace(/-/g, " ")
-            .replace(/\b\w/g, (c) => c.toUpperCase())}
+          {general.area}
         </p>
       </div>
 

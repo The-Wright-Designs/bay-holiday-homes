@@ -24,6 +24,7 @@ const OurSalesDivisionComponent = () => {
               width={220}
               height={110}
               className="max-w-[220px] h-auto object-contain"
+              sizes="220px"
             />
           </Link>
           <Link
@@ -37,6 +38,7 @@ const OurSalesDivisionComponent = () => {
               width={220}
               height={110}
               className="max-w-[220px] h-auto object-contain"
+              sizes="220px"
             />
           </Link>
         </div>

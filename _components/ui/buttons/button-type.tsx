@@ -14,6 +14,7 @@ const ButtonType = ({
   navyStroke = false,
   colorNavy = false,
   colorPeach = false,
+  tealStroke = false,
   ariaLabel,
   title,
 }: ButtonProps) => {
@@ -32,6 +33,7 @@ const ButtonType = ({
         navyStroke,
         colorNavy,
         colorPeach,
+        tealStroke,
       )}
       disabled={disabled || pending}
       title={title}

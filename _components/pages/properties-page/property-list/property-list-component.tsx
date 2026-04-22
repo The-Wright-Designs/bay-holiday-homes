@@ -123,8 +123,9 @@ export default function PropertyListComponent({
       {sortedProperties.length === 0 ? (
         <div className="flex items-center justify-center py-20">
           <p className="text-center text-navy">
-            Sorry, we have no properties that match your filter or search.
-            Please adjust and try again.
+            Sorry, we have no properties that match what you're looking for.
+            Please adjust or <strong>clear your filter or search</strong> and
+            try again.
           </p>
         </div>
       ) : (

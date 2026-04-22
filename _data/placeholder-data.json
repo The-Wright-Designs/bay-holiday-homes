@@ -102,7 +102,7 @@
       "slug": "sailor-moon-house",
       "general": {
         "propertyName": "Sailor Moon",
-        "area": "central-beach",
+        "area": "Central Beach",
         "type": "house",
         "beds": "4",
         "baths": "3",
@@ -111,13 +111,26 @@
         "pricePerNight": { "from": "4200", "to": "4800" },
         "sizeSquareMeters": "182",
         "description": "A charming family-friendly house in the heart of Central Beach. This 4-bedroom home features direct beach access and easy access to local amenities.",
-        "availableDates": [{"start": "2026-07-01", "end": "2026-07-14"}, {"start": "2026-08-01", "end": "2026-08-10"}, {"start": "2026-12-10", "end": "2026-12-20"}],
-        "images": ["/images/placeholders/property-list/_MG_0462.jpg", "/images/placeholders/property-list/_MG_0530-Edit.jpg", "/images/placeholders/property-list/_MG_0553.jpg"]
+        "availableDates": [
+          { "start": "2026-07-01", "end": "2026-07-14" },
+          { "start": "2026-08-01", "end": "2026-08-10" },
+          { "start": "2026-12-10", "end": "2026-12-20" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0462.jpg",
+          "/images/placeholders/property-list/_MG_0530-Edit.jpg",
+          "/images/placeholders/property-list/_MG_0553.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": false, "weber": true, "builtIn": true, "pizzaOven": false },
+          "braai": {
+            "gas": false,
+            "weber": true,
+            "builtIn": true,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": false, "gas": false }
         }
       },
@@ -128,18 +141,37 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": false, "externalBeams": false, "electricFence": true, "other": "" },
-        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": false,
+          "externalBeams": false,
+          "electricFence": true,
+          "other": ""
+        },
+        "securityService": {
+          "none": false,
+          "adt": true,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
-        "petFriendly": false,
-        "wheelChairFriendly": false,
+        "petFriendly": true,
+        "wheelChairFriendly": true,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
-        "hotTub": false,
-        "sauna": false
+        "view": {
+          "ocean": true,
+          "mountain": true,
+          "lagoon": true,
+          "fynbos": true
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": true, "outdoor": true }
+        },
+        "hotTub": true,
+        "sauna": true
       }
     },
     {
@@ -147,22 +179,36 @@
       "slug": "ocean-breeze-house",
       "general": {
         "propertyName": "Ocean Breeze",
-        "area": "beachy-head",
+        "area": "Beachy Head",
         "type": "house",
         "beds": "5",
         "baths": "4",
         "totalLounges": "3",
+        "totalLivingAreas": "2",
         "loungeTypes": { "openPlan": true, "outside": true },
         "pricePerNight": { "from": "5000", "to": "5500" },
         "sizeSquareMeters": "245",
         "description": "Experience luxury living in this stunning 5-bedroom beachfront house at iconic Beachy Head. Perfect for extended family gatherings and groups.",
-        "availableDates": [{"start": "2026-06-15", "end": "2026-06-28"}, {"start": "2026-07-20", "end": "2026-08-02"}, {"start": "2026-09-01", "end": "2026-09-14"}],
-        "images": ["/images/placeholders/property-list/_MG_0477.jpg", "/images/placeholders/property-list/_MG_0562.jpg", "/images/placeholders/property-list/_MG_0557.jpg"]
+        "availableDates": [
+          { "start": "2026-06-15", "end": "2026-06-28" },
+          { "start": "2026-07-20", "end": "2026-08-02" },
+          { "start": "2026-09-01", "end": "2026-09-14" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0477.jpg",
+          "/images/placeholders/property-list/_MG_0562.jpg",
+          "/images/placeholders/property-list/_MG_0557.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": true, "weber": false, "builtIn": true, "pizzaOven": false },
+          "braai": {
+            "gas": true,
+            "weber": false,
+            "builtIn": true,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": true, "gas": false }
         }
       },
@@ -173,16 +219,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "" },
-        "securityService": { "none": false, "adt": false, "smhart": true, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": true,
+          "externalBeams": true,
+          "electricFence": true,
+          "other": ""
+        },
+        "securityService": {
+          "none": false,
+          "adt": false,
+          "smhart": true,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": false,
         "wheelChairFriendly": true,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": true,
         "sauna": false
       }
@@ -192,7 +257,7 @@
       "slug": "sunset-villa-house",
       "general": {
         "propertyName": "Sunset Villa",
-        "area": "keurbooms",
+        "area": "Keurbooms River, Beach & Lagoon",
         "type": "house",
         "beds": "3",
         "baths": "2",
@@ -200,8 +265,16 @@
         "pricePerNight": { "from": "3600", "to": "4000" },
         "sizeSquareMeters": "156",
         "description": "A tranquil 3-bedroom villa nestled in the peaceful Keurbooms area. Perfect for families, this home features a private pool ideal for relaxation.",
-        "availableDates": [{"start": "2026-07-05", "end": "2026-07-18"}, {"start": "2026-08-12", "end": "2026-08-25"}, {"start": "2026-12-01", "end": "2026-12-15"}],
-        "images": ["/images/placeholders/property-list/_MG_0528.jpg", "/images/placeholders/property-list/_MG_0598.jpg", "/images/placeholders/property-list/_MG_0551.jpg"]
+        "availableDates": [
+          { "start": "2026-07-05", "end": "2026-07-18" },
+          { "start": "2026-08-12", "end": "2026-08-25" },
+          { "start": "2026-12-01", "end": "2026-12-15" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0528.jpg",
+          "/images/placeholders/property-list/_MG_0598.jpg",
+          "/images/placeholders/property-list/_MG_0551.jpg"
+        ]
       },
       "braaiFireplace": null,
       "parking": {
@@ -215,8 +288,16 @@
         "petFriendly": false,
         "wheelChairFriendly": false,
         "directBeachAccess": false,
-        "view": { "ocean": true, "mountain": true, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": true,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -226,7 +307,7 @@
       "slug": "seashell-retreat-house",
       "general": {
         "propertyName": "Seashell Retreat",
-        "area": "secure-estate",
+        "area": "Secure Estates",
         "type": "house",
         "beds": "6",
         "baths": "5",
@@ -236,13 +317,26 @@
         "pricePerNight": { "from": "5800", "to": "6500" },
         "sizeSquareMeters": "320",
         "description": "An elegant 6-bedroom luxury retreat in the exclusive Secure Estate. This sophisticated property boasts direct beach access and a stunning pool.",
-        "availableDates": [{"start": "2026-06-20", "end": "2026-06-30"}, {"start": "2026-07-10", "end": "2026-07-24"}, {"start": "2026-11-15", "end": "2026-11-28"}],
-        "images": ["/images/placeholders/property-list/_MG_0504.jpg", "/images/placeholders/property-list/_MG_0494-Edit-2.jpg", "/images/placeholders/property-list/_MG_0550.jpg"]
+        "availableDates": [
+          { "start": "2026-06-20", "end": "2026-06-30" },
+          { "start": "2026-07-10", "end": "2026-07-24" },
+          { "start": "2026-11-15", "end": "2026-11-28" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0504.jpg",
+          "/images/placeholders/property-list/_MG_0494-Edit-2.jpg",
+          "/images/placeholders/property-list/_MG_0550.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": true, "weber": false, "builtIn": true, "pizzaOven": true },
+          "braai": {
+            "gas": true,
+            "weber": false,
+            "builtIn": true,
+            "pizzaOven": true
+          },
           "fireplace": { "wood": false, "gas": true }
         }
       },
@@ -253,16 +347,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "CCTV" },
-        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": true,
+          "externalBeams": true,
+          "electricFence": true,
+          "other": "CCTV"
+        },
+        "securityService": {
+          "none": false,
+          "adt": true,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": false,
         "petFriendly": true,
         "wheelChairFriendly": false,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": true, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": true,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": true,
         "sauna": true
       }
@@ -272,7 +385,7 @@
       "slug": "coastal-haven-house",
       "general": {
         "propertyName": "Coastal Haven",
-        "area": "robberg-longships",
+        "area": "Robberg & Longships",
         "type": "house",
         "beds": "4",
         "baths": "3",
@@ -280,13 +393,26 @@
         "loungeTypes": { "openPlan": true, "outside": false },
         "pricePerNight": { "from": "3900", "to": "4300" },
         "description": "A welcoming 4-bedroom family home in the scenic Robberg & Longships area with direct beach access. Perfect for families who love outdoor activities.",
-        "availableDates": [{"start": "2026-07-01", "end": "2026-07-12"}, {"start": "2026-08-05", "end": "2026-08-18"}, {"start": "2026-12-20", "end": "2027-01-02"}],
-        "images": ["/images/placeholders/property-list/_MG_0530-Edit.jpg", "/images/placeholders/property-list/_MG_0559.jpg", "/images/placeholders/property-list/_MG_0534.jpg"]
+        "availableDates": [
+          { "start": "2026-07-01", "end": "2026-07-12" },
+          { "start": "2026-08-05", "end": "2026-08-18" },
+          { "start": "2026-12-20", "end": "2027-01-02" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0530-Edit.jpg",
+          "/images/placeholders/property-list/_MG_0559.jpg",
+          "/images/placeholders/property-list/_MG_0534.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": false, "weber": true, "builtIn": false, "pizzaOven": false },
+          "braai": {
+            "gas": false,
+            "weber": true,
+            "builtIn": false,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": true, "gas": false }
         }
       },
@@ -297,16 +423,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": false, "externalBeams": true, "electricFence": true, "other": "" },
-        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": false,
+          "externalBeams": true,
+          "electricFence": true,
+          "other": ""
+        },
+        "securityService": {
+          "none": false,
+          "adt": true,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": true,
         "wheelChairFriendly": false,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": true, "lagoon": false, "fynbos": true },
-        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "view": {
+          "ocean": true,
+          "mountain": true,
+          "lagoon": false,
+          "fynbos": true
+        },
+        "pool": {
+          "numberOf": "0",
+          "type": { "indoor": false, "outdoor": false }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -316,7 +461,7 @@
       "slug": "beachfront-luxury-apartment",
       "general": {
         "propertyName": "Beachfront Luxury",
-        "area": "town-area",
+        "area": "Town Area",
         "type": "flat-apartment",
         "beds": "2",
         "baths": "2",
@@ -325,8 +470,16 @@
         "pricePerNight": { "from": "2600", "to": "3000" },
         "sizeSquareMeters": "95",
         "description": "A stylish 2-bedroom apartment in the heart of Town Area with direct beach access. Ideal for couples or small families seeking coastal charm.",
-        "availableDates": [{"start": "2026-06-10", "end": "2026-06-22"}, {"start": "2026-07-25", "end": "2026-08-07"}, {"start": "2026-11-01", "end": "2026-11-14"}],
-        "images": ["/images/placeholders/property-list/_MG_0575.jpg", "/images/placeholders/property-list/_MG_0497-Edit.jpg", "/images/placeholders/property-list/_MG_0517-Edit.jpg"]
+        "availableDates": [
+          { "start": "2026-06-10", "end": "2026-06-22" },
+          { "start": "2026-07-25", "end": "2026-08-07" },
+          { "start": "2026-11-01", "end": "2026-11-14" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0575.jpg",
+          "/images/placeholders/property-list/_MG_0497-Edit.jpg",
+          "/images/placeholders/property-list/_MG_0517-Edit.jpg"
+        ]
       },
       "braaiFireplace": null,
       "parking": {
@@ -336,16 +489,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": false, "internal": true, "externalBeams": false, "electricFence": false, "other": "Intercom" },
-        "securityService": { "none": true, "adt": false, "smhart": false, "other": "" }
+        "type": {
+          "alarm": false,
+          "internal": true,
+          "externalBeams": false,
+          "electricFence": false,
+          "other": "Intercom"
+        },
+        "securityService": {
+          "none": true,
+          "adt": false,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": false,
         "wheelChairFriendly": true,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -355,7 +527,7 @@
       "slug": "harbour-view-apartment",
       "general": {
         "propertyName": "Harbour View",
-        "area": "central-beach",
+        "area": "Central Beach",
         "type": "flat-apartment",
         "beds": "2",
         "baths": "1",
@@ -363,24 +535,51 @@
         "pricePerNight": { "from": "2000", "to": "2400" },
         "sizeSquareMeters": "78",
         "description": "A cozy 2-bedroom apartment with picturesque harbour views in Central Beach. Perfect for couples or small families on a budget-conscious holiday.",
-        "availableDates": [{"start": "2026-07-08", "end": "2026-07-21"}, {"start": "2026-08-20", "end": "2026-09-02"}, {"start": "2026-12-15", "end": "2026-12-28"}],
-        "images": ["/images/placeholders/property-list/_MG_0562.jpg", "/images/placeholders/property-list/_MG_0582.jpg", "/images/placeholders/property-list/_MG_0521.jpg"]
+        "availableDates": [
+          { "start": "2026-07-08", "end": "2026-07-21" },
+          { "start": "2026-08-20", "end": "2026-09-02" },
+          { "start": "2026-12-15", "end": "2026-12-28" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0562.jpg",
+          "/images/placeholders/property-list/_MG_0582.jpg",
+          "/images/placeholders/property-list/_MG_0521.jpg"
+        ]
       },
       "braaiFireplace": null,
       "parking": null,
       "wiFi": { "available": true, "type": "basic", "tenantToPayExtra": true },
       "security": {
         "available": true,
-        "type": { "alarm": false, "internal": true, "externalBeams": false, "electricFence": false, "other": "" },
-        "securityService": { "none": true, "adt": false, "smhart": false, "other": "" }
+        "type": {
+          "alarm": false,
+          "internal": true,
+          "externalBeams": false,
+          "electricFence": false,
+          "other": ""
+        },
+        "securityService": {
+          "none": true,
+          "adt": false,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": false,
         "wheelChairFriendly": false,
         "directBeachAccess": false,
-        "view": { "ocean": false, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "view": {
+          "ocean": false,
+          "mountain": false,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "0",
+          "type": { "indoor": false, "outdoor": false }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -390,7 +589,7 @@
       "slug": "modern-penthouse-apartment",
       "general": {
         "propertyName": "Modern Penthouse",
-        "area": "beachy-head",
+        "area": "Beachy Head",
         "type": "flat-apartment",
         "beds": "3",
         "baths": "2",
@@ -400,13 +599,26 @@
         "pricePerNight": { "from": "3300", "to": "3800" },
         "sizeSquareMeters": "145",
         "description": "A contemporary 3-bedroom penthouse at exclusive Beachy Head with direct beach access. Experience panoramic views and exceptional comfort.",
-        "availableDates": [{"start": "2026-06-25", "end": "2026-07-05"}, {"start": "2026-07-18", "end": "2026-07-31"}, {"start": "2026-09-05", "end": "2026-09-18"}],
-        "images": ["/images/placeholders/property-list/_MG_0598.jpg", "/images/placeholders/property-list/_MG_0553.jpg", "/images/placeholders/property-list/_MG_0462.jpg"]
+        "availableDates": [
+          { "start": "2026-06-25", "end": "2026-07-05" },
+          { "start": "2026-07-18", "end": "2026-07-31" },
+          { "start": "2026-09-05", "end": "2026-09-18" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0598.jpg",
+          "/images/placeholders/property-list/_MG_0553.jpg",
+          "/images/placeholders/property-list/_MG_0462.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": true, "weber": false, "builtIn": false, "pizzaOven": false },
+          "braai": {
+            "gas": true,
+            "weber": false,
+            "builtIn": false,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": false, "gas": true }
         }
       },
@@ -417,16 +629,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": true, "externalBeams": false, "electricFence": false, "other": "Biometric access" },
-        "securityService": { "none": false, "adt": false, "smhart": true, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": true,
+          "externalBeams": false,
+          "electricFence": false,
+          "other": "Biometric access"
+        },
+        "securityService": {
+          "none": false,
+          "adt": false,
+          "smhart": true,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": false,
         "petFriendly": false,
         "wheelChairFriendly": false,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": true,
         "sauna": false
       }
@@ -436,7 +667,7 @@
       "slug": "seaview-studio-apartment",
       "general": {
         "propertyName": "Seaview Studio",
-        "area": "keurbooms",
+        "area": "Keurbooms River, Beach & Lagoon",
         "type": "flat-apartment",
         "beds": "1",
         "baths": "1",
@@ -445,24 +676,51 @@
         "pricePerNight": { "from": "1600", "to": "2000" },
         "sizeSquareMeters": "52",
         "description": "A charming 1-bedroom studio in serene Keurbooms with direct beach access. Perfect for solo travelers or couples seeking a romantic getaway.",
-        "availableDates": [{"start": "2026-07-12", "end": "2026-07-22"}, {"start": "2026-08-25", "end": "2026-09-05"}, {"start": "2026-11-20", "end": "2026-11-30"}],
-        "images": ["/images/placeholders/property-list/_MG_0494-Edit-2.jpg", "/images/placeholders/property-list/_MG_0551.jpg", "/images/placeholders/property-list/_MG_0575.jpg"]
+        "availableDates": [
+          { "start": "2026-07-12", "end": "2026-07-22" },
+          { "start": "2026-08-25", "end": "2026-09-05" },
+          { "start": "2026-11-20", "end": "2026-11-30" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0494-Edit-2.jpg",
+          "/images/placeholders/property-list/_MG_0551.jpg",
+          "/images/placeholders/property-list/_MG_0575.jpg"
+        ]
       },
       "braaiFireplace": null,
       "parking": null,
       "wiFi": { "available": true, "type": "basic", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": false, "internal": true, "externalBeams": false, "electricFence": false, "other": "" },
-        "securityService": { "none": true, "adt": false, "smhart": false, "other": "" }
+        "type": {
+          "alarm": false,
+          "internal": true,
+          "externalBeams": false,
+          "electricFence": false,
+          "other": ""
+        },
+        "securityService": {
+          "none": true,
+          "adt": false,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": false,
         "petFriendly": false,
         "wheelChairFriendly": false,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -472,7 +730,7 @@
       "slug": "marina-apartment",
       "general": {
         "propertyName": "Marina Apartment",
-        "area": "secure-estate",
+        "area": "Secure Estates",
         "type": "flat-apartment",
         "beds": "2",
         "baths": "2",
@@ -480,8 +738,16 @@
         "pricePerNight": { "from": "2300", "to": "2700" },
         "sizeSquareMeters": "88",
         "description": "A secure 2-bedroom family apartment in exclusive Secure Estate with resort-style amenities. Ideal for families seeking safety and relaxation.",
-        "availableDates": [{"start": "2026-06-30", "end": "2026-07-10"}, {"start": "2026-08-08", "end": "2026-08-20"}, {"start": "2026-12-05", "end": "2026-12-18"}],
-        "images": ["/images/placeholders/property-list/_MG_0559.jpg", "/images/placeholders/property-list/_MG_0534.jpg", "/images/placeholders/property-list/_MG_0528.jpg"]
+        "availableDates": [
+          { "start": "2026-06-30", "end": "2026-07-10" },
+          { "start": "2026-08-08", "end": "2026-08-20" },
+          { "start": "2026-12-05", "end": "2026-12-18" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0559.jpg",
+          "/images/placeholders/property-list/_MG_0534.jpg",
+          "/images/placeholders/property-list/_MG_0528.jpg"
+        ]
       },
       "braaiFireplace": null,
       "parking": {
@@ -491,16 +757,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": false, "externalBeams": false, "electricFence": true, "other": "" },
-        "securityService": { "none": false, "adt": false, "smhart": false, "other": "24-hour estate security" }
+        "type": {
+          "alarm": true,
+          "internal": false,
+          "externalBeams": false,
+          "electricFence": true,
+          "other": ""
+        },
+        "securityService": {
+          "none": false,
+          "adt": false,
+          "smhart": false,
+          "other": "24-hour estate security"
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": true,
         "wheelChairFriendly": true,
         "directBeachAccess": false,
-        "view": { "ocean": false, "mountain": false, "lagoon": true, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": false,
+          "mountain": false,
+          "lagoon": true,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -510,7 +795,7 @@
       "slug": "garden-townhouse",
       "general": {
         "propertyName": "Garden Townhouse",
-        "area": "robberg-longships",
+        "area": "Robberg & Longships",
         "type": "townhouse",
         "beds": "3",
         "baths": "2",
@@ -519,13 +804,26 @@
         "pricePerNight": { "from": "3000", "to": "3400" },
         "sizeSquareMeters": "135",
         "description": "A delightful 3-bedroom townhouse in scenic Robberg & Longships with beautiful gardens. Perfect for families who enjoy nature and outdoor activities.",
-        "availableDates": [{"start": "2026-07-03", "end": "2026-07-16"}, {"start": "2026-08-15", "end": "2026-08-28"}, {"start": "2026-10-20", "end": "2026-11-02"}],
-        "images": ["/images/placeholders/property-list/_MG_0582.jpg", "/images/placeholders/property-list/_MG_0477.jpg", "/images/placeholders/property-list/_MG_0559.jpg"]
+        "availableDates": [
+          { "start": "2026-07-03", "end": "2026-07-16" },
+          { "start": "2026-08-15", "end": "2026-08-28" },
+          { "start": "2026-10-20", "end": "2026-11-02" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0582.jpg",
+          "/images/placeholders/property-list/_MG_0477.jpg",
+          "/images/placeholders/property-list/_MG_0559.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": false, "weber": true, "builtIn": false, "pizzaOven": false },
+          "braai": {
+            "gas": false,
+            "weber": true,
+            "builtIn": false,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": true, "gas": false }
         }
       },
@@ -540,8 +838,16 @@
         "petFriendly": true,
         "wheelChairFriendly": false,
         "directBeachAccess": false,
-        "view": { "ocean": false, "mountain": true, "lagoon": false, "fynbos": true },
-        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "view": {
+          "ocean": false,
+          "mountain": true,
+          "lagoon": false,
+          "fynbos": true
+        },
+        "pool": {
+          "numberOf": "0",
+          "type": { "indoor": false, "outdoor": false }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -551,7 +857,7 @@
       "slug": "beachside-townhouse",
       "general": {
         "propertyName": "Beachside Townhouse",
-        "area": "town-area",
+        "area": "Town Area",
         "type": "townhouse",
         "beds": "3",
         "baths": "3",
@@ -561,13 +867,26 @@
         "pricePerNight": { "from": "3600", "to": "4000" },
         "sizeSquareMeters": "165",
         "description": "A wonderful 3-bedroom family townhouse with direct beach access in the vibrant Town Area. Perfectly positioned for beach lovers close to shops and restaurants.",
-        "availableDates": [{"start": "2026-06-18", "end": "2026-07-01"}, {"start": "2026-07-30", "end": "2026-08-12"}, {"start": "2026-12-22", "end": "2027-01-04"}],
-        "images": ["/images/placeholders/property-list/_MG_0557.jpg", "/images/placeholders/property-list/_MG_0521.jpg", "/images/placeholders/property-list/_MG_0504.jpg"]
+        "availableDates": [
+          { "start": "2026-06-18", "end": "2026-07-01" },
+          { "start": "2026-07-30", "end": "2026-08-12" },
+          { "start": "2026-12-22", "end": "2027-01-04" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0557.jpg",
+          "/images/placeholders/property-list/_MG_0521.jpg",
+          "/images/placeholders/property-list/_MG_0504.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": false, "weber": false, "builtIn": true, "pizzaOven": false },
+          "braai": {
+            "gas": false,
+            "weber": false,
+            "builtIn": true,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": false, "gas": false }
         }
       },
@@ -578,16 +897,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": false, "externalBeams": true, "electricFence": true, "other": "" },
-        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": false,
+          "externalBeams": true,
+          "electricFence": true,
+          "other": ""
+        },
+        "securityService": {
+          "none": false,
+          "adt": true,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": false,
         "wheelChairFriendly": false,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -597,7 +935,7 @@
       "slug": "coastal-cottage-townhouse",
       "general": {
         "propertyName": "Coastal Cottage",
-        "area": "central-beach",
+        "area": "Central Beach",
         "type": "townhouse",
         "beds": "2",
         "baths": "2",
@@ -606,8 +944,16 @@
         "pricePerNight": { "from": "2700", "to": "3100" },
         "sizeSquareMeters": "105",
         "description": "A charming 2-bedroom cottage in picturesque Central Beach with direct beach access. Perfect for couples or small families seeking a cozy coastal escape.",
-        "availableDates": [{"start": "2026-07-14", "end": "2026-07-26"}, {"start": "2026-08-28", "end": "2026-09-09"}, {"start": "2026-11-25", "end": "2026-12-07"}],
-        "images": ["/images/placeholders/property-list/_MG_0551.jpg", "/images/placeholders/property-list/_MG_0517-Edit.jpg", "/images/placeholders/property-list/_MG_0582.jpg"]
+        "availableDates": [
+          { "start": "2026-07-14", "end": "2026-07-26" },
+          { "start": "2026-08-28", "end": "2026-09-09" },
+          { "start": "2026-11-25", "end": "2026-12-07" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0551.jpg",
+          "/images/placeholders/property-list/_MG_0517-Edit.jpg",
+          "/images/placeholders/property-list/_MG_0582.jpg"
+        ]
       },
       "braaiFireplace": null,
       "parking": {
@@ -617,16 +963,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": false, "externalBeams": false, "electricFence": false, "other": "" },
-        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": false,
+          "externalBeams": false,
+          "electricFence": false,
+          "other": ""
+        },
+        "securityService": {
+          "none": false,
+          "adt": true,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": false,
         "wheelChairFriendly": true,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "0",
+          "type": { "indoor": false, "outdoor": false }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -636,7 +1001,7 @@
       "slug": "lagoon-townhouse",
       "general": {
         "propertyName": "Lagoon Townhouse",
-        "area": "beachy-head",
+        "area": "Beachy Head",
         "type": "townhouse",
         "beds": "4",
         "baths": "3",
@@ -646,13 +1011,26 @@
         "pricePerNight": { "from": "3400", "to": "3800" },
         "sizeSquareMeters": "185",
         "description": "A sophisticated 4-bedroom townhouse nestled at Beachy Head with stunning lagoon views and a pool. Ideal for couples or groups seeking elegance and tranquility.",
-        "availableDates": [{"start": "2026-06-22", "end": "2026-07-04"}, {"start": "2026-08-02", "end": "2026-08-15"}, {"start": "2026-09-18", "end": "2026-10-01"}],
-        "images": ["/images/placeholders/property-list/_MG_0550.jpg", "/images/placeholders/property-list/_MG_0462.jpg", "/images/placeholders/property-list/_MG_0497-Edit.jpg"]
+        "availableDates": [
+          { "start": "2026-06-22", "end": "2026-07-04" },
+          { "start": "2026-08-02", "end": "2026-08-15" },
+          { "start": "2026-09-18", "end": "2026-10-01" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0550.jpg",
+          "/images/placeholders/property-list/_MG_0462.jpg",
+          "/images/placeholders/property-list/_MG_0497-Edit.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": true, "weber": false, "builtIn": false, "pizzaOven": false },
+          "braai": {
+            "gas": true,
+            "weber": false,
+            "builtIn": false,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": false, "gas": true }
         }
       },
@@ -663,16 +1041,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "CCTV" },
-        "securityService": { "none": false, "adt": false, "smhart": true, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": true,
+          "externalBeams": true,
+          "electricFence": true,
+          "other": "CCTV"
+        },
+        "securityService": {
+          "none": false,
+          "adt": false,
+          "smhart": true,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": false,
         "petFriendly": false,
         "wheelChairFriendly": false,
         "directBeachAccess": false,
-        "view": { "ocean": false, "mountain": false, "lagoon": true, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": false,
+          "mountain": false,
+          "lagoon": true,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": true,
         "sauna": false
       }
@@ -682,7 +1079,7 @@
       "slug": "bay-retreat-townhouse",
       "general": {
         "propertyName": "Bay Retreat",
-        "area": "keurbooms",
+        "area": "Keurbooms River, Beach & Lagoon",
         "type": "townhouse",
         "beds": "3",
         "baths": "2",
@@ -690,13 +1087,26 @@
         "pricePerNight": { "from": "3100", "to": "3500" },
         "sizeSquareMeters": "142",
         "description": "A serene 3-bedroom family townhouse in peaceful Keurbooms with direct beach access. Perfect for families seeking a quiet coastal escape.",
-        "availableDates": [{"start": "2026-07-07", "end": "2026-07-19"}, {"start": "2026-08-22", "end": "2026-09-03"}, {"start": "2026-12-08", "end": "2026-12-20"}],
-        "images": ["/images/placeholders/property-list/_MG_0534.jpg", "/images/placeholders/property-list/_MG_0598.jpg", "/images/placeholders/property-list/_MG_0528.jpg"]
+        "availableDates": [
+          { "start": "2026-07-07", "end": "2026-07-19" },
+          { "start": "2026-08-22", "end": "2026-09-03" },
+          { "start": "2026-12-08", "end": "2026-12-20" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0534.jpg",
+          "/images/placeholders/property-list/_MG_0598.jpg",
+          "/images/placeholders/property-list/_MG_0528.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": false,
         "type": {
-          "braai": { "gas": false, "weber": false, "builtIn": false, "pizzaOven": false },
+          "braai": {
+            "gas": false,
+            "weber": false,
+            "builtIn": false,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": false, "gas": false }
         }
       },
@@ -707,16 +1117,35 @@
       "wiFi": { "available": true, "type": "basic", "tenantToPayExtra": true },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": false, "externalBeams": false, "electricFence": false, "other": "" },
-        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": false,
+          "externalBeams": false,
+          "electricFence": false,
+          "other": ""
+        },
+        "securityService": {
+          "none": false,
+          "adt": true,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": false,
         "wheelChairFriendly": false,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": true, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "0", "type": { "indoor": false, "outdoor": false } },
+        "view": {
+          "ocean": true,
+          "mountain": true,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "0",
+          "type": { "indoor": false, "outdoor": false }
+        },
         "hotTub": false,
         "sauna": false
       }
@@ -726,7 +1155,7 @@
       "slug": "royal-estate",
       "general": {
         "propertyName": "Royal Estate",
-        "area": "secure-estate",
+        "area": "Secure Estates",
         "type": "house",
         "beds": "8",
         "baths": "7",
@@ -736,13 +1165,26 @@
         "pricePerNight": { "from": "11500", "to": "12500" },
         "sizeSquareMeters": "650",
         "description": "An opulent 8-bedroom estate in exclusive Secure Estate with direct beach access and a magnificent pool. Perfect for large family gatherings and group celebrations.",
-        "availableDates": [{"start": "2026-06-28", "end": "2026-07-11"}, {"start": "2026-07-22", "end": "2026-08-04"}, {"start": "2026-08-30", "end": "2026-09-12"}],
-        "images": ["/images/placeholders/property-list/_MG_0517-Edit.jpg", "/images/placeholders/property-list/_MG_0550.jpg", "/images/placeholders/property-list/_MG_0562.jpg"]
+        "availableDates": [
+          { "start": "2026-06-28", "end": "2026-07-11" },
+          { "start": "2026-07-22", "end": "2026-08-04" },
+          { "start": "2026-08-30", "end": "2026-09-12" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0517-Edit.jpg",
+          "/images/placeholders/property-list/_MG_0550.jpg",
+          "/images/placeholders/property-list/_MG_0562.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": true, "weber": true, "builtIn": true, "pizzaOven": true },
+          "braai": {
+            "gas": true,
+            "weber": true,
+            "builtIn": true,
+            "pizzaOven": true
+          },
           "fireplace": { "wood": true, "gas": true }
         }
       },
@@ -753,16 +1195,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "CCTV & panic buttons" },
-        "securityService": { "none": false, "adt": false, "smhart": false, "other": "24-hour private security" }
+        "type": {
+          "alarm": true,
+          "internal": true,
+          "externalBeams": true,
+          "electricFence": true,
+          "other": "CCTV & panic buttons"
+        },
+        "securityService": {
+          "none": false,
+          "adt": false,
+          "smhart": false,
+          "other": "24-hour private security"
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": true,
         "wheelChairFriendly": true,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "2", "type": { "indoor": true, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "2",
+          "type": { "indoor": true, "outdoor": true }
+        },
         "hotTub": true,
         "sauna": true
       }
@@ -772,7 +1233,7 @@
       "slug": "paradise-estate",
       "general": {
         "propertyName": "Paradise Estate",
-        "area": "robberg-longships",
+        "area": "Robberg & Longships",
         "type": "house",
         "beds": "10",
         "baths": "8",
@@ -782,13 +1243,25 @@
         "pricePerNight": { "from": "14000", "to": "16000" },
         "sizeSquareMeters": "850",
         "description": "The ultimate 10-bedroom luxury estate in stunning Robberg & Longships with pristine beach access and resort-style pool. Perfect for special events and milestone celebrations.",
-        "availableDates": [{"start": "2026-07-17", "end": "2026-07-31"}, {"start": "2026-09-12", "end": "2026-09-26"}],
-        "images": ["/images/placeholders/property-list/_MG_0521.jpg", "/images/placeholders/property-list/_MG_0557.jpg", "/images/placeholders/property-list/_MG_0494-Edit-2.jpg"]
+        "availableDates": [
+          { "start": "2026-07-17", "end": "2026-07-31" },
+          { "start": "2026-09-12", "end": "2026-09-26" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0521.jpg",
+          "/images/placeholders/property-list/_MG_0557.jpg",
+          "/images/placeholders/property-list/_MG_0494-Edit-2.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": true, "weber": false, "builtIn": true, "pizzaOven": true },
+          "braai": {
+            "gas": true,
+            "weber": false,
+            "builtIn": true,
+            "pizzaOven": true
+          },
           "fireplace": { "wood": true, "gas": false }
         }
       },
@@ -799,16 +1272,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "Biometric access & CCTV" },
-        "securityService": { "none": false, "adt": false, "smhart": false, "other": "Private security" }
+        "type": {
+          "alarm": true,
+          "internal": true,
+          "externalBeams": true,
+          "electricFence": true,
+          "other": "Biometric access & CCTV"
+        },
+        "securityService": {
+          "none": false,
+          "adt": false,
+          "smhart": false,
+          "other": "Private security"
+        }
       },
       "specialFeatures": {
         "childFriendly": false,
         "petFriendly": true,
         "wheelChairFriendly": false,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": true, "lagoon": true, "fynbos": false },
-        "pool": { "numberOf": "2", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": true,
+          "lagoon": true,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "2",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": true,
         "sauna": true
       }
@@ -818,7 +1310,7 @@
       "slug": "oceanfront-manor",
       "general": {
         "propertyName": "Oceanfront Manor",
-        "area": "town-area",
+        "area": "Town Area",
         "type": "house",
         "beds": "7",
         "baths": "6",
@@ -828,13 +1320,26 @@
         "pricePerNight": { "from": "10000", "to": "11000" },
         "sizeSquareMeters": "520",
         "description": "A grand 7-bedroom oceanfront manor in vibrant Town Area with direct beach access. Combines elegance with convenience, perfect for large families and group celebrations.",
-        "availableDates": [{"start": "2026-06-12", "end": "2026-06-25"}, {"start": "2026-08-10", "end": "2026-08-23"}, {"start": "2026-11-08", "end": "2026-11-21"}],
-        "images": ["/images/placeholders/property-list/_MG_0497-Edit.jpg", "/images/placeholders/property-list/_MG_0530-Edit.jpg", "/images/placeholders/property-list/_MG_0553.jpg"]
+        "availableDates": [
+          { "start": "2026-06-12", "end": "2026-06-25" },
+          { "start": "2026-08-10", "end": "2026-08-23" },
+          { "start": "2026-11-08", "end": "2026-11-21" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0497-Edit.jpg",
+          "/images/placeholders/property-list/_MG_0530-Edit.jpg",
+          "/images/placeholders/property-list/_MG_0553.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": true, "weber": false, "builtIn": true, "pizzaOven": false },
+          "braai": {
+            "gas": true,
+            "weber": false,
+            "builtIn": true,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": false, "gas": true }
         }
       },
@@ -845,16 +1350,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": true, "externalBeams": false, "electricFence": true, "other": "" },
-        "securityService": { "none": false, "adt": false, "smhart": true, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": true,
+          "externalBeams": false,
+          "electricFence": true,
+          "other": ""
+        },
+        "securityService": {
+          "none": false,
+          "adt": false,
+          "smhart": true,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": false,
         "wheelChairFriendly": true,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": true,
         "sauna": false
       }
@@ -864,7 +1388,7 @@
       "slug": "luxury-cliffside-estate",
       "general": {
         "propertyName": "Luxury Cliffside",
-        "area": "central-beach",
+        "area": "Central Beach",
         "type": "house",
         "beds": "9",
         "baths": "7",
@@ -874,13 +1398,25 @@
         "pricePerNight": { "from": "13000", "to": "14000" },
         "sizeSquareMeters": "720",
         "description": "A breathtaking 9-bedroom cliffside estate with spectacular views over Central Beach. Features a stunning pool and premium amenities throughout.",
-        "availableDates": [{"start": "2026-07-26", "end": "2026-08-08"}, {"start": "2026-09-08", "end": "2026-09-22"}],
-        "images": ["/images/placeholders/property-list/_MG_0394.jpg", "/images/placeholders/property-list/_MG_0477.jpg", "/images/placeholders/property-list/_MG_0575.jpg"]
+        "availableDates": [
+          { "start": "2026-07-26", "end": "2026-08-08" },
+          { "start": "2026-09-08", "end": "2026-09-22" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0394.jpg",
+          "/images/placeholders/property-list/_MG_0477.jpg",
+          "/images/placeholders/property-list/_MG_0575.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": true, "weber": true, "builtIn": true, "pizzaOven": false },
+          "braai": {
+            "gas": true,
+            "weber": true,
+            "builtIn": true,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": true, "gas": true }
         }
       },
@@ -891,16 +1427,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": true, "externalBeams": true, "electricFence": true, "other": "CCTV & panic buttons" },
-        "securityService": { "none": false, "adt": true, "smhart": false, "other": "" }
+        "type": {
+          "alarm": true,
+          "internal": true,
+          "externalBeams": true,
+          "electricFence": true,
+          "other": "CCTV & panic buttons"
+        },
+        "securityService": {
+          "none": false,
+          "adt": true,
+          "smhart": false,
+          "other": ""
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": false,
         "wheelChairFriendly": false,
         "directBeachAccess": false,
-        "view": { "ocean": true, "mountain": true, "lagoon": false, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": true, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": true,
+          "lagoon": false,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": true, "outdoor": true }
+        },
         "hotTub": true,
         "sauna": true
       }
@@ -910,7 +1465,7 @@
       "slug": "grand-bay-estate",
       "general": {
         "propertyName": "Grand Bay Estate",
-        "area": "beachy-head",
+        "area": "Beachy Head",
         "type": "house",
         "beds": "8",
         "baths": "6",
@@ -920,13 +1475,26 @@
         "pricePerNight": { "from": "10500", "to": "11500" },
         "sizeSquareMeters": "580",
         "description": "An impressive 8-bedroom estate at iconic Beachy Head with direct beach access and a beautiful pool. Spacious accommodations perfect for extended family gatherings.",
-        "availableDates": [{"start": "2026-06-05", "end": "2026-06-18"}, {"start": "2026-07-28", "end": "2026-08-10"}, {"start": "2026-10-25", "end": "2026-11-07"}],
-        "images": ["/images/placeholders/property-list/_MG_0504.jpg", "/images/placeholders/property-list/_MG_0394.jpg", "/images/placeholders/property-list/_MG_0521.jpg"]
+        "availableDates": [
+          { "start": "2026-06-05", "end": "2026-06-18" },
+          { "start": "2026-07-28", "end": "2026-08-10" },
+          { "start": "2026-10-25", "end": "2026-11-07" }
+        ],
+        "images": [
+          "/images/placeholders/property-list/_MG_0504.jpg",
+          "/images/placeholders/property-list/_MG_0394.jpg",
+          "/images/placeholders/property-list/_MG_0521.jpg"
+        ]
       },
       "braaiFireplace": {
         "available": true,
         "type": {
-          "braai": { "gas": false, "weber": true, "builtIn": true, "pizzaOven": false },
+          "braai": {
+            "gas": false,
+            "weber": true,
+            "builtIn": true,
+            "pizzaOven": false
+          },
           "fireplace": { "wood": true, "gas": false }
         }
       },
@@ -937,16 +1505,35 @@
       "wiFi": { "available": true, "type": "fibre", "tenantToPayExtra": false },
       "security": {
         "available": true,
-        "type": { "alarm": true, "internal": false, "externalBeams": true, "electricFence": true, "other": "CCTV" },
-        "securityService": { "none": false, "adt": false, "smhart": false, "other": "24-hour estate security" }
+        "type": {
+          "alarm": true,
+          "internal": false,
+          "externalBeams": true,
+          "electricFence": true,
+          "other": "CCTV"
+        },
+        "securityService": {
+          "none": false,
+          "adt": false,
+          "smhart": false,
+          "other": "24-hour estate security"
+        }
       },
       "specialFeatures": {
         "childFriendly": true,
         "petFriendly": false,
         "wheelChairFriendly": false,
         "directBeachAccess": true,
-        "view": { "ocean": true, "mountain": false, "lagoon": true, "fynbos": false },
-        "pool": { "numberOf": "1", "type": { "indoor": false, "outdoor": true } },
+        "view": {
+          "ocean": true,
+          "mountain": false,
+          "lagoon": true,
+          "fynbos": false
+        },
+        "pool": {
+          "numberOf": "1",
+          "type": { "indoor": false, "outdoor": true }
+        },
         "hotTub": false,
         "sauna": false
       }

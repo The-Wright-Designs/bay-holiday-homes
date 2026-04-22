@@ -8,6 +8,7 @@ export const buttonStyles = (
   navyStroke?: boolean,
   colorNavy?: boolean,
   colorPeach?: boolean,
+  tealStroke?: boolean,
 ) =>
   classNames(
     "border-2 flex text-[16px] min-w-[150px] text-center px-10 py-3 justify-center ease-in-out duration-300 rounded-[2px]",
@@ -17,7 +18,7 @@ export const buttonStyles = (
       "hover:cursor-pointer": !(disabled || pending),
       "bg-white text-navy border-white": colorWhite,
       "desktop:hover:bg-teal desktop:hover:text-white":
-        colorWhite && !(disabled || pending),
+        (colorWhite || tealStroke) && !(disabled || pending),
       "bg-white text-navy border-navy": navyStroke,
       "desktop:hover:bg-navy desktop:hover:text-white":
         navyStroke && !(disabled || pending),
@@ -26,13 +27,15 @@ export const buttonStyles = (
         colorNavy && !(disabled || pending),
       "bg-peach text-black border-peach": colorPeach,
       "desktop:hover:bg-white": colorPeach && !(disabled || pending),
+      "bg-white text-black border-teal": tealStroke,
       "bg-teal text-white border-teal":
-        !colorWhite && !navyStroke && !colorNavy && !colorPeach,
+        !colorWhite && !navyStroke && !colorNavy && !colorPeach && !tealStroke,
       "desktop:hover:bg-white desktop:hover:text-teal":
         !colorWhite &&
         !navyStroke &&
         !colorNavy &&
         !colorPeach &&
+        !tealStroke &&
         !(disabled || pending),
     },
   );

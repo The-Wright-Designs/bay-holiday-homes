@@ -30,6 +30,7 @@ const OurServicesCard = ({
           width={200}
           height={200}
           className="object-cover h-auto"
+          sizes="200px"
         />
       </div>
       <div className="flex flex-col gap-3 items-center text-center flex-1">

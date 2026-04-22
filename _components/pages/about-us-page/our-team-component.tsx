@@ -15,6 +15,7 @@ const OurTeamComponent = () => {
           width={1280}
           height={800}
           className="w-full h-full object-cover desktop:object-bottom"
+          sizes="(max-width: 1280px) 100vw, 1280px"
         />
       </div>
 

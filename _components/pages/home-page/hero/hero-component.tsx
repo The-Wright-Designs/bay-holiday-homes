@@ -11,10 +11,10 @@ export default function HeroComponent() {
           <Image
             src="/images/hero/bay-holiday-homes-plettenberg-bay.jpg"
             alt="Bay Holiday Homes Plettenberg Bay coastal view"
-            width={1280}
-            height={700}
+            fill
             className="h-full w-full object-cover object-top"
             priority
+            sizes="(max-width: 1280px) 100vw, 1280px"
           />
         </div>
 

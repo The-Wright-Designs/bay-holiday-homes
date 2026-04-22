@@ -24,6 +24,7 @@ const OurStoryComponent = () => {
             width={190}
             height={190}
             className="w-full h-full object-cover"
+            sizes="190px"
           />
         </div>
       </div>
@@ -64,6 +65,7 @@ const OurStoryComponent = () => {
               width={204}
               height={204}
               className="w-full h-full object-cover"
+              sizes="204px"
             />
           </div>
         </div>

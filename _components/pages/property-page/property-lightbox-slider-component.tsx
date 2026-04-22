@@ -125,6 +125,7 @@ export default function PropertyLightboxSliderComponent({
               pagination={{ dynamicBullets: true }}
               loop
               slidesPerView={1}
+              spaceBetween={40}
               style={
                 {
                   "--swiper-pagination-color": "#4AB5BB",
