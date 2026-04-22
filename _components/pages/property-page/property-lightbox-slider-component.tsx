@@ -23,6 +23,12 @@ export default function PropertyLightboxSliderComponent({
   cssClasses,
 }: PropertyLightboxSliderProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [initialSlide, setInitialSlide] = useState(0);
+
+  const openAt = (index: number) => {
+    setInitialSlide(index);
+    setIsOpen(true);
+  };
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -39,35 +45,44 @@ export default function PropertyLightboxSliderComponent({
           cssClasses,
         )}
       >
-        <div className="relative aspect-[16/7] w-full overflow-hidden col-span-2 tablet:h-[40vh] desktop:col-span-1 desktop:row-span-2 desktop:aspect-auto desktop:h-full">
+        <button
+          onClick={() => openAt(0)}
+          className="relative aspect-[16/8] w-full overflow-hidden col-span-2 tablet:h-[40vh] desktop:col-span-1 desktop:row-span-2 desktop:aspect-auto desktop:h-full desktop:hover:cursor-pointer"
+        >
           <Image
             src={images[0]}
             alt={propertyName}
             fill
-            className="object-cover"
+            className="object-cover desktop:hover:scale-105 ease-in-out duration-500 delay-75"
             sizes="(max-width: 800px) 100vw, 1280px"
             priority
           />
-        </div>
+        </button>
 
-        <div className="relative flex-1 w-full aspect-[3.5/4] overflow-hidden tablet:h-[35vh] desktop:aspect-auto desktop:h-full">
+        <button
+          onClick={() => openAt(1)}
+          className="relative flex-1 w-full aspect-[3.25/4] overflow-hidden tablet:h-[35vh] desktop:aspect-auto desktop:h-full desktop:hover:cursor-pointer"
+        >
           <Image
             src={images[1] ?? images[0]}
             alt={propertyName}
             fill
-            className="object-cover"
+            className="object-cover desktop:hover:scale-105 ease-in-out duration-500 delay-75"
             sizes="(max-width: 800px) 50vw, 640px"
           />
-        </div>
-        <div className="relative flex-1 w-full aspect-[3.5/4] overflow-hidden tablet:h-[35vh] desktop:aspect-auto desktop:h-full">
+        </button>
+        <button
+          onClick={() => openAt(2)}
+          className="relative flex-1 w-full aspect-[3.25/4] overflow-hidden tablet:h-[35vh] desktop:aspect-auto desktop:h-full desktop:hover:cursor-pointer"
+        >
           <Image
             src={images[2] ?? images[0]}
             alt={propertyName}
             fill
-            className="object-cover"
+            className="object-cover desktop:hover:scale-105 ease-in-out duration-500 delay-75"
             sizes="(max-width: 800px) 50vw, 640px"
           />
-        </div>
+        </button>
         <button
           onClick={() => setIsOpen(true)}
           className="absolute bottom-3 left-3 flex items-center gap-1 bg-teal/90 px-2.5 py-2 rounded-[2px] desktop:hover:cursor-pointer desktop:hover:opacity-90 ease-in-out duration-300"
@@ -123,6 +138,7 @@ export default function PropertyLightboxSliderComponent({
                 nextEl: ".swiper-lightbox-next",
               }}
               pagination={{ dynamicBullets: true }}
+              initialSlide={initialSlide}
               loop
               slidesPerView={1}
               spaceBetween={40}

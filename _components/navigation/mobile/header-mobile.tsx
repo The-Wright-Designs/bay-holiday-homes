@@ -63,7 +63,7 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
             aria-label="Close menu"
             className="p-2 -m-2"
           >
-            <X color="#213766" size={30} />
+            <X color="#FFFFFF" size={30} />
           </button>
         </div>
         <nav>
