@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-white w-full mt-20 mb-5">
       <div className="border-t border-black border-opacity-25 px-5 pt-10 flex flex-col gap-6 desktop:max-w-[1280px] desktop:mx-auto desktop:px-[40px] desktop:pt-[40px] desktop:gap-5">
         <div className="flex flex-col gap-6 items-center desktop:flex-row desktop:justify-between desktop:items-start">
-          <div className="flex flex-col gap-3 items-center desktop:items-start">
+          <div className="flex flex-col gap-3 items-center desktop:items-start desktop:gap-2">
             <div className="flex flex-col gap-0.5 items-center desktop:items-start">
               {navData.map((item) => (
                 <Link
@@ -22,7 +22,7 @@ const Footer = () => {
               ))}
             </div>
 
-            <div className="flex gap-5 items-center justify-center pt-3 desktop:pt-0 desktop:gap-3">
+            <div className="flex gap-5 items-center justify-center pt-3 desktop:pt-0 desktop:gap-1.5">
               <Link
                 href="https://www.facebook.com/profile.php?id=100094256300725"
                 target="_blank"
@@ -35,7 +35,7 @@ const Footer = () => {
                   alt="Facebook"
                   width={31}
                   height={31}
-                  className="desktop:w-[24px] h-auto"
+                  className="desktop:w-[22px] h-auto"
                 />
               </Link>
               <Link
@@ -50,7 +50,7 @@ const Footer = () => {
                   alt="Instagram"
                   width={31}
                   height={31}
-                  className="desktop:w-[24px] h-auto"
+                  className="desktop:w-[22px] h-auto"
                 />
               </Link>
               <Link
@@ -65,7 +65,7 @@ const Footer = () => {
                   alt="WhatsApp"
                   width={31}
                   height={31}
-                  className="desktop:w-[24px] h-auto"
+                  className="desktop:w-[22px] h-auto"
                 />
               </Link>
             </div>

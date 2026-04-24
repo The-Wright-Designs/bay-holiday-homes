@@ -1,6 +1,6 @@
 import ButtonLink from "@/_components/ui/buttons/button-link";
-import ButtonType from "@/_components/ui/buttons/button-type";
 import { MapPin } from "lucide-react";
+import PropertyRatesAvailabilityComponent from "@/_components/pages/property-page/property-details/property-rates-availability-component";
 import { PropertyProps } from "@/_types/property-types";
 import PropertySummaryComponent from "@/_components/pages/property-page/property-details/property-summary-component";
 import PropertyDetailedInfoComponent from "@/_components/pages/property-page/property-details/property-detailed-info-component";
@@ -29,7 +29,7 @@ const PropertyDetailsComponent = ({
   return (
     <div className="pt-10 grid px-5 gap-10 tablet:px-10 desktop:p-0">
       <ButtonLink
-        href={`/${slug}/#enquire`}
+        href={`/properties/${slug}/#enquire`}
         ariaLabel="Enquire about property"
         cssClasses="tablet:hidden"
       >
@@ -50,7 +50,7 @@ const PropertyDetailsComponent = ({
             </div>
           </div>
           <ButtonLink
-            href={`/${slug}/#enquire`}
+            href={`/properties/${slug}/#enquire`}
             ariaLabel="Enquire about property"
             cssClasses="hidden tablet:block desktop:hidden"
           >
@@ -61,15 +61,10 @@ const PropertyDetailsComponent = ({
           general={general}
           specialFeatures={specialFeatures}
         />
-        <div className="w-full flex flex-col gap-5 tablet:flex-row tablet:gap-10 tablet:items-center desktop:justify-between">
-          <div className="flex flex-col gap-3">
-            <h3>Rates &amp; Availability:</h3>
-            <p>Starting from: R{general.pricePerNight.from} / night</p>
-          </div>
-          <ButtonType type="button" tealStroke>
-            View Bookable Dates
-          </ButtonType>
-        </div>
+        <PropertyRatesAvailabilityComponent
+          availableDates={general.availableDates}
+          pricePerNightFrom={general.pricePerNight.from}
+        />
         <div className="flex flex-col gap-3">
           <h3>Description:</h3>
           <p>{general.description}</p>

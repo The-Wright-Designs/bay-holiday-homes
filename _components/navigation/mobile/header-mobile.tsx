@@ -57,7 +57,7 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
           },
         )}
       >
-        <div className="flex w-full gap-1 items-center justify-end mb-8 translate-x-[9px] -translate-y-1.5">
+        <div className="flex w-full gap-1 items-center justify-end mb-8 translate-x-[9px] -translate-y-1.5 tablet:translate-y-[5px]">
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"

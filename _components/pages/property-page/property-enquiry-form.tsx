@@ -80,7 +80,7 @@ const PropertyEnquiryForm = ({
     <div
       ref={containerRef}
       className="bg-teal rounded-[2px] flex flex-col gap-10 p-5 scroll-mt-24 tablet:p-10 desktop:scroll-mt-32 desktop:p-7"
-      id="submitted"
+      id="enquire"
     >
       <div
         className={classNames("flex flex-col gap-5", {
@@ -104,7 +104,7 @@ const PropertyEnquiryForm = ({
               alt="Bay Holiday Homes Logo"
               width={359}
               height={84}
-              className="h-auto py-4 px-7 bg-white rounded-md"
+              className="h-auto py-4 px-7 bg-white rounded-xs"
               priority
             />
           </div>
@@ -203,7 +203,11 @@ const PropertyEnquiryForm = ({
             />
           </fieldset>
           {error && <p className="text-white text-paragraph">{error}</p>}
-          <ButtonType type="submit" navyStroke cssClasses="w-full mt-5">
+          <ButtonType
+            type="submit"
+            navyStroke
+            cssClasses="w-full mt-5 min-[500px]:w-auto min-[500px]:self-start"
+          >
             Submit
           </ButtonType>
         </form>

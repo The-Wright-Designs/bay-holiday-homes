@@ -121,7 +121,10 @@ export default function PropertyLightboxSliderComponent({
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 overflow-hidden">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 overflow-hidden desktop:hover:cursor-pointer"
+          onClick={() => setIsOpen(false)}
+        >
           <button
             onClick={() => setIsOpen(false)}
             className="absolute -m2 p-2 top-5.5 right-4.5 z-10 desktop:hidden"
@@ -130,7 +133,10 @@ export default function PropertyLightboxSliderComponent({
             <X size={32} color="#FFFFFF" />
           </button>
 
-          <div className="relative w-full max-w-[1280px] px-14 overflow-hidden">
+          <div
+            className="relative w-full max-w-[1280px] px-14 overflow-hidden desktop:hover:cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
             <Swiper
               modules={[Navigation, Pagination]}
               navigation={{
@@ -165,7 +171,7 @@ export default function PropertyLightboxSliderComponent({
               ))}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-2 -right-7 z-10 hover:cursor-pointer hover:opacity-90 ease-in-out duration-300 p-2 -m-2 rounded-md bg-teal/80"
+                className="absolute top-2 -right-7 z-10 hover:cursor-pointer hover:opacity-90 ease-in-out duration-300 p-2 -m-2 rounded-xs bg-teal/80"
                 aria-label="Close gallery"
               >
                 <X size={32} color="#FFFFFF" />
@@ -173,13 +179,13 @@ export default function PropertyLightboxSliderComponent({
             </Swiper>
 
             <button
-              className="hidden desktop:block p-2 -m-2 bg-teal/70 rounded-md swiper-lightbox-prev absolute left-7 top-1/2 -translate-y-1/2 z-10 hover:cursor-pointer hover:opacity-80 ease-in-out duration-300"
+              className="hidden desktop:block p-2 -m-2 bg-teal/70 rounded-xs swiper-lightbox-prev absolute left-7 top-1/2 -translate-y-1/2 z-10 hover:cursor-pointer hover:opacity-80 ease-in-out duration-300"
               aria-label="Previous photo"
             >
               <SquareArrowLeft size={28} color="#FFFFFF" />
             </button>
             <button
-              className="hidden desktop:block p-2 -m-2 bg-teal/70 rounded-md swiper-lightbox-next absolute right-7 top-1/2 -translate-y-1/2 z-10 hover:cursor-pointer hover:opacity-80 ease-in-out duration-300"
+              className="hidden desktop:block p-2 -m-2 bg-teal/70 rounded-xs swiper-lightbox-next absolute right-7 top-1/2 -translate-y-1/2 z-10 hover:cursor-pointer hover:opacity-80 ease-in-out duration-300"
               aria-label="Next photo"
             >
               <SquareArrowRight size={28} color="#FFFFFF" />
