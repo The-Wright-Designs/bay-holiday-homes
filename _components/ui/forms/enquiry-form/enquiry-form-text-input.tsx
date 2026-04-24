@@ -8,6 +8,7 @@ interface EnquiryFormTextInputProps {
   placeholderText?: string;
   required?: boolean;
   disabled?: boolean;
+  readOnly?: boolean;
   autoComplete?: string;
   cssClasses?: string;
 }
@@ -19,6 +20,7 @@ const EnquiryFormTextInput = ({
   placeholderText,
   required,
   disabled,
+  readOnly,
   autoComplete,
   cssClasses,
 }: EnquiryFormTextInputProps) => {
@@ -30,11 +32,12 @@ const EnquiryFormTextInput = ({
       <input
         id={name}
         name={name}
-        className={inputStyles(undefined, disabled)}
+        className={inputStyles(undefined, disabled || readOnly)}
         defaultValue={defaultValue}
         placeholder={placeholderText}
         required={required}
         disabled={disabled}
+        readOnly={readOnly}
         autoComplete={autoComplete}
       />
     </div>

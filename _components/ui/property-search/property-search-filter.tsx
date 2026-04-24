@@ -52,7 +52,9 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
     };
   }, []);
 
-  const handleMultiFilterChange = (field: "propertyType" | "area" | "extras") => {
+  const handleMultiFilterChange = (
+    field: "propertyType" | "area" | "extras",
+  ) => {
     return (value: string[]) => {
       setFilters((prev) => ({ ...prev, [field]: value }));
     };
@@ -122,7 +124,7 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
         options={budgetOptions}
         placeholder="Select"
         ariaLabel="Select budget"
-        label="Budget:"
+        label="Budget p/n:"
         value={filters.budget ? [filters.budget] : []}
         onChange={handleSingleFilterChange("budget")}
       />

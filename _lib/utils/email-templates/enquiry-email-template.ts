@@ -1,5 +1,6 @@
 interface EnquiryEmailTemplateProps {
   property: string;
+  propertyId: string;
   name: string;
   email: string;
   phone?: string;
@@ -13,6 +14,7 @@ interface EnquiryEmailTemplateProps {
 
 export const enquiryEmailTemplate = ({
   property,
+  propertyId,
   name,
   email,
   phone,
@@ -48,6 +50,7 @@ export const enquiryEmailTemplate = ({
       <div class="content">
         <h2>Property Enquiry</h2>
         <div class="field"><span class="label">Property: </span><span class="value">${property}</span></div>
+        <div class="field"><span class="label">Property ID: </span><span class="value">${propertyId}</span></div>
         <div class="field"><span class="label">Name: </span><span class="value">${name}</span></div>
         <div class="field"><span class="label">Email: </span><span class="value">${email}</span></div>
         ${phone ? `<div class="field"><span class="label">Phone: </span><span class="value">${phone}</span></div>` : ""}

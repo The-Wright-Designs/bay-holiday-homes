@@ -98,7 +98,7 @@
   ],
   "propertyList": [
     {
-      "id": "7k3m9p2x",
+      "propertyId": "A3F7K2",
       "slug": "sailor-moon-house",
       "general": {
         "propertyName": "Sailor Moon",
@@ -175,7 +175,7 @@
       }
     },
     {
-      "id": "4n8q1r5t",
+      "propertyId": "B8M4P9",
       "slug": "ocean-breeze-house",
       "general": {
         "propertyName": "Ocean Breeze",
@@ -253,7 +253,7 @@
       }
     },
     {
-      "id": "2w6v9h3j",
+      "propertyId": "C1N6R3",
       "slug": "sunset-villa-house",
       "general": {
         "propertyName": "Sunset Villa",
@@ -303,7 +303,7 @@
       }
     },
     {
-      "id": "5z7b4n1q",
+      "propertyId": "D5T2W8",
       "slug": "seashell-retreat-house",
       "general": {
         "propertyName": "Seashell Retreat",
@@ -381,7 +381,7 @@
       }
     },
     {
-      "id": "8p3k6m2w",
+      "propertyId": "E9Q7H4",
       "slug": "coastal-haven-house",
       "general": {
         "propertyName": "Coastal Haven",
@@ -457,7 +457,7 @@
       }
     },
     {
-      "id": "1x9r4t7n",
+      "propertyId": "F2K5M1",
       "slug": "beachfront-luxury-apartment",
       "general": {
         "propertyName": "Beachfront Luxury",
@@ -523,7 +523,7 @@
       }
     },
     {
-      "id": "6h2v8q3p",
+      "propertyId": "G7R3N6",
       "slug": "harbour-view-apartment",
       "general": {
         "propertyName": "Harbour View",
@@ -585,7 +585,7 @@
       }
     },
     {
-      "id": "9m5k1w7r",
+      "propertyId": "H4V8Q2",
       "slug": "modern-penthouse-apartment",
       "general": {
         "propertyName": "Modern Penthouse",
@@ -663,7 +663,7 @@
       }
     },
     {
-      "id": "3t7n2q6h",
+      "propertyId": "J6P1T5",
       "slug": "seaview-studio-apartment",
       "general": {
         "propertyName": "Seaview Studio",
@@ -726,7 +726,7 @@
       }
     },
     {
-      "id": "4q8p5m1k",
+      "propertyId": "K3W9M7",
       "slug": "marina-apartment",
       "general": {
         "propertyName": "Marina Apartment",
@@ -791,7 +791,7 @@
       }
     },
     {
-      "id": "7w3r9n2v",
+      "propertyId": "L8H4Q1",
       "slug": "garden-townhouse",
       "general": {
         "propertyName": "Garden Townhouse",
@@ -853,7 +853,7 @@
       }
     },
     {
-      "id": "2k6h4t8q",
+      "propertyId": "M2T6R9",
       "slug": "beachside-townhouse",
       "general": {
         "propertyName": "Beachside Townhouse",
@@ -931,7 +931,7 @@
       }
     },
     {
-      "id": "5n1m7p3w",
+      "propertyId": "N5K2V8",
       "slug": "coastal-cottage-townhouse",
       "general": {
         "propertyName": "Coastal Cottage",
@@ -997,7 +997,7 @@
       }
     },
     {
-      "id": "8v4q2k6r",
+      "propertyId": "P7M3H6",
       "slug": "lagoon-townhouse",
       "general": {
         "propertyName": "Lagoon Townhouse",
@@ -1075,7 +1075,7 @@
       }
     },
     {
-      "id": "1h9t5n3m",
+      "propertyId": "Q1R8W4",
       "slug": "bay-retreat-townhouse",
       "general": {
         "propertyName": "Bay Retreat",
@@ -1151,7 +1151,7 @@
       }
     },
     {
-      "id": "6p2w8r4k",
+      "propertyId": "R4N7T2",
       "slug": "royal-estate",
       "general": {
         "propertyName": "Royal Estate",
@@ -1229,7 +1229,7 @@
       }
     },
     {
-      "id": "3m7k1q5t",
+      "propertyId": "S9V5K3",
       "slug": "paradise-estate",
       "general": {
         "propertyName": "Paradise Estate",
@@ -1306,7 +1306,7 @@
       }
     },
     {
-      "id": "9r5n2h6v",
+      "propertyId": "T6Q2M8",
       "slug": "oceanfront-manor",
       "general": {
         "propertyName": "Oceanfront Manor",
@@ -1384,7 +1384,7 @@
       }
     },
     {
-      "id": "4t8q3p7w",
+      "propertyId": "U1H9R5",
       "slug": "luxury-cliffside-estate",
       "general": {
         "propertyName": "Luxury Cliffside",
@@ -1461,7 +1461,7 @@
       }
     },
     {
-      "id": "2w6k9m1r",
+      "propertyId": "V8T4N1",
       "slug": "grand-bay-estate",
       "general": {
         "propertyName": "Grand Bay Estate",

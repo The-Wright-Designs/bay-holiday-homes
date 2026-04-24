@@ -1,4 +1,5 @@
 export interface PropertyProps {
+  propertyId: string;
   general: {
     propertyName: string;
     area:

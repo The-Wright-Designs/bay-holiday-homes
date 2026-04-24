@@ -11,6 +11,8 @@ interface EnquiryFormDateInputProps {
   defaultValue?: string;
   required?: boolean;
   cssClasses?: string;
+  min?: string;
+  onChange?: (value: string) => void;
 }
 
 const EnquiryFormDateInput = ({
@@ -19,6 +21,8 @@ const EnquiryFormDateInput = ({
   defaultValue,
   required,
   cssClasses,
+  min,
+  onChange,
 }: EnquiryFormDateInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -35,6 +39,8 @@ const EnquiryFormDateInput = ({
           type="date"
           defaultValue={defaultValue}
           required={required}
+          min={min}
+          onChange={(e) => onChange?.(e.target.value)}
           className={classNames(
             inputStyles(),
             "appearance-none pr-10 [&::-webkit-calendar-picker-indicator]:hidden",

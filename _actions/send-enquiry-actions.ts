@@ -5,7 +5,7 @@ import { enquiryEmailTemplate } from "@/_lib/utils/email-templates/enquiry-email
 import { verifyRecaptchaToken } from "@/_lib/verify-recaptcha";
 
 export async function sendEnquiry(
-  formData: FormData
+  formData: FormData,
 ): Promise<{ success: boolean; error?: string }> {
   const honey = formData.get("_honey");
   const recaptchaToken = formData.get("recaptchaToken") as string;
@@ -25,6 +25,7 @@ export async function sendEnquiry(
       }
 
       const property = formData.get("property")?.toString() || "";
+      const propertyId = formData.get("propertyId")?.toString() || "";
       const name = formData.get("name")?.toString() || "";
       const email = formData.get("email")?.toString() || "";
       const phone = formData.get("phone")?.toString() || "";
@@ -41,6 +42,7 @@ export async function sendEnquiry(
 
       const emailHtmlContent = enquiryEmailTemplate({
         property,
+        propertyId,
         name,
         email,
         phone: phone || undefined,
@@ -64,7 +66,7 @@ export async function sendEnquiry(
       });
 
       await transporter.sendMail({
-        from: process.env.SMTP_USER as string,
+        from: `Bay Holiday Homes <${process.env.SMTP_USER}>`,
         to: process.env.SMTP_SEND_TO as string,
         subject: "Property Enquiry - Bay Holiday Homes",
         replyTo: email,

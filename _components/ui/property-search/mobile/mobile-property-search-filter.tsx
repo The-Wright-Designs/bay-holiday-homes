@@ -128,7 +128,7 @@ const MobilePropertySearchFilter = ({
             }}
             aria-label="Close filters"
             className={classNames("p-2 -m-2 desktop:hover:cursor-pointer", {
-              "invisible": activeFilter !== null,
+              invisible: activeFilter !== null,
             })}
           >
             <X color="#213766" size={26} />
@@ -177,7 +177,7 @@ const MobilePropertySearchFilter = ({
                 options={generalData.propertySearch.budget}
                 placeholder="Select"
                 ariaLabel="Select budget"
-                label="Budget"
+                label="Budget p/n"
                 value={filters.budget ? [filters.budget] : []}
                 onChange={(value) =>
                   setFilters((prev) => ({ ...prev, budget: value[0] ?? "" }))

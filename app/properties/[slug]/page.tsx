@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import placeholderData from "@/_data/placeholder-data.json";
 import PropertyLightboxSliderComponent from "@/_components/pages/property-page/property-lightbox-slider-component";
 import PropertyDetailsComponent from "@/_components/pages/property-page/property-details-component";
-import PropertyEnquiryForm from "@/_components/pages/property-page/property-enquiry-form";
+import PropertyEnquiryFormWrapper from "@/_components/pages/property-page/property-enquiry-form-wrapper";
 
 interface PropertyPageProps {
   params: Promise<{ slug: string }>;
@@ -32,7 +32,7 @@ const PropertyPage = async ({ params }: PropertyPageProps) => {
           security={property!.security as never}
           wiFi={property!.wiFi as never}
         />
-        <PropertyEnquiryForm propertyName={property!.general.propertyName} />
+        <PropertyEnquiryFormWrapper propertyName={property!.general.propertyName} propertyId={property!.propertyId} />
       </div>
     </div>
   );
