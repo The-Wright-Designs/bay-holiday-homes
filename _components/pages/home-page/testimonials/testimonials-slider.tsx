@@ -46,7 +46,7 @@ export default function TestimonialsSlider({
             <SwiperSlide key={index} className="pb-10">
               <div className="flex flex-col gap-3 items-center justify-center text-center px-5 desktop:px-0 min-h-[134px]">
                 <div className="flex gap-[2px] items-center">
-                  {Array.from({ length: 5 }).map((_, starIndex) => (
+                  {Array.from({ length: Number(testimonial.meta_box.stars) }).map((_, starIndex) => (
                     <Image
                       key={starIndex}
                       src="/icons/star.svg"
@@ -58,10 +58,10 @@ export default function TestimonialsSlider({
                   ))}
                 </div>
                 <blockquote className="text-[18px] font-light text-black max-w-[900px]">
-                  &quot;{testimonial.testimonial}&quot;
+                  &quot;{testimonial.meta_box.testimonial}&quot;
                 </blockquote>
                 <cite className="text-[18px] font-light italic text-black">
-                  - {testimonial.author}
+                  - {testimonial.meta_box.author}
                 </cite>
               </div>
             </SwiperSlide>

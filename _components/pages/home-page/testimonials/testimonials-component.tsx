@@ -3,15 +3,20 @@
 import { useState } from "react";
 import classNames from "classnames";
 import TestimonialsSlider from "./testimonials-slider";
-import placeholderData from "@/_data/placeholder-data.json";
+import { Testimonial } from "@/_types/testimonials-types";
 
-const TestimonialsComponent = () => {
+const TestimonialsComponent = ({
+  testimonials,
+}: {
+  testimonials: Testimonial[];
+}) => {
   const [activeTab, setActiveTab] = useState<"clients" | "guests">("clients");
 
-  const testimonialsData =
-    activeTab === "clients"
-      ? placeholderData.happyClients
-      : placeholderData.happyGuests;
+  const testimonialsData = testimonials.filter(
+    (t) =>
+      t.meta_box.type ===
+      (activeTab === "clients" ? "happy_clients" : "happy_guests"),
+  );
 
   return (
     <section className="flex flex-col gap-10 items-center w-full py-15">

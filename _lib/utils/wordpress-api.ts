@@ -1,5 +1,6 @@
 import { PropertyProps } from "@/_types/property-types";
 import { TopProperty } from "@/_types/top-properties-types";
+import { Testimonial } from "@/_types/testimonials-types";
 
 const WP_API_URL =
   "https://wordpress.bayholidays.co.za/wp-json/wp/v2/property";
@@ -25,19 +26,28 @@ export async function fetchPropertyById(
   id: string
 ): Promise<PropertyProps | null> {
   const res = await fetch(
-    `${WP_API_URL}?meta_key=property_id&meta_value=${id}&per_page=1`,
+    `${WP_API_URL}?per_page=100`,
     { next: { revalidate: 3600 } }
   );
 
   if (!res.ok) return null;
 
   const data: PropertyProps[] = await res.json();
-  return data[0] ?? null;
+  return data.find((p) => p.meta_box.property_id === id) ?? null;
 }
 
 export async function fetchTopProperties(): Promise<TopProperty[]> {
   const res = await fetch(
     "https://wordpress.bayholidays.co.za/wp-json/wp/v2/top_property",
+    { next: { revalidate: 3600 } }
+  );
+  if (!res.ok) return [];
+  return res.json();
+}
+
+export async function fetchTestimonials(): Promise<Testimonial[]> {
+  const res = await fetch(
+    "https://wordpress.bayholidays.co.za/wp-json/wp/v2/testimonial",
     { next: { revalidate: 3600 } }
   );
   if (!res.ok) return [];

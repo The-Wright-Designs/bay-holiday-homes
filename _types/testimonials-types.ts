@@ -1,7 +1,10 @@
 export interface Testimonial {
-  testimonial: string;
-  author: string;
-  stars: number;
+  meta_box: {
+    type: "happy_clients" | "happy_guests";
+    testimonial: string;
+    author: string;
+    stars: string;
+  };
 }
 
 export interface TestimonialsSliderProps {

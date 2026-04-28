@@ -5,15 +5,18 @@ import TestimonialsComponent from "@/_components/pages/home-page/testimonials/te
 import TopPropertiesComponent from "@/_components/pages/home-page/top-properties/top-properties-component";
 import OurServicesComponent from "@/_components/pages/home-page/our-services/our-services-component";
 import ContactSectionComponent from "@/_components/pages/home-page/contact/contact-section-component";
+import { fetchTestimonials } from "@/_lib/utils/wordpress-api";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const testimonials = await fetchTestimonials();
+
   return (
     <div>
       <HeroComponent />
       <PageWrapper>
         <MosaicGalleryComponent />
         <TopPropertiesComponent />
-        <TestimonialsComponent />
+        <TestimonialsComponent testimonials={testimonials} />
         <OurServicesComponent />
         <ContactSectionComponent />
       </PageWrapper>
