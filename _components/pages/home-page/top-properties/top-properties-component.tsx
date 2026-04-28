@@ -1,8 +1,9 @@
 import Image from "next/image";
-import placeholderData from "@/_data/placeholder-data.json";
 import TopPropertiesSlider from "./top-properties-slider";
+import { fetchTopProperties } from "@/_lib/utils/wordpress-api";
 
-const TopPropertiesComponent = () => {
+const TopPropertiesComponent = async () => {
+  const topProperties = await fetchTopProperties();
   return (
     <div className="flex flex-col gap-10 py-15 border-y border-black/25 desktop:py-0 desktop:border-none">
       <div className="flex flex-col gap-2 items-center justify-center desktop:flex-row">
@@ -18,7 +19,7 @@ const TopPropertiesComponent = () => {
           className="order-first desktop:w-[42px] desktop:h-[42px] desktop:order-last"
         />
       </div>
-      <TopPropertiesSlider topProperties={placeholderData.topProperties} />
+      <TopPropertiesSlider topProperties={topProperties} />
     </div>
   );
 };

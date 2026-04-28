@@ -62,21 +62,23 @@ export default function TopPropertiesSlider({
           {topProperties.map((property, index) => (
             <SwiperSlide key={index} className="pb-10">
               <Link
-                href={property.href}
+                href={`/properties/${property.meta_box.top_property_id}`}
                 className="group relative flex flex-col items-center justify-center aspect-square w-full overflow-hidden desktop:hover:cursor-pointer"
               >
                 <Image
-                  src={property.image}
-                  alt={property.title}
+                  src={property.meta_box.image.full_url}
+                  alt={`Bay Holiday Homes - Top Property ${index + 1}`}
                   fill
                   className="object-cover transition-transform duration-500 delay-75 desktop:group-hover:scale-105"
                   sizes="(max-width: 600px) 100vw, (max-width: 800px) 50vw, 25vw"
                 />
-                <div className="relative bg-white/80 rounded-lg p-4 w-[200px] flex items-center justify-center desktop:group-hover:bg-teal ease-in-out duration-500 delay-150">
-                  <p className="text-[20px] text-center text-black desktop:group-hover:text-white ease-in-out duration-500 delay-200">
-                    {property.title}
-                  </p>
-                </div>
+                {property.meta_box.title && (
+                  <div className="relative bg-white/80 rounded-lg p-4 w-[200px] flex items-center justify-center desktop:group-hover:bg-teal ease-in-out duration-500 delay-150">
+                    <p className="text-[20px] text-center text-black desktop:group-hover:text-white ease-in-out duration-500 uppercase delay-200">
+                      {property.meta_box.title}
+                    </p>
+                  </div>
+                )}
               </Link>
             </SwiperSlide>
           ))}

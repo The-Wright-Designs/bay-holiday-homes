@@ -1,4 +1,5 @@
 import { PropertyProps } from "@/_types/property-types";
+import { TopProperty } from "@/_types/top-properties-types";
 
 const WP_API_URL =
   "https://wordpress.bayholidays.co.za/wp-json/wp/v2/property";
@@ -32,4 +33,13 @@ export async function fetchPropertyById(
 
   const data: PropertyProps[] = await res.json();
   return data[0] ?? null;
+}
+
+export async function fetchTopProperties(): Promise<TopProperty[]> {
+  const res = await fetch(
+    "https://wordpress.bayholidays.co.za/wp-json/wp/v2/top_property",
+    { next: { revalidate: 3600 } }
+  );
+  if (!res.ok) return [];
+  return res.json();
 }

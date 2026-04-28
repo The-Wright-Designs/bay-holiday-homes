@@ -1,7 +1,11 @@
 export interface TopProperty {
-  title: string;
-  image: string;
-  href: string;
+  meta_box: {
+    top_property_id: string;
+    title: string;
+    image: {
+      full_url: string;
+    };
+  };
 }
 
 export interface TopPropertiesSliderProps {

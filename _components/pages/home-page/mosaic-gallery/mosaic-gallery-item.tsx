@@ -40,7 +40,7 @@ const MosaicGalleryItem = ({
       />
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="bg-white/80 py-3 px-8 rounded-lg max-w-3/4 desktop:group-hover:bg-teal ease-in-out duration-500 delay-150">
-          <h3 className="text-center text-[20px] font-normal desktop:group-hover:text-white ease-in-out duration-500 delay-200">
+          <h3 className="text-center text-[20px] font-light desktop:group-hover:text-white ease-in-out duration-500 delay-200">
             {heading}
           </h3>
         </div>
