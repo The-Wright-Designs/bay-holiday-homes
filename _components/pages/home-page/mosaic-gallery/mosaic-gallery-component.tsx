@@ -22,6 +22,7 @@ const MosaicGalleryComponent = () => {
             image={item.image}
             heading={item.heading}
             large={item.large}
+            areaId={item.id}
             cssClasses={classNames("aspect-square", {
               "desktop:aspect-[2/1]": item.large,
               "desktop:aspect-square": !item.large,

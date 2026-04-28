@@ -9,7 +9,7 @@ export default function HeroComponent() {
       <div className="relative w-full">
         <div className="relative h-[500px] w-full desktop:h-[462px]">
           <Image
-            src="/images/placeholders/_MG_0420.jpg"
+            src="/images/_MG_0420.jpg"
             alt="Bay Holiday Homes Plettenberg Bay coastal view"
             width={1280}
             height={700}

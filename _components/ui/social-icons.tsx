@@ -3,14 +3,12 @@ import Image from "next/image";
 
 import whatsapp from "@/public/icons/whatsapp.svg";
 import facebook from "@/public/icons/facebook.svg";
-import instagram from "@/public/icons/instagram.svg";
 
 interface Props {
   cssClasses?: string;
   small?: boolean;
   social?: {
     facebook?: string;
-    instagram?: string;
     whatsapp?: string;
   };
 }
@@ -29,21 +27,6 @@ const SocialIcons = ({ cssClasses, small, social }: Props) => {
             <Image
               src={facebook}
               alt="View our Facebook page"
-              width={24}
-              height={24}
-            />
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={social?.instagram || ""}
-            target="_blank"
-            className="tablet:tablet:hover:opacity-80 ease-in-out duration-200"
-            aria-label="View our Instagram profile"
-          >
-            <Image
-              src={instagram}
-              alt="View our Instagram profile"
               width={24}
               height={24}
             />
@@ -79,21 +62,6 @@ const SocialIcons = ({ cssClasses, small, social }: Props) => {
             <Image
               src={facebook}
               alt="View our Facebook page"
-              width={32}
-              height={32}
-            />
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={social?.instagram || ""}
-            className="grid h-8 w-8 place-items-center tablet:hover:opacity-80 ease-in-out duration-200"
-            target="_blank"
-            aria-label="View our Instagram profile"
-          >
-            <Image
-              src={instagram}
-              alt="View our Instagram profile"
               width={32}
               height={32}
             />

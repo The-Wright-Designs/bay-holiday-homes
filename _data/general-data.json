@@ -1,12 +1,12 @@
 {
   "contact": {
-    "phone": "01234 567890",
-    "email": "example@example.co.za",
+    "phone": "+27 44 533 1480",
+    "afterHoursPhone": "+27 72 616 3405",
+    "email": "simone@rea.co.za",
     "address": "5 Gibb Street, Plettenberg Bay, 6600",
     "social": {
       "facebook": "https://www.facebook.com/share/1BjrHx8uS6/",
-      "instagram": "#",
-      "whatsapp": "#"
+      "whatsapp": "https://wa.me/qr/ROAIX3IPIYQBJ1"
     }
   },
   "propertySearch": {
@@ -73,13 +73,13 @@
       "large": true
     },
     {
-      "id": "secure-estates",
+      "id": "secure-estate",
       "image": "/images/areas/secure-estates.jpg",
       "heading": "Secure Estates",
       "large": false
     },
     {
-      "id": "robberg-and-longships",
+      "id": "robberg-longships",
       "image": "/images/areas/robberg-and-longships.jpg",
       "heading": "Robberg & Longships",
       "large": false

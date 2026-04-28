@@ -43,21 +43,6 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-opacity duration-300 desktop:hover:opacity-80 desktop:hover:cursor-pointer"
-                aria-label="Instagram"
-              >
-                <Image
-                  src="/icons/instagram.svg"
-                  alt="Instagram"
-                  width={31}
-                  height={31}
-                  className="desktop:w-[22px] h-auto"
-                />
-              </Link>
-              <Link
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity duration-300 desktop:hover:opacity-80 desktop:hover:cursor-pointer"
                 aria-label="WhatsApp"
               >
                 <Image

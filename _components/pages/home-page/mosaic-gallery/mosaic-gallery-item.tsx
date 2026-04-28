@@ -6,6 +6,7 @@ interface MosaicGalleryItemProps {
   image: string;
   heading: string;
   large: boolean;
+  areaId: string;
   cssClasses?: string;
 }
 
@@ -13,6 +14,7 @@ const MosaicGalleryItem = ({
   image,
   heading,
   large,
+  areaId,
   cssClasses,
 }: MosaicGalleryItemProps) => {
   const sizes = large
@@ -21,7 +23,7 @@ const MosaicGalleryItem = ({
 
   return (
     <Link
-      href={`/${heading.replace(/,/g, "").replace(/&/g, "").replace(/\s+/g, "-").toLowerCase()}`}
+      href={`/properties?area=${areaId}`}
       aria-label=""
       className={classNames(
         "group relative w-full h-full overflow-hidden desktop:hover:cursor-pointer",
