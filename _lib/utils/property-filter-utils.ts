@@ -38,19 +38,19 @@ const matchesBedrooms = (beds: string, bedroomRange: string): boolean => {
 };
 
 const matchesExtra = (extra: string, property: PropertyProps): boolean => {
-  const { specialFeatures } = property;
-  if (!specialFeatures) return false;
-  if (extra === "childFriendly") return specialFeatures.childFriendly;
-  if (extra === "petFriendly") return specialFeatures.petFriendly;
-  if (extra === "wheelChairFriendly") return specialFeatures.wheelChairFriendly;
-  if (extra === "directBeachAccess") return specialFeatures.directBeachAccess;
-  if (extra === "pool") return Number(specialFeatures.pool.numberOf) > 0;
-  if (extra === "hotTub") return specialFeatures.hotTub;
-  if (extra === "sauna") return specialFeatures.sauna;
-  if (extra === "oceanView") return specialFeatures.view.ocean;
-  if (extra === "mountainView") return specialFeatures.view.mountain;
-  if (extra === "lagoonView") return specialFeatures.view.lagoon;
-  if (extra === "fynbosView") return specialFeatures.view.fynbos;
+  const { meta_box } = property;
+  if (!meta_box) return false;
+  if (extra === "childFriendly") return meta_box.special_features?.includes("child_friendly") ?? false;
+  if (extra === "petFriendly") return meta_box.special_features?.includes("pet_friendly") ?? false;
+  if (extra === "wheelChairFriendly") return meta_box.special_features?.includes("wheel_chair_friendly") ?? false;
+  if (extra === "directBeachAccess") return meta_box.special_features?.includes("direct_beach_access") ?? false;
+  if (extra === "pool") return Number(meta_box.pool_number_of ?? "0") > 0;
+  if (extra === "hotTub") return meta_box.special_features?.includes("hot_tub") ?? false;
+  if (extra === "sauna") return meta_box.special_features?.includes("sauna") ?? false;
+  if (extra === "oceanView") return meta_box.view?.includes("ocean") ?? false;
+  if (extra === "mountainView") return meta_box.view?.includes("mountain") ?? false;
+  if (extra === "lagoonView") return meta_box.view?.includes("lagoon") ?? false;
+  if (extra === "fynbosView") return meta_box.view?.includes("fynbos") ?? false;
   return false;
 };
 
@@ -65,15 +65,15 @@ export const filterProperties = (
   const extras = searchParams.getAll("extras");
 
   return properties.filter((property) => {
-    const { general } = property;
+    const { meta_box } = property;
 
-    if (propertyTypes.length && !propertyTypes.includes(general.type)) return false;
+    if (propertyTypes.length && !propertyTypes.includes(meta_box.type)) return false;
 
-    if (areas.length && !areas.includes(general.area)) return false;
+    if (areas.length && !areas.includes(meta_box.area)) return false;
 
-    if (budget && !matchesBudget(general.pricePerNight.from, budget)) return false;
+    if (budget && !matchesBudget(meta_box.price_from, budget)) return false;
 
-    if (bedrooms && !matchesBedrooms(general.beds, bedrooms)) return false;
+    if (bedrooms && !matchesBedrooms(meta_box.beds, bedrooms)) return false;
 
     if (extras.length && !extras.some((e) => matchesExtra(e, property))) return false;
 

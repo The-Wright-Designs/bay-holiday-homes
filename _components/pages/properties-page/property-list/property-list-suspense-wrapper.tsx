@@ -1,12 +1,19 @@
 import { Suspense } from "react";
 import PropertyListComponent from "./property-list-component";
+import { PropertyProps } from "@/_types/property-types";
 
 interface PropertyListSuspenseWrapperProps {
   cssClasses?: string;
+  properties: PropertyProps[];
+  totalPages: number;
+  currentPage: number;
 }
 
 export default function PropertyListSuspenseWrapper({
   cssClasses,
+  properties,
+  totalPages,
+  currentPage,
 }: PropertyListSuspenseWrapperProps) {
   return (
     <Suspense
@@ -16,7 +23,12 @@ export default function PropertyListSuspenseWrapper({
         </div>
       }
     >
-      <PropertyListComponent cssClasses={cssClasses} />
+      <PropertyListComponent
+        cssClasses={cssClasses}
+        properties={properties}
+        totalPages={totalPages}
+        currentPage={currentPage}
+      />
     </Suspense>
   );
 }

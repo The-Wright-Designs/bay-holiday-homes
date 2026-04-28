@@ -1,95 +1,55 @@
 export interface PropertyProps {
-  propertyId: string;
-  general: {
-    propertyName: string;
+  id: number;
+  title: {
+    rendered: string;
+  };
+  slug: string;
+  meta_box: {
+    property_id: string;
     area:
-      | "town-area"
-      | "central-beach"
       | "beachy-head"
+      | "central-beach"
       | "keurbooms"
       | "secure-estate"
+      | "town-area"
       | "robberg-longships";
-    type: "townhouse" | "house" | "flat-apartment";
+    type: "house" | "flat-apartment" | "townhouse";
     beds: string;
     baths: string;
-    totalLivingAreas?: string;
-    totalLounges: string;
-    loungeTypes?: {
-      openPlan: boolean;
-      outside: boolean;
-    };
-    pricePerNight: {
-      from: string;
-      to: string;
-    };
-    sizeSquareMeters?: string;
+    total_living_areas?: string;
+    total_lounges: string;
+    lounge_type?: ("open_plan" | "outside" | "standard")[];
+    price_from: string;
+    price_to: string;
+    size_square_meters?: string;
     description: string;
-    availableDates: { start: string; end: string }[] | null;
-    images: string[];
+    gallery: { full_url: string }[];
+    bookable_dates: [string, string][] | null;
+    special_features:
+      | (
+          | "child_friendly"
+          | "pet_friendly"
+          | "wheel_chair_friendly"
+          | "direct_beach_access"
+          | "hot_tub"
+          | "sauna"
+        )[]
+      | null;
+    view: ("ocean" | "mountain" | "lagoon" | "fynbos")[] | null;
+    pool_number_of?: string;
+    pool?: ("indoor" | "outdoor")[] | null;
+    braai?: ("gas" | "weber" | "built_in" | "pizza_oven")[] | null;
+    fireplace?: ("wood" | "gas")[] | null;
+    parking_garage?: string;
+    parking_undercover?: string;
+    parking_street?: string;
+    wifi_type?: "fibre" | "basic" | null;
+    wifi_tenant_pays?: string | null;
+    security_property?:
+      | ("alarm" | "internal" | "external_beams" | "electric_fence" | "other")[]
+      | null;
+    security_service?:
+      | ("service_adt" | "service_smhart" | "service_other")[]
+      | null;
   };
-  braaiFireplace: {
-    available: boolean;
-    type: {
-      braai: {
-        gas: boolean;
-        weber: boolean;
-        builtIn: boolean;
-        pizzaOven: boolean;
-      };
-      fireplace: {
-        wood: boolean;
-        gas: boolean;
-      };
-    };
-  } | null;
-  parking: {
-    available: boolean;
-    type: {
-      garage: string;
-      undercover: string;
-      street: string;
-    };
-  } | null;
-  wiFi: {
-    available: boolean;
-    type: "fibre" | "basic";
-    tenantToPayExtra: boolean;
-  } | null;
-  security: {
-    available: boolean;
-    type: {
-      alarm: boolean;
-      internal: boolean;
-      externalBeams: boolean;
-      electricFence: boolean;
-      other: string;
-    };
-    securityService: {
-      none: boolean;
-      adt: boolean;
-      smhart: boolean;
-      other: string;
-    };
-  } | null;
-  specialFeatures: {
-    childFriendly: boolean;
-    petFriendly: boolean;
-    wheelChairFriendly: boolean;
-    directBeachAccess: boolean;
-    view: {
-      ocean: boolean;
-      mountain: boolean;
-      lagoon: boolean;
-      fynbos: boolean;
-    };
-    pool: {
-      numberOf: string;
-      type: {
-        indoor: boolean;
-        outdoor: boolean;
-      };
-    };
-    hotTub: boolean;
-    sauna: boolean;
-  } | null;
 }

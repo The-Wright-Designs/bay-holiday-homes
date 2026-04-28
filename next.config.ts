@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     deviceSizes: [425, 800, 1280],
     minimumCacheTTL: 86400,
+    remotePatterns: [
+      { protocol: "https", hostname: "wordpress.bayholidays.co.za" },
+    ],
   },
 };
 

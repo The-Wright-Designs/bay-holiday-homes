@@ -1,31 +1,24 @@
 import { PropertyProps } from "@/_types/property-types";
 
 interface Props {
-  general: PropertyProps["general"];
-  parking: PropertyProps["parking"];
-  security: PropertyProps["security"];
-  wiFi: PropertyProps["wiFi"];
+  meta_box: PropertyProps["meta_box"];
 }
 
-const PropertyDetailedInfoComponent = ({
-  general,
-  parking,
-  security,
-  wiFi,
-}: Props) => {
-  const totalParking = parking
-    ? Number(parking.type.garage) +
-      Number(parking.type.undercover) +
-      Number(parking.type.street)
-    : null;
+const PropertyDetailedInfoComponent = ({ meta_box }: Props) => {
+  const totalParking =
+    meta_box.parking_garage || meta_box.parking_undercover || meta_box.parking_street
+      ? Number(meta_box.parking_garage ?? "0") +
+        Number(meta_box.parking_undercover ?? "0") +
+        Number(meta_box.parking_street ?? "0")
+      : null;
 
-  const securityLabel = security
+  const securityLabel = meta_box.security_property?.length
     ? [
-        security.type.electricFence && "Electric fencing",
-        security.type.alarm && "Alarm",
-        security.type.externalBeams && "External beams",
-        security.type.internal && "Internal",
-        security.type.other || null,
+        meta_box.security_property.includes("electric_fence") && "Electric fencing",
+        meta_box.security_property.includes("alarm") && "Alarm",
+        meta_box.security_property.includes("external_beams") && "External beams",
+        meta_box.security_property.includes("internal") && "Internal",
+        meta_box.security_property.includes("other") && "Other",
       ]
         .filter(Boolean)
         .join(" & ")
@@ -34,10 +27,10 @@ const PropertyDetailedInfoComponent = ({
   return (
     <div className="flex flex-col gap-3">
       <h3>Detailed Information:</h3>
-      {general.sizeSquareMeters && (
+      {meta_box.size_square_meters && (
         <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
           <p>Size:</p>
-          <p>{general.sizeSquareMeters}m²</p>
+          <p>{meta_box.size_square_meters}m²</p>
         </div>
       )}
       {totalParking !== null && totalParking > 0 && (
@@ -52,10 +45,10 @@ const PropertyDetailedInfoComponent = ({
           <p>{securityLabel}</p>
         </div>
       )}
-      {wiFi?.available && (
+      {meta_box.wifi_type && (
         <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
           <p>WiFi:</p>
-          <p>{wiFi.type === "fibre" ? "High speed fibre" : "Basic WiFi"}</p>
+          <p>{meta_box.wifi_type === "fibre" ? "High speed fibre" : "Basic WiFi"}</p>
         </div>
       )}
     </div>

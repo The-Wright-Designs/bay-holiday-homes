@@ -11,20 +11,17 @@
   },
   "propertySearch": {
     "propertyType": [
-      { "value": "house", "label": "House" },
       { "value": "flat-apartment", "label": "Flat / Apartment" },
+      { "value": "house", "label": "House" },
       { "value": "townhouse", "label": "Townhouse" }
     ],
     "area": [
-      { "value": "Town Area", "label": "Town Area" },
-      { "value": "Central Beach", "label": "Central Beach" },
-      { "value": "Beachy Head", "label": "Beachy Head" },
-      {
-        "value": "Keurbooms River, Beach & Lagoon",
-        "label": "Keurbooms River, Beach & Lagoon"
-      },
-      { "value": "Secure Estates", "label": "Secure Estates" },
-      { "value": "Robberg & Longships", "label": "Robberg & Longships" }
+      { "value": "beachy-head", "label": "Beachy Head" },
+      { "value": "central-beach", "label": "Central Beach" },
+      { "value": "keurbooms", "label": "Keurbooms River, Beach & Lagoon" },
+      { "value": "robberg-longships", "label": "Robberg & Longships" },
+      { "value": "secure-estate", "label": "Secure Estates" },
+      { "value": "town-area", "label": "Town Area" }
     ],
     "budget": [
       { "value": "0-5000", "label": "R0-R5000 p/n" },

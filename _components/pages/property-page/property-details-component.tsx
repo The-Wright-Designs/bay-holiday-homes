@@ -1,5 +1,6 @@
 import ButtonLink from "@/_components/ui/buttons/button-link";
 import { MapPin } from "lucide-react";
+import { getAreaLabel } from "@/_lib/utils/area-label-utils";
 import PropertyRatesAvailabilityComponent from "@/_components/pages/property-page/property-details/property-rates-availability-component";
 import { PropertyProps } from "@/_types/property-types";
 import PropertySummaryComponent from "@/_components/pages/property-page/property-details/property-summary-component";
@@ -9,22 +10,14 @@ interface Props {
   slug: string;
   propertyName: string;
   area: string;
-  general: PropertyProps["general"];
-  specialFeatures: PropertyProps["specialFeatures"];
-  parking: PropertyProps["parking"];
-  security: PropertyProps["security"];
-  wiFi: PropertyProps["wiFi"];
+  meta_box: PropertyProps["meta_box"];
 }
 
 const PropertyDetailsComponent = ({
   slug,
   propertyName,
   area,
-  general,
-  specialFeatures,
-  parking,
-  security,
-  wiFi,
+  meta_box,
 }: Props) => {
   return (
     <div className="pt-10 grid px-5 gap-10 tablet:px-10 desktop:p-0">
@@ -41,12 +34,7 @@ const PropertyDetailsComponent = ({
             <h1 className="uppercase">{propertyName}</h1>
             <div className="flex items-center gap-2">
               <MapPin size={14} color="#3D3D3D" />
-              <p>
-                {area === "Keurbooms River, Beach & Lagoon"
-                  ? "Keurbooms"
-                  : area}
-                , Plettenberg Bay
-              </p>
+              <p>{getAreaLabel(area)}, Plettenberg Bay</p>
             </div>
           </div>
           <ButtonLink
@@ -57,24 +45,16 @@ const PropertyDetailsComponent = ({
             Enquire Now
           </ButtonLink>
         </div>
-        <PropertySummaryComponent
-          general={general}
-          specialFeatures={specialFeatures}
-        />
+        <PropertySummaryComponent meta_box={meta_box} />
         <PropertyRatesAvailabilityComponent
-          availableDates={general.availableDates}
-          pricePerNightFrom={general.pricePerNight.from}
+          availableDates={meta_box.bookable_dates}
+          pricePerNightFrom={meta_box.price_from}
         />
         <div className="flex flex-col gap-3">
           <h3>Description:</h3>
-          <p>{general.description}</p>
+          <p>{meta_box.description}</p>
         </div>
-        <PropertyDetailedInfoComponent
-          general={general}
-          parking={parking}
-          security={security}
-          wiFi={wiFi}
-        />
+        <PropertyDetailedInfoComponent meta_box={meta_box} />
       </main>
     </div>
   );

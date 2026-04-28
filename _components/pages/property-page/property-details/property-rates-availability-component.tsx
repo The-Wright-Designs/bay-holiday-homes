@@ -6,7 +6,7 @@ import classNames from "classnames";
 import { X } from "lucide-react";
 
 interface Props {
-  availableDates: { start: string; end: string }[] | null;
+  availableDates: [string, string][] | null;
   pricePerNightFrom: string;
 }
 
@@ -80,7 +80,7 @@ const PropertyRatesAvailabilityComponent = ({
                     className="border-b border-white/15 pb-2 last:border-none last:pb-0"
                   >
                     <p className="text-white">
-                      {formatDate(date.start)} &ndash; {formatDate(date.end)}
+                      {formatDate(date[0])} &ndash; {formatDate(date[1])}
                     </p>
                   </li>
                 ))}

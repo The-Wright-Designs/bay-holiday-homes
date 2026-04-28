@@ -21,13 +21,11 @@ const TEAL = "#4AB5BB";
 const ICON_SIZE = 32;
 
 interface Props {
-  general: PropertyProps["general"];
-  specialFeatures: PropertyProps["specialFeatures"];
+  meta_box: PropertyProps["meta_box"];
 }
 
-const PropertySummaryComponent = ({ general, specialFeatures }: Props) => {
-  const hasPool =
-    specialFeatures?.pool?.numberOf && specialFeatures.pool.numberOf !== "0";
+const PropertySummaryComponent = ({ meta_box }: Props) => {
+  const hasPool = meta_box.pool_number_of && meta_box.pool_number_of !== "0";
 
   return (
     <div className="flex flex-col gap-3">
@@ -36,28 +34,28 @@ const PropertySummaryComponent = ({ general, specialFeatures }: Props) => {
         <div className="flex items-center gap-2">
           <BedDouble size={ICON_SIZE} color={TEAL} />
           <p>
-            {general.beds} bedroom{general.beds === "1" ? "" : "s"}
+            {meta_box.beds} bedroom{meta_box.beds === "1" ? "" : "s"}
           </p>
         </div>
         <div className="flex items-center gap-2">
           <Bath size={ICON_SIZE} color={TEAL} />
           <p>
-            {general.baths} bathroom{general.baths === "1" ? "" : "s"}
+            {meta_box.baths} bathroom{meta_box.baths === "1" ? "" : "s"}
           </p>
         </div>
-        {specialFeatures?.childFriendly && (
+        {meta_box.special_features?.includes("child_friendly") && (
           <div className="flex items-center gap-2">
             <Baby size={ICON_SIZE} color={TEAL} />
             <p>Child friendly</p>
           </div>
         )}
-        {specialFeatures?.petFriendly && (
+        {meta_box.special_features?.includes("pet_friendly") && (
           <div className="flex items-center gap-2">
             <PawPrint size={ICON_SIZE} color={TEAL} />
             <p>Pet friendly</p>
           </div>
         )}
-        {specialFeatures?.wheelChairFriendly && (
+        {meta_box.special_features?.includes("wheel_chair_friendly") && (
           <div className="flex items-center gap-2">
             <Accessibility size={ICON_SIZE} color={TEAL} />
             <p>Wheelchair friendly</p>
@@ -69,43 +67,43 @@ const PropertySummaryComponent = ({ general, specialFeatures }: Props) => {
             <p>Pool</p>
           </div>
         )}
-        {specialFeatures?.directBeachAccess && (
+        {meta_box.special_features?.includes("direct_beach_access") && (
           <div className="flex items-center gap-2">
             <SurfingIcon color={TEAL} size={ICON_SIZE} />
             <p>Beach access</p>
           </div>
         )}
-        {specialFeatures?.view?.ocean && (
+        {meta_box.view?.includes("ocean") && (
           <div className="flex items-center gap-2">
             <OceanIcon color={TEAL} size={36} />
             <p>Ocean view</p>
           </div>
         )}
-        {specialFeatures?.view?.mountain && (
+        {meta_box.view?.includes("mountain") && (
           <div className="flex items-center gap-2">
             <MountainIcon color={TEAL} size={36} />
             <p>Mountain view</p>
           </div>
         )}
-        {specialFeatures?.view?.lagoon && (
+        {meta_box.view?.includes("lagoon") && (
           <div className="flex items-center gap-2">
             <LagoonIcon color={TEAL} size={36} />
             <p>Lagoon view</p>
           </div>
         )}
-        {specialFeatures?.view?.fynbos && (
+        {meta_box.view?.includes("fynbos") && (
           <div className="flex items-center gap-2">
             <Shrub size={ICON_SIZE} color={TEAL} />
             <p>Fynbos view</p>
           </div>
         )}
-        {specialFeatures?.hotTub && (
+        {meta_box.special_features?.includes("hot_tub") && (
           <div className="flex items-center gap-2">
             <HotTubIcon color={TEAL} size={ICON_SIZE} />
             <p>Hot tub</p>
           </div>
         )}
-        {specialFeatures?.sauna && (
+        {meta_box.special_features?.includes("sauna") && (
           <div className="flex items-center gap-2">
             <SaunaIcon color={TEAL} size={ICON_SIZE} />
             <p>Sauna</p>

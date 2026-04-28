@@ -3,30 +3,31 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import PropertyCard from "./property-card";
-import placeholderData from "@/_data/placeholder-data.json";
 import classNames from "classnames";
 import PropertyListSorting from "./property-list-sorting";
 import PropertyListSearch from "./property-list-search";
+import PropertyListPagination from "./property-list-pagination";
 import { PropertyProps } from "@/_types/property-types";
 import { filterProperties } from "@/_lib/utils/property-filter-utils";
 
-interface PropertyListItem extends PropertyProps {
-  id: string;
-  slug: string;
-}
-
 interface PropertyListComponentProps {
   cssClasses?: string;
+  properties: PropertyProps[];
+  totalPages: number;
+  currentPage: number;
 }
 
 export default function PropertyListComponent({
   cssClasses,
+  properties,
+  totalPages,
+  currentPage,
 }: PropertyListComponentProps) {
   const searchParams = useSearchParams();
   const [sortOption, setSortOption] = useState<string>("a-z");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isSearching, setIsSearching] = useState<boolean>(false);
-  const [filteredByUrl, setFilteredByUrl] = useState<PropertyListItem[]>([]);
+  const [filteredByUrl, setFilteredByUrl] = useState<PropertyProps[]>([]);
 
   const handleSearch = (query: string) => {
     setIsSearching(true);
@@ -42,29 +43,22 @@ export default function PropertyListComponent({
 
   useEffect(() => {
     const urlParams = new URLSearchParams(searchParams.toString());
-    const filtered = filterProperties(
-      placeholderData.propertyList as PropertyListItem[],
-      urlParams,
-    );
-    setFilteredByUrl(filtered as PropertyListItem[]);
-  }, [searchParams]);
+    const filtered = filterProperties(properties, urlParams);
+    setFilteredByUrl(filtered as PropertyProps[]);
+  }, [searchParams, properties]);
 
-  const searchProperties = (
-    properties: PropertyListItem[],
-  ): PropertyListItem[] => {
+  const searchProperties = (properties: PropertyProps[]): PropertyProps[] => {
     if (!searchQuery) return properties;
 
-    const nameMatches: PropertyListItem[] = [];
-    const areaMatches: PropertyListItem[] = [];
-    const descriptionMatches: PropertyListItem[] = [];
+    const nameMatches: PropertyProps[] = [];
+    const areaMatches: PropertyProps[] = [];
+    const descriptionMatches: PropertyProps[] = [];
 
     properties.forEach((property) => {
-      const { general } = property;
-      const matchesName = general.propertyName
-        .toLowerCase()
-        .includes(searchQuery);
-      const matchesArea = general.area.toLowerCase().includes(searchQuery);
-      const matchesDescription = general.description
+      const { meta_box, title } = property;
+      const matchesName = title.rendered.toLowerCase().includes(searchQuery);
+      const matchesArea = meta_box.area.toLowerCase().includes(searchQuery);
+      const matchesDescription = meta_box.description
         .toLowerCase()
         .includes(searchQuery);
 
@@ -83,7 +77,7 @@ export default function PropertyListComponent({
   const baseProperties =
     filteredByUrl.length > 0 || searchParams.toString()
       ? filteredByUrl
-      : (placeholderData.propertyList as PropertyListItem[]);
+      : properties;
 
   const filteredProperties = searchQuery
     ? searchProperties(baseProperties)
@@ -91,17 +85,11 @@ export default function PropertyListComponent({
 
   const sortedProperties = [...filteredProperties].sort((a, b) => {
     if (sortOption === "a-z") {
-      return a.general.propertyName.localeCompare(b.general.propertyName);
+      return a.title.rendered.localeCompare(b.title.rendered);
     } else if (sortOption === "price-high-low") {
-      return (
-        Number(b.general.pricePerNight.from) -
-        Number(a.general.pricePerNight.from)
-      );
+      return Number(b.meta_box.price_from) - Number(a.meta_box.price_from);
     } else if (sortOption === "price-low-high") {
-      return (
-        Number(a.general.pricePerNight.from) -
-        Number(b.general.pricePerNight.from)
-      );
+      return Number(a.meta_box.price_from) - Number(b.meta_box.price_from);
     }
     return 0;
   });
@@ -134,13 +122,17 @@ export default function PropertyListComponent({
         >
           {sortedProperties.map((property) => (
             <PropertyCard
-              key={property.propertyId}
+              key={property.id}
               slug={property.slug}
               property={property}
             />
           ))}
         </div>
       )}
+      <PropertyListPagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+      />
     </div>
   );
 }
