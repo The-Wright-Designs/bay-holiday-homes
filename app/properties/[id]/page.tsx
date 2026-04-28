@@ -1,16 +1,16 @@
 import { notFound } from "next/navigation";
-import { fetchPropertyBySlug } from "@/_lib/utils/wordpress-api";
+import { fetchPropertyById } from "@/_lib/utils/wordpress-api";
 import PropertyLightboxSliderComponent from "@/_components/pages/property-page/property-lightbox-slider-component";
 import PropertyDetailsComponent from "@/_components/pages/property-page/property-details-component";
 import PropertyEnquiryFormWrapper from "@/_components/pages/property-page/property-enquiry-form-wrapper";
 
 interface PropertyPageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ id: string }>;
 }
 
 const PropertyPage = async ({ params }: PropertyPageProps) => {
-  const { slug } = await params;
-  const property = await fetchPropertyBySlug(slug);
+  const { id } = await params;
+  const property = await fetchPropertyById(id);
 
   if (!property) notFound();
 
@@ -23,7 +23,7 @@ const PropertyPage = async ({ params }: PropertyPageProps) => {
       />
       <div className="grid gap-15 max-w-[1280px] mx-auto desktop:gap-10 desktop:grid-cols-2 desktop:pt-10 min-[1360px]:px-0">
         <PropertyDetailsComponent
-          slug={slug}
+          id={id}
           propertyName={property.title.rendered}
           area={property.meta_box.area}
           meta_box={property.meta_box}

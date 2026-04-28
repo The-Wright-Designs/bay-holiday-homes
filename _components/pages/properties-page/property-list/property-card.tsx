@@ -15,13 +15,13 @@ import { PropertyProps } from "@/_types/property-types";
 import { getAreaLabel } from "@/_lib/utils/area-label-utils";
 
 interface PropertyCardProps {
-  slug: string;
+  id: string;
   property: PropertyProps;
   cssClasses?: string;
 }
 
 export default function PropertyCard({
-  slug,
+  id,
   property,
   cssClasses,
 }: PropertyCardProps) {
@@ -49,7 +49,7 @@ export default function PropertyCard({
 
   return (
     <Link
-      href={`/properties/${slug}`}
+      href={`/properties/${id}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={classNames(

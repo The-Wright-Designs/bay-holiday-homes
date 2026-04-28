@@ -20,11 +20,11 @@ export async function fetchProperties(
   return { properties, totalPages };
 }
 
-export async function fetchPropertyBySlug(
-  slug: string
+export async function fetchPropertyById(
+  id: string
 ): Promise<PropertyProps | null> {
   const res = await fetch(
-    `${WP_API_URL}?slug=${slug}&per_page=1`,
+    `${WP_API_URL}?meta_key=property_id&meta_value=${id}&per_page=1`,
     { next: { revalidate: 3600 } }
   );
 

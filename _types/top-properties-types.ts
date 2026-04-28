@@ -1,5 +1,4 @@
 export interface TopProperty {
-  id: string;
   title: string;
   image: string;
   href: string;

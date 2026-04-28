@@ -59,8 +59,8 @@ export default function TopPropertiesSlider({
             } as React.CSSProperties
           }
         >
-          {topProperties.map((property) => (
-            <SwiperSlide key={property.id} className="pb-10">
+          {topProperties.map((property, index) => (
+            <SwiperSlide key={index} className="pb-10">
               <Link
                 href={property.href}
                 className="group relative flex flex-col items-center justify-center aspect-square w-full overflow-hidden desktop:hover:cursor-pointer"

@@ -7,14 +7,14 @@ import PropertySummaryComponent from "@/_components/pages/property-page/property
 import PropertyDetailedInfoComponent from "@/_components/pages/property-page/property-details/property-detailed-info-component";
 
 interface Props {
-  slug: string;
+  id: string;
   propertyName: string;
   area: string;
   meta_box: PropertyProps["meta_box"];
 }
 
 const PropertyDetailsComponent = ({
-  slug,
+  id,
   propertyName,
   area,
   meta_box,
@@ -22,7 +22,7 @@ const PropertyDetailsComponent = ({
   return (
     <div className="pt-10 grid px-5 gap-10 tablet:px-10 desktop:p-0">
       <ButtonLink
-        href={`/properties/${slug}/#enquire`}
+        href={`/properties/${id}/#enquire`}
         ariaLabel="Enquire about property"
         cssClasses="tablet:hidden"
       >
@@ -38,7 +38,7 @@ const PropertyDetailsComponent = ({
             </div>
           </div>
           <ButtonLink
-            href={`/properties/${slug}/#enquire`}
+            href={`/properties/${id}/#enquire`}
             ariaLabel="Enquire about property"
             cssClasses="hidden tablet:block desktop:hidden"
           >

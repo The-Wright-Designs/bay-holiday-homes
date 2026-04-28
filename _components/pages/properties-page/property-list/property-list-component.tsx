@@ -123,7 +123,7 @@ export default function PropertyListComponent({
           {sortedProperties.map((property) => (
             <PropertyCard
               key={property.id}
-              slug={property.slug}
+              id={property.meta_box.property_id}
               property={property}
             />
           ))}
