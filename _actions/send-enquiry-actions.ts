@@ -67,7 +67,7 @@ export async function sendEnquiry(
 
       await transporter.sendMail({
         from: `Bay Holiday Homes <${process.env.SMTP_USER}>`,
-        to: process.env.SMTP_SEND_TO as string,
+        to: process.env.SMTP_SEND_TO_RENTAL as string,
         subject: "Property Enquiry - Bay Holiday Homes",
         replyTo: email,
         html: emailHtmlContent,

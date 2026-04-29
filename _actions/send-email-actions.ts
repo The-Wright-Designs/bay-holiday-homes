@@ -71,7 +71,7 @@ export async function sendEmail(
 
       const mailOptions: MailOptions = {
         from: process.env.SMTP_USER as string,
-        to: process.env.SMTP_SEND_TO as string,
+        to: process.env.SMTP_SEND_TO_GENERAL as string,
         subject: "Website form submission - Bay Holiday Homes",
         replyTo: email,
         html: emailHtmlContent,
