@@ -15,18 +15,22 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.bayholidays.co.za"),
   title: "Bay Holiday Homes",
   description:
-    "Beach and bay-side holiday properties - coastal getaway accommodation",
+    "Beach and bay-side holiday properties - coastal getaway accommodation in Plettenberg Bay, South Africa.",
   keywords:
     "bay holiday homes, coastal accommodation, beach holiday rentals, bay-side properties, seaside getaways, ocean view rentals, coastal vacation homes, beach house rentals, waterfront accommodation, holiday homes south africa, plettenberg bay accommodation, beach property rentals",
   openGraph: {
+    title: "Bay Holiday Homes",
     description:
-      "Beach and bay-side holiday properties - coastal getaway accommodation",
+      "Beach and bay-side holiday properties - coastal getaway accommodation in Plettenberg Bay, South Africa.",
     type: "website",
     locale: "en_ZA",
     siteName: "Bay Holiday Homes",
     images: [
       {
         url: "/open-graph-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Bay Holiday Homes",
       },
     ],
   },

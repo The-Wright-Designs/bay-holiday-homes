@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { fetchPropertyById } from "@/_lib/utils/wordpress-api";
 import PropertyLightboxSliderComponent from "@/_components/pages/property-page/property-lightbox-slider-component";
@@ -6,6 +7,29 @@ import PropertyEnquiryFormWrapper from "@/_components/pages/property-page/proper
 
 interface PropertyPageProps {
   params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: PropertyPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const property = await fetchPropertyById(id);
+  if (!property) return {};
+
+  const { title, meta_box } = property;
+  const description = `${meta_box.beds} bed, ${meta_box.baths} bath ${meta_box.type.replace("-", " ")} in ${meta_box.area.replace(/-/g, " ")} — from R${meta_box.price_from}/night. Book your Plettenberg Bay getaway.`;
+
+  return {
+    title: `${title.rendered} | Bay Holiday Homes`,
+    description,
+    openGraph: {
+      title: `${title.rendered} | Bay Holiday Homes`,
+      description,
+      images: meta_box.gallery[0]
+        ? [{ url: meta_box.gallery[0].full_url }]
+        : undefined,
+    },
+  };
 }
 
 const PropertyPage = async ({ params }: PropertyPageProps) => {
