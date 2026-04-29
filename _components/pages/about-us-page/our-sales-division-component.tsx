@@ -33,7 +33,7 @@ const OurSalesDivisionComponent = () => {
             className="desktop:hover:opacity-90 ease-in-out duration-300"
           >
             <Image
-              src="/logos/choice-rentals-logo.png"
+              src="/logos/choice-rentals-logo.jpg"
               alt="Choice Rentals logo"
               width={220}
               height={110}
