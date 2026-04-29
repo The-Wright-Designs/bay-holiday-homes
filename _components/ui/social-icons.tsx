@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import facebook from "@/public/icons/facebook.svg";
-
+const facebook = "/icons/facebook.svg";
 const whatsapp = "/icons/whatsapp.svg";
 
 interface Props {

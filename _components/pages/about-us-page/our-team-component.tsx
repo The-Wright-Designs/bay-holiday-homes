@@ -1,4 +1,5 @@
 import Image from "next/image";
+import teamData from "@/_data/general-data.json";
 
 const OurTeamComponent = () => {
   return (
@@ -20,28 +21,19 @@ const OurTeamComponent = () => {
       </div>
 
       <ul className="grid gap-3 w-full desktop:grid-cols-2">
-        <li className="text-paragraph">
-          <span className="font-bold">Simone</span> &ndash; Director, Manager,
-          business development, Marketing
-        </li>
-        <li className="text-paragraph desktop:col-start-1 desktop:row-start-2">
-          <span className="font-bold">Gavin</span> &ndash; Accounts
-        </li>
-        <li className="text-paragraph desktop:col-start-1 desktop:row-start-3">
-          <span className="font-bold">Mandy</span> &ndash; Rentals and Social
-          Media Marketing
-        </li>
-        <li className="text-paragraph">
-          <span className="font-bold">Lisa</span> &ndash; Operations Manager
-          Home Management
-        </li>
-        <li className="text-paragraph">
-          <span className="font-bold">Laura</span> &ndash; Office Manager
-        </li>
-        <li className="text-paragraph">
-          <span className="font-bold">Luan</span> &ndash; Head of Operations
-          Home Management
-        </li>
+        {teamData.ourTeam.map(({ name, role, column, row }) => (
+          <li
+            key={name}
+            className="text-paragraph"
+            style={
+              column && row
+                ? { gridColumn: column, gridRow: row }
+                : undefined
+            }
+          >
+            <span className="font-bold">{name}</span> &ndash; {role}
+          </li>
+        ))}
       </ul>
     </section>
   );

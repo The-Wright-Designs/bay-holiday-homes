@@ -85,6 +85,23 @@
       "large": false
     }
   ],
+  "ourTeam": [
+    {
+      "name": "Simone",
+      "role": "Head of Bay Holiday Homes",
+      "column": 1,
+      "row": 1
+    },
+    { "name": "Mandy", "role": "Head of Rentals", "column": 1, "row": 3 },
+    { "name": "Lisa", "role": "Ops Manager", "column": null, "row": null },
+    { "name": "Laura", "role": "Ops Manager", "column": null, "row": null },
+    {
+      "name": "Luan",
+      "role": "Head of Operations",
+      "column": 1,
+      "row": 2
+    }
+  ],
   "ourServices": {
     "managing": [
       {
