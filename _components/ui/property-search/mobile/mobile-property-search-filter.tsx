@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import Image from "next/image";
 import classNames from "classnames";
 import ButtonType from "@/_components/ui/buttons/button-type";
@@ -48,6 +48,7 @@ const MobilePropertySearchFilter = ({
 }: MobilePropertySearchFilterProps) => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [activeFilter, setActiveFilter] = useState<SimpleFilterKey | null>(
@@ -77,6 +78,26 @@ const MobilePropertySearchFilter = ({
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
+
+  const hasActiveFilters =
+    filters.propertyType.length > 0 ||
+    filters.area.length > 0 ||
+    filters.budget !== "" ||
+    filters.bedrooms !== "" ||
+    filters.extras.length > 0;
+
+  const handleClear = () => {
+    setFilters({
+      propertyType: [],
+      area: [],
+      budget: "",
+      bedrooms: "",
+      extras: [],
+    });
+    if (pathname === "/properties") {
+      router.push("/properties");
+    }
+  };
 
   const handleSearch = () => {
     setIsLoading(true);
@@ -115,7 +136,7 @@ const MobilePropertySearchFilter = ({
 
       <div
         className={classNames(
-          "fixed inset-0 z-50 overflow-y-auto max-h-full transform bg-teal p-7 transition-transform duration-300 ease-in-out flex flex-col gap-10",
+          "fixed inset-0 z-50 overflow-y-auto max-h-full transform bg-teal px-5 py-6 transition-transform duration-300 ease-in-out flex flex-col gap-10 tablet:py-8.5",
           { "translate-x-full": !isOpen },
         )}
       >
@@ -131,7 +152,7 @@ const MobilePropertySearchFilter = ({
               invisible: activeFilter !== null,
             })}
           >
-            <X color="#213766" size={26} />
+            <X color="#FFFFFF" size={28} />
           </button>
         </div>
 
@@ -200,26 +221,40 @@ const MobilePropertySearchFilter = ({
               />
             </div>
 
-            <ButtonType
-              type="button"
-              colorPeach
-              cssClasses="w-full !h-[46px]"
-              ariaLabel="Search properties"
-              onClick={handleSearch}
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <div className="spinner-small" />
-              ) : (
-                <Image
-                  src="/icons/search.svg"
-                  alt="Search properties"
-                  width={18}
-                  height={18}
-                  className="object-contain"
-                />
+            <div className="flex flex-col gap-5">
+              {hasActiveFilters && (
+                <ButtonType
+                  type="button"
+                  navyStroke
+                  cssClasses="w-full flex items-center justify-center gap-1"
+                  ariaLabel="Clear filters"
+                  onClick={handleClear}
+                >
+                  <X width={18} color="#213766" />
+                  Clear
+                </ButtonType>
               )}
-            </ButtonType>
+              <ButtonType
+                type="button"
+                colorPeach
+                cssClasses="w-full"
+                ariaLabel="Search properties"
+                onClick={handleSearch}
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <div className="spinner-small" />
+                ) : (
+                  <Image
+                    src="/icons/search.svg"
+                    alt="Search properties"
+                    width={18}
+                    height={18}
+                    className="object-contain"
+                  />
+                )}
+              </ButtonType>
+            </div>
           </>
         )}
       </div>

@@ -51,13 +51,13 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
 
       <div
         className={classNames(
-          "fixed inset-0 z-50 transform bg-teal p-7 transition-transform duration-300 ease-in-out",
+          "fixed inset-0 z-50 transform bg-teal py-6 px-5 tablet:py-8 transition-transform duration-300 ease-in-out",
           {
             "translate-x-full": !isOpen,
           },
         )}
       >
-        <div className="flex w-full gap-1 items-center justify-end mb-8 translate-x-[9px] -translate-y-1.5 tablet:translate-y-[5px]">
+        <div className="flex w-full gap-1 items-center justify-end mb-8">
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"

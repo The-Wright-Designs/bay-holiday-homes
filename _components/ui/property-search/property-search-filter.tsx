@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import Image from "next/image";
 import FormSelectInput from "@/_components/ui/forms/form-select-input";
 import ButtonType from "@/_components/ui/buttons/button-type";
@@ -20,6 +20,7 @@ interface PropertySearchFilterProps {
 const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const { propertySearch } = generalData;
   const propertyTypeOptions = propertySearch.propertyType;
   const areaOptions = propertySearch.area;
@@ -81,7 +82,9 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
       bedrooms: "",
       extras: [],
     });
-    router.push("/properties");
+    if (pathname === "/properties") {
+      router.push("/properties");
+    }
   };
 
   const handleSearch = () => {
