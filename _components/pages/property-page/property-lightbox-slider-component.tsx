@@ -171,7 +171,7 @@ export default function PropertyLightboxSliderComponent({
               ))}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-2 -right-7 z-10 hover:cursor-pointer hover:opacity-90 ease-in-out duration-300 p-2 -m-2 rounded-xs bg-teal/80"
+                className="hidden desktop:block absolute top-2 -right-7 z-10 hover:cursor-pointer hover:opacity-90 ease-in-out duration-300 p-2 -m-2 rounded-xs bg-teal/80"
                 aria-label="Close gallery"
               >
                 <X size={32} color="#FFFFFF" />

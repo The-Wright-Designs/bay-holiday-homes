@@ -10,13 +10,6 @@ interface Props {
   pricePerNightFrom: string;
 }
 
-const formatDate = (dateStr: string) =>
-  new Date(dateStr).toLocaleDateString("en-ZA", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
-
 const PropertyRatesAvailabilityComponent = ({
   availableDates,
   pricePerNightFrom,
@@ -80,7 +73,7 @@ const PropertyRatesAvailabilityComponent = ({
                     className="border-b border-white/15 pb-2 last:border-none last:pb-0"
                   >
                     <p className="text-white">
-                      {formatDate(date[0])} &ndash; {formatDate(date[1])}
+                      {date[0]} &ndash; {date[1]}
                     </p>
                   </li>
                 ))}
