@@ -18,7 +18,9 @@ export const buildFilterUrl = (filters: PropertyFilterState): string => {
   filters.extras.forEach((v) => params.append("extras", v));
 
   const queryString = params.toString();
-  return queryString ? `/properties?${queryString}` : "/properties";
+  return queryString
+    ? `/properties?${queryString}#property-search`
+    : "/properties#property-search";
 };
 
 const matchesBudget = (priceFrom: string, budgetRange: string): boolean => {

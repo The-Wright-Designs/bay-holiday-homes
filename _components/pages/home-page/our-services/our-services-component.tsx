@@ -7,7 +7,7 @@ const OurServicesComponent = () => {
 
   return (
     <section
-      className="flex flex-col gap-10 scroll-mt-24 desktop:scroll-mt-36"
+      className="flex flex-col gap-10 scroll-mt-32 tablet:scroll-mt-36 desktop:scroll-mt-44"
       id="services"
     >
       <div className="flex flex-col gap-2 items-center text-center">

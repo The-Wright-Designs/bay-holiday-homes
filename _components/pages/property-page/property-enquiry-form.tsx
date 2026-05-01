@@ -79,7 +79,7 @@ const PropertyEnquiryForm = ({
   return (
     <div
       ref={containerRef}
-      className="bg-teal rounded-[2px] flex flex-col gap-10 p-5 scroll-mt-24 tablet:p-10 desktop:scroll-mt-32 desktop:p-7"
+      className="bg-teal rounded-[2px] flex flex-col gap-10 p-5 scroll-mt-24 tablet:scroll-mt-28 tablet:p-10 desktop:p-7"
       id="enquire"
     >
       <div

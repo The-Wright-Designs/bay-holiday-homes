@@ -4,7 +4,7 @@ import Link from "next/link";
 const OurSalesDivisionComponent = () => {
   return (
     <section
-      className="flex flex-col gap-10 items-center w-full pt-15 scroll-mt-12 desktop:scroll-mt-24"
+      className="flex flex-col gap-10 items-center w-full pt-15 scroll-mt-20 tablet:scroll-mt-28 desktop:scroll-mt-32"
       id="sales"
     >
       <h2 className="text-[40px] font-light uppercase text-center">

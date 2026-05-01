@@ -15,7 +15,13 @@ export default function PropertyListSorting({
   onSortChange,
 }: PropertyListSortingProps) {
   return (
-    <div className={classNames("flex flex-col gap-3", cssClasses)}>
+    <div
+      className={classNames(
+        "flex flex-col gap-3 scroll-mt-28 tablet:scroll-mt-32 desktop:scroll-mt-40",
+        cssClasses,
+      )}
+      id="property-search"
+    >
       <p className="text-[16px] font-semibold">
         {resultCount} {resultCount === 1 ? "result" : "results"}
       </p>

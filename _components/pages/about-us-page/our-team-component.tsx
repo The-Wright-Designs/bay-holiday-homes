@@ -4,7 +4,7 @@ import teamData from "@/_data/general-data.json";
 const OurTeamComponent = () => {
   return (
     <section
-      className="flex flex-col gap-10 items-center w-full scroll-mt-24 desktop:scroll-mt-36"
+      className="flex flex-col gap-10 items-center w-full scroll-mt-32 tablet:scroll-mt-36 desktop:scroll-mt-44"
       id="team"
     >
       <h2 className="text-[40px] font-light uppercase text-center">Our Team</h2>
@@ -26,9 +26,7 @@ const OurTeamComponent = () => {
             key={name}
             className="text-paragraph"
             style={
-              column && row
-                ? { gridColumn: column, gridRow: row }
-                : undefined
+              column && row ? { gridColumn: column, gridRow: row } : undefined
             }
           >
             <span className="font-bold">{name}</span> &ndash; {role}

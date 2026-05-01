@@ -7,7 +7,7 @@ import navData from "@/_data/nav-data.json";
 const Footer = () => {
   return (
     <footer className="bg-white w-full mt-20 mb-5">
-      <div className="border-t border-black border-opacity-25 px-5 pt-10 flex flex-col gap-6 desktop:max-w-[1280px] desktop:mx-auto desktop:px-[40px] desktop:pt-[40px] desktop:gap-5">
+      <div className="border-t border-black/50 border-opacity-25 px-5 pt-10 flex flex-col gap-6 desktop:max-w-[1280px] desktop:mx-auto desktop:px-[40px] desktop:pt-[40px] desktop:gap-5">
         <div className="flex flex-col gap-6 items-center desktop:flex-row desktop:justify-between desktop:items-start">
           <div className="flex flex-col gap-3 items-center desktop:items-start desktop:gap-2">
             <div className="flex flex-col gap-0.5 items-center desktop:items-start">
