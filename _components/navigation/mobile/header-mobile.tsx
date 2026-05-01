@@ -30,16 +30,36 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
   return (
     <div className={classNames(cssClasses)}>
       <div className="flex w-full items-center justify-between">
-        <Link href="/">
-          <Image
-            src="/logos/bay-holiday-homes-logo.png"
-            alt="Bay Holiday Homes Logo"
-            width={300}
-            height={100}
-            className="w-[157px] h-auto tablet:w-[250px]"
-            priority
-          />
-        </Link>
+        <div className="flex flex-col">
+          <Link href="/">
+            <Image
+              src="/logos/bay-holiday-homes-logo.png"
+              alt="Bay Holiday Homes Logo"
+              width={300}
+              height={100}
+              className="w-[175px] h-auto tablet:w-[250px]"
+              priority
+            />
+          </Link>
+          <div className="flex items-center gap-1.5">
+            <p className="text-[12px] tablet:text-[14px]">A partner of</p>
+            <Link
+              href="https://www.choicenet.co.za/"
+              aria-label="Choice website"
+              target="_blank"
+              className="p-2 -m-2"
+            >
+              <Image
+                src="/logos/choice-logo.jpg"
+                alt="Bay Holiday Homes Logo"
+                width={60}
+                height={20}
+                priority
+                className="w-[50px] h-auto tablet:w-[60px]"
+              />
+            </Link>
+          </div>
+        </div>
         <button
           onClick={() => setIsOpen(true)}
           className="ease-in-out duration-300 -m-3 p-3"

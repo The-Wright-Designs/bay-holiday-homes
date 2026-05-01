@@ -11,16 +11,35 @@ const HeaderDesktop = ({ cssClasses }: DesktopHeaderProps) => {
   return (
     <div className={classNames(cssClasses)}>
       <div className="flex items-end justify-between">
-        <Link href="/" className="hover:opacity-90">
-          <Image
-            src="/logos/bay-holiday-homes-logo.png"
-            alt="Bay Holiday Homes Logo"
-            width={359}
-            height={84}
-            className="h-auto"
-            priority
-          />
-        </Link>
+        <div>
+          <Link href="/" className="hover:opacity-90">
+            <Image
+              src="/logos/bay-holiday-homes-logo.png"
+              alt="Bay Holiday Homes Logo"
+              width={344}
+              height={84}
+              className="h-auto"
+              priority
+            />
+          </Link>
+          <div className="flex items-center gap-1.5">
+            <p className="text-[16px]">A partner of</p>
+            <Link
+              href="https://www.choicenet.co.za/"
+              aria-label="Choice website"
+              target="_blank"
+              className="hover:opacity-90"
+            >
+              <Image
+                src="/logos/choice-logo.jpg"
+                alt="Bay Holiday Homes Logo"
+                width={70}
+                height={20}
+                priority
+              />
+            </Link>
+          </div>
+        </div>
         <nav className="flex gap-5 mb-1 items-end">
           {navData.map((item) => (
             <Link
