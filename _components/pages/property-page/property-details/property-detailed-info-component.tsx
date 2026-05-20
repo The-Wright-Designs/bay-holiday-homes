@@ -12,6 +12,14 @@ const PropertyDetailedInfoComponent = ({ meta_box }: Props) => {
         Number(meta_box.parking_street ?? "0")
       : null;
 
+  const loungeLabel = meta_box.lounge_type?.length
+    ? meta_box.lounge_type
+        .map((t) =>
+          t === "open_plan" ? "Open plan" : t === "outside" ? "Outside" : "Standard"
+        )
+        .join(" & ")
+    : null;
+
   const securityLabel = meta_box.security_property?.length
     ? [
         meta_box.security_property.includes("electric_fence") && "Electric fencing",
@@ -31,6 +39,18 @@ const PropertyDetailedInfoComponent = ({ meta_box }: Props) => {
         <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
           <p>Size:</p>
           <p>{meta_box.size_square_meters}m²</p>
+        </div>
+      )}
+      {meta_box.total_living_areas && (
+        <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
+          <p>Living Areas:</p>
+          <p>{meta_box.total_living_areas}</p>
+        </div>
+      )}
+      {meta_box.total_lounges && meta_box.total_lounges !== "0" && (
+        <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
+          <p>Lounges:</p>
+          <p>{meta_box.total_lounges}{loungeLabel ? ` (${loungeLabel})` : ""}</p>
         </div>
       )}
       {totalParking !== null && totalParking > 0 && (
