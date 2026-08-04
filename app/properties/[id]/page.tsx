@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { fetchPropertyById } from "@/_lib/utils/wordpress-api";
+import { getAreaLabel } from "@/_lib/utils/area-label-utils";
+import JsonLd from "@/_components/seo/json-ld";
+import {
+  buildBreadcrumbSchema,
+  buildPropertySchema,
+  getTypeLabel,
+  sharedOpenGraph,
+  sharedTwitter,
+} from "@/_lib/utils/structured-data";
 import PropertyLightboxSliderComponent from "@/_components/pages/property-page/property-lightbox-slider-component";
 import PropertyDetailsComponent from "@/_components/pages/property-page/property-details-component";
 import PropertyEnquiryFormWrapper from "@/_components/pages/property-page/property-enquiry-form-wrapper";
@@ -17,17 +26,37 @@ export async function generateMetadata({
   if (!property) return {};
 
   const { title, meta_box } = property;
-  const description = `${meta_box.beds} bed, ${meta_box.baths} bath ${meta_box.type.replace("-", " ")} in ${meta_box.area.replace(/-/g, " ")} — from R${meta_box.price_from}/night. Book your Plettenberg Bay getaway.`;
+  const description = `${meta_box.beds} bed, ${meta_box.baths} bath ${getTypeLabel(meta_box.type).toLowerCase()} in ${getAreaLabel(meta_box.area)} — from R${meta_box.price_from}/night. Book your Plettenberg Bay getaway.`;
+  const canonical = `/properties/${meta_box.property_id}`;
+  const images = meta_box.gallery[0]
+    ? [
+        {
+          url: meta_box.gallery[0].full_url,
+          width: 1200,
+          height: 630,
+          alt: title.rendered,
+        },
+      ]
+    : undefined;
 
   return {
-    title: `${title.rendered} | Bay Holiday Homes`,
+    title: title.rendered,
     description,
+    alternates: { canonical },
     openGraph: {
+      ...sharedOpenGraph,
       title: `${title.rendered} | Bay Holiday Homes`,
       description,
-      images: meta_box.gallery[0]
-        ? [{ url: meta_box.gallery[0].full_url }]
-        : undefined,
+      url: canonical,
+      ...(images ? { images } : {}),
+    },
+    twitter: {
+      ...sharedTwitter,
+      title: `${title.rendered} | Bay Holiday Homes`,
+      description,
+      ...(meta_box.gallery[0]
+        ? { images: [meta_box.gallery[0].full_url] }
+        : {}),
     },
   };
 }
@@ -40,6 +69,19 @@ const PropertyPage = async ({ params }: PropertyPageProps) => {
 
   return (
     <div>
+      <JsonLd
+        schema={[
+          buildPropertySchema(property),
+          buildBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Properties", path: "/properties" },
+            {
+              name: property.title.rendered,
+              path: `/properties/${property.meta_box.property_id}`,
+            },
+          ]),
+        ]}
+      />
       <PropertyLightboxSliderComponent
         images={property.meta_box.gallery.map((img) => img.full_url)}
         propertyName={property.title.rendered}

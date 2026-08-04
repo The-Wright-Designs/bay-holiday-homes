@@ -5,7 +5,7 @@ import PropertySearchWrapper from "@/_components/ui/property-search/property-sea
 
 export default function HeroComponent() {
   return (
-    <main className="max-w-[1280px] mx-auto">
+    <section className="max-w-[1280px] mx-auto">
       <div className="relative w-full">
         <div className="relative h-[500px] w-full tablet:h-[575px] desktop:h-[672px]">
           <Image
@@ -54,6 +54,6 @@ export default function HeroComponent() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

@@ -67,7 +67,10 @@ export default function TopPropertiesSlider({
               >
                 <Image
                   src={property.meta_box.image.full_url}
-                  alt={`Bay Holiday Homes - Top Property ${index + 1}`}
+                  alt={
+                    property.meta_box.title ||
+                    `Bay Holiday Homes - Top Property ${index + 1}`
+                  }
                   fill
                   className="object-cover transition-transform duration-500 delay-75 desktop:group-hover:scale-105"
                   sizes="(max-width: 600px) 100vw, (max-width: 800px) 50vw, 25vw"

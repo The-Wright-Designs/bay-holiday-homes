@@ -1,4 +1,3 @@
-import Image from "next/image";
 import TopPropertiesSlider from "./top-properties-slider";
 import { fetchTopProperties } from "@/_lib/utils/wordpress-api";
 

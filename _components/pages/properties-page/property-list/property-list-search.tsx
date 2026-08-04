@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import classNames from "classnames";
-import ButtonType from "@/_components/ui/buttons/button-type";
 
 interface PropertyListSearchProps {
   cssClasses?: string;

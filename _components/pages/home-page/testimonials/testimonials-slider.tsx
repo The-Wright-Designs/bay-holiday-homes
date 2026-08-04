@@ -45,12 +45,16 @@ export default function TestimonialsSlider({
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index} className="pb-10">
               <div className="flex flex-col gap-3 items-center justify-center text-center px-5 desktop:px-0 min-h-[134px]">
-                <div className="flex gap-[2px] items-center">
+                <div
+                  className="flex gap-[2px] items-center"
+                  role="img"
+                  aria-label={`${testimonial.meta_box.stars} out of 5 stars`}
+                >
                   {Array.from({ length: Number(testimonial.meta_box.stars) }).map((_, starIndex) => (
                     <Image
                       key={starIndex}
                       src="/icons/star.svg"
-                      alt="Review star"
+                      alt=""
                       width={20}
                       height={20}
                       className="w-5 h-5"

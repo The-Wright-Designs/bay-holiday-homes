@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import PropertyCard from "./property-card";
 import classNames from "classnames";
@@ -27,7 +27,11 @@ export default function PropertyListComponent({
   const [sortOption, setSortOption] = useState<string>("a-z");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isSearching, setIsSearching] = useState<boolean>(false);
-  const [filteredByUrl, setFilteredByUrl] = useState<PropertyProps[]>([]);
+
+  const filteredByUrl = useMemo(() => {
+    const urlParams = new URLSearchParams(searchParams.toString());
+    return filterProperties(properties, urlParams) as PropertyProps[];
+  }, [searchParams, properties]);
 
   const handleSearch = (query: string) => {
     setIsSearching(true);
@@ -40,12 +44,6 @@ export default function PropertyListComponent({
   const handleClearSearch = () => {
     setSearchQuery("");
   };
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(searchParams.toString());
-    const filtered = filterProperties(properties, urlParams);
-    setFilteredByUrl(filtered as PropertyProps[]);
-  }, [searchParams, properties]);
 
   const searchProperties = (properties: PropertyProps[]): PropertyProps[] => {
     if (!searchQuery) return properties;
@@ -111,7 +109,7 @@ export default function PropertyListComponent({
       {sortedProperties.length === 0 ? (
         <div className="flex items-center justify-center py-20">
           <p className="text-center text-navy">
-            Sorry, we have no properties that match what you're looking for.
+            Sorry, we have no properties that match what you&apos;re looking for.
             Please adjust or <strong>clear your filter or search</strong> and
             try again.
           </p>
@@ -129,10 +127,12 @@ export default function PropertyListComponent({
           ))}
         </div>
       )}
-      <PropertyListPagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-      />
+      {sortedProperties.length > 0 && (
+        <PropertyListPagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+        />
+      )}
     </div>
   );
 }

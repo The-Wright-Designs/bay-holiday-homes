@@ -34,7 +34,7 @@ const PropertyDetailedInfoComponent = ({ meta_box }: Props) => {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3>Detailed Information:</h3>
+      <h2 className="text-subheading">Detailed Information:</h2>
       {meta_box.size_square_meters && (
         <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
           <p>Size:</p>

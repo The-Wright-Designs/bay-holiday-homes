@@ -203,6 +203,7 @@ const FormSelectInput = ({
           role="combobox"
           aria-expanded={isOpen}
           aria-haspopup="listbox"
+          aria-controls={`${name}-listbox`}
           aria-label={ariaLabel || name}
         >
           <p
@@ -233,14 +234,14 @@ const FormSelectInput = ({
 
         <ul
           ref={dropdownRef}
+          id={`${name}-listbox`}
           className={dropdownClasses}
           role="listbox"
           aria-label={ariaLabel || name}
           aria-multiselectable={multiple}
         >
-          {options.map((option, index) => {
+          {options.map((option) => {
             const isSelected = selectedValues.includes(option.value);
-            const isFocused = index === focusedIndex;
 
             const optionClasses = classNames(
               "p-[12px] text-navy text-[16px] font-light desktop:hover:cursor-pointer ease-in-out duration-300",

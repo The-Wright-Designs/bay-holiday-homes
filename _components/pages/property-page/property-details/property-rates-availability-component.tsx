@@ -20,7 +20,7 @@ const PropertyRatesAvailabilityComponent = ({
     <div className="w-full flex flex-col gap-7 desktop:gap-3">
       <div className="w-full flex flex-wrap gap-y-5 items-center gap-x-10 desktop:justify-between">
         <div className="flex flex-col gap-3">
-          <h3>Rates &amp; Availability:</h3>
+          <h2 className="text-subheading">Rates &amp; Availability:</h2>
           <p>Starting from: R{pricePerNightFrom} / night</p>
         </div>
         <div

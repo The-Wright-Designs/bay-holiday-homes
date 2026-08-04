@@ -28,7 +28,7 @@ const PropertyDetailsComponent = ({
       >
         Enquire Now
       </ButtonLink>
-      <main className="flex flex-col gap-10">
+      <div className="flex flex-col gap-10">
         <div className="border-t border-black/25 pt-5 flex gap-10 justify-between items-center tablet:border-none tablet:pt-0">
           <div className="flex flex-col gap-1">
             <h1 className="uppercase">{propertyName}</h1>
@@ -55,7 +55,7 @@ const PropertyDetailsComponent = ({
           <p>{meta_box.description}</p>
         </div>
         <PropertyDetailedInfoComponent meta_box={meta_box} />
-      </main>
+      </div>
     </div>
   );
 };

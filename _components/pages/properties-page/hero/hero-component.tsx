@@ -5,7 +5,7 @@ import PropertySearchWrapper from "../../../ui/property-search/property-search-w
 
 export default function HeroComponent() {
   return (
-    <main className="max-w-[1280px] mx-auto">
+    <section className="max-w-[1280px] mx-auto">
       <div className="relative w-full">
         <div className="relative h-[500px] w-full desktop:h-[462px]">
           <Image
@@ -13,7 +13,7 @@ export default function HeroComponent() {
             alt="Bay Holiday Homes Plettenberg Bay coastal view"
             width={1280}
             height={700}
-            className="h-full w-full object-cover"
+            className="object-cover"
             priority
           />
         </div>
@@ -34,6 +34,6 @@ export default function HeroComponent() {
           cssClasses="absolute w-full flex justify-center inset-x-0 bottom-15"
         />
       </div>
-    </main>
+    </section>
   );
 }

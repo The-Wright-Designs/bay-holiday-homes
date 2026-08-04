@@ -4,6 +4,7 @@ export interface PropertyProps {
     rendered: string;
   };
   slug: string;
+  modified_gmt?: string;
   meta_box: {
     property_id: string;
     area:

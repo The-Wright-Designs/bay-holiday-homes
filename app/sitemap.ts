@@ -29,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const propertyRoutes: MetadataRoute.Sitemap = allProperties.map((p) => ({
     url: `${BASE_URL}/properties/${p.meta_box.property_id}`,
+    lastModified: p.modified_gmt ? new Date(`${p.modified_gmt}Z`) : undefined,
     changeFrequency: "weekly",
     priority: 0.8,
   }));

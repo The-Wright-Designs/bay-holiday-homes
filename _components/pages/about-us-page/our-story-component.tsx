@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const OurStoryComponent = () => {
   return (
-    <main className="flex flex-col gap-10 items-center py-15">
-      <p className="text-[40px] font-light uppercase text-center">Our Story</p>
+    <section className="flex flex-col gap-10 items-center py-15">
+      <h1 className="text-[40px] font-light uppercase text-center">Our Story</h1>
       <div className="flex flex-col items-center gap-10 w-full">
         <div className="flex flex-col gap-[20px] w-full">
           <p className="text-paragraph font-semibold text-center">
@@ -130,7 +130,7 @@ const OurStoryComponent = () => {
           coastal paradise.
         </p>
       </div>
-    </main>
+    </section>
   );
 };
 

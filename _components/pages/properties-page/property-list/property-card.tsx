@@ -81,11 +81,11 @@ export default function PropertyCard({
       >
         <div className="flex gap-3 items-center w-full">
           <div className="flex flex-col flex-1 min-w-0">
-            <p className="text-[18px] font-semibold">
+            <h2 className="text-[18px] font-semibold">
               {meta_box.type
                 .replace(/-/g, "/")
                 .replace(/\b\w/g, (c) => c.toUpperCase())}
-            </p>
+            </h2>
             <p className="text-[14px] font-light">
               {title.rendered.replace(/\b\w/g, (c) => c.toUpperCase())}
             </p>

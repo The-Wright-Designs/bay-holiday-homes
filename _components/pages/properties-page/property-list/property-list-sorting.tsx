@@ -43,7 +43,7 @@ export default function PropertyListSorting({
           <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
             <Image
               src="/icons/chevron_right.svg"
-              alt="Open select box"
+              alt=""
               width={24}
               height={24}
             />

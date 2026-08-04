@@ -63,7 +63,10 @@ export async function fetchProperties(
     { next: { revalidate: 900 } }
   );
 
-  if (!res.ok) return { properties: [], totalPages: 1 };
+  if (!res.ok)
+    throw new Error(
+      `WordPress properties request failed with status ${res.status}`
+    );
 
   const totalPages = Number(res.headers.get("X-WP-TotalPages") ?? 1);
   const data: PropertyProps[] = await res.json();
@@ -87,15 +90,26 @@ export async function fetchProperties(
 export async function fetchPropertyById(
   id: string
 ): Promise<PropertyProps | null> {
-  const res = await fetch(
-    `${WP_API_URL}?per_page=100`,
-    { next: { revalidate: 900 } }
-  );
+  let property: PropertyProps | null = null;
+  let page = 1;
+  let totalPages = 1;
 
-  if (!res.ok) return null;
+  do {
+    const res = await fetch(`${WP_API_URL}?per_page=100&page=${page}`, {
+      next: { revalidate: 900 },
+    });
 
-  const data: PropertyProps[] = await res.json();
-  const property = data.find((p) => p.meta_box.property_id === id) ?? null;
+    if (!res.ok)
+      throw new Error(
+        `WordPress property request failed with status ${res.status}`
+      );
+
+    totalPages = Number(res.headers.get("X-WP-TotalPages") ?? 1);
+    const data: PropertyProps[] = await res.json();
+    property = data.find((p) => p.meta_box?.property_id === id) ?? null;
+    page++;
+  } while (!property && page <= totalPages);
+
   if (
     !property ||
     !property.title?.rendered ||
@@ -117,7 +131,10 @@ export async function fetchTopProperties(): Promise<TopProperty[]> {
     "https://wordpress.bayholidays.co.za/wp-json/wp/v2/top_property",
     { next: { revalidate: 900 } }
   );
-  if (!res.ok) return [];
+  if (!res.ok)
+    throw new Error(
+      `WordPress top properties request failed with status ${res.status}`
+    );
   const data: TopProperty[] = await res.json();
   return data
     .filter(
@@ -137,7 +154,10 @@ export async function fetchTestimonials(): Promise<Testimonial[]> {
     "https://wordpress.bayholidays.co.za/wp-json/wp/v2/testimonial",
     { next: { revalidate: 900 } }
   );
-  if (!res.ok) return [];
+  if (!res.ok)
+    throw new Error(
+      `WordPress testimonials request failed with status ${res.status}`
+    );
   const data: Testimonial[] = await res.json();
   return data
     .filter(

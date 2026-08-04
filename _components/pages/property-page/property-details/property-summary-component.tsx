@@ -29,7 +29,7 @@ const PropertySummaryComponent = ({ meta_box }: Props) => {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3>Summary:</h3>
+      <h2 className="text-subheading">Summary:</h2>
       <div className="grid min-[500px]:grid-cols-2 gap-3 tablet:grid-cols-3">
         <div className="flex items-center gap-2">
           <BedDouble size={ICON_SIZE} color={TEAL} />
