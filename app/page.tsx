@@ -7,6 +7,8 @@ import OurServicesComponent from "@/_components/pages/home-page/our-services/our
 import ContactSectionComponent from "@/_components/pages/home-page/contact/contact-section-component";
 import { fetchTestimonials } from "@/_lib/utils/wordpress-api";
 
+export const revalidate = 900;
+
 export default async function HomePage() {
   const testimonials = await fetchTestimonials();
 

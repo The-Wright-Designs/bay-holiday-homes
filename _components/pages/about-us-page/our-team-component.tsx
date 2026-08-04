@@ -9,12 +9,11 @@ const OurTeamComponent = () => {
     >
       <h2 className="text-[40px] font-light uppercase text-center">Our Team</h2>
 
-      <div className="w-full aspect-[4/3] overflow-hidden desktop:aspect-video">
+      <div className="relative w-full aspect-[4/3] overflow-hidden desktop:aspect-video">
         <Image
           src="/images/our-team/bay-holiday-homes-team.jpg"
           alt="Bay Holiday Homes team photo showing the entire team"
-          width={1280}
-          height={800}
+          fill
           className="w-full h-full object-cover desktop:object-bottom"
           sizes="(max-width: 1280px) 100vw, 1280px"
         />

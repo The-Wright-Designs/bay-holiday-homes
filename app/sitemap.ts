@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { fetchProperties } from "@/_lib/utils/wordpress-api";
 
-export const revalidate = 3600;
+export const revalidate = 900;
 
 const BASE_URL = "https://www.bayholidays.co.za";
 

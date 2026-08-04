@@ -58,7 +58,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-5 items-center desktop:items-end">
             <div className="flex flex-col gap-5 items-center justify-center desktop:flex-row">
-              <div className="flex gap-5 items-center justify-center">
+              <div className="flex flex-wrap gap-5 items-center justify-center">
                 <Link
                   href="https://theppra.org.za/"
                   target="_blank"
@@ -69,8 +69,8 @@ const Footer = () => {
                   <Image
                     src="/logos/pppra-logo.png"
                     alt="PPPRA Logo"
-                    width={76}
-                    height={56}
+                    width={150}
+                    height={90}
                   />
                 </Link>
                 <Link
@@ -83,7 +83,7 @@ const Footer = () => {
                   <Image
                     src="/logos/plett-tourism-logo.png"
                     alt="Plett Tourism Logo"
-                    width={84}
+                    width={150}
                     height={56}
                   />
                 </Link>
@@ -92,9 +92,9 @@ const Footer = () => {
               <Image
                 src="/logos/bay-holiday-homes-logo.png"
                 alt="Bay Holiday Homes Logo"
-                width={274}
+                width={350}
                 height={64}
-                className="order-first w-[174px] h-auto desktop:w-[274px] desktop:order-none"
+                className="order-first w-[300px] h-auto desktop:w-[400px] desktop:order-none"
               />
             </div>
 
@@ -114,7 +114,7 @@ const Footer = () => {
         </div>
 
         <p className="text-center w-full text-[14px]">
-          © 2025 Bay Holiday Homes |{" "}
+          © {new Date().getFullYear()} Bay Holiday Homes |{" "}
           <Link
             href="/"
             className="transition-opacity duration-300 desktop:hover:opacity-80 desktop:hover:cursor-pointer"

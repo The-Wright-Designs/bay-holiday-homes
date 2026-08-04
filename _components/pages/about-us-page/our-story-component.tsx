@@ -46,7 +46,7 @@ const OurStoryComponent = () => {
       <div className="relative grid gap-10 w-full tablet:grid-cols-2">
         <div className="relative aspect-[4/2.6]">
           <Image
-            src="/images/our-story/old-plett-photo.png"
+            src="/images/our-story/old-plett-photo.jpeg"
             alt="Historic Plettenberg Bay photo from 1965"
             fill
             sizes="(max-width: 800px) 100vw, 50vw"
@@ -69,7 +69,7 @@ const OurStoryComponent = () => {
 
         <div className="relative aspect-[4/2.6]">
           <Image
-            src="/images/our-story/new-plett-photo.png"
+            src="/images/our-story/new-plett-photo.jpeg"
             alt="Modern Plettenberg Bay photo"
             fill
             sizes="(max-width: 1279px) 100vw, 50vw"
