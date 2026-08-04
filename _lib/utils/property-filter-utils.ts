@@ -47,12 +47,12 @@ const matchesExtra = (extra: string, property: PropertyProps): boolean => {
   if (extra === "wheelChairFriendly") return meta_box.special_features?.includes("wheel_chair_friendly") ?? false;
   if (extra === "directBeachAccess") return meta_box.special_features?.includes("direct_beach_access") ?? false;
   if (extra === "pool") return Number(meta_box.pool_number_of ?? "0") > 0;
-  if (extra === "hotTub") return meta_box.special_features?.includes("hot_tub") ?? false;
-  if (extra === "sauna") return meta_box.special_features?.includes("sauna") ?? false;
+  if (extra === "hotTub") return meta_box.pool_other?.includes("hot_tub") ?? false;
+  if (extra === "sauna") return meta_box.pool_other?.includes("sauna") ?? false;
   if (extra === "oceanView") return meta_box.view?.includes("ocean") ?? false;
   if (extra === "mountainView") return meta_box.view?.includes("mountain") ?? false;
   if (extra === "lagoonView") return meta_box.view?.includes("lagoon") ?? false;
-  if (extra === "fynbosView") return meta_box.view?.includes("fynbos") ?? false;
+  if (extra === "gardenView") return meta_box.view?.includes("garden") ?? false;
   return false;
 };
 

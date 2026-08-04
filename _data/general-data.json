@@ -44,7 +44,7 @@
       { "value": "oceanView", "label": "Ocean View" },
       { "value": "mountainView", "label": "Mountain View" },
       { "value": "lagoonView", "label": "Lagoon View" },
-      { "value": "fynbosView", "label": "Fynbos View" }
+      { "value": "gardenView", "label": "Garden View" }
     ]
   },
   "mosaicGalleryItems": [

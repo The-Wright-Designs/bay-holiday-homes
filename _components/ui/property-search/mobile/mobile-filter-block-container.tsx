@@ -58,7 +58,7 @@ const iconMap: Record<string, (color: string) => ReactNode> = {
   oceanView: (c) => <OceanIcon color={c} size={36} />,
   mountainView: (c) => <MountainIcon color={c} size={36} />,
   lagoonView: (c) => <LagoonIcon color={c} size={36} />,
-  fynbosView: (c) => <Shrub size={32} color={c} />,
+  gardenView: (c) => <Shrub size={32} color={c} />,
 };
 
 const MobileFilterBlockContainer = ({

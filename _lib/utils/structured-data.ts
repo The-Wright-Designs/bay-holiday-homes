@@ -136,10 +136,13 @@ function buildAmenities(meta_box: PropertyProps["meta_box"]) {
     amenities.push({ name: "Wheelchair accessible", value: true });
   if (meta_box.special_features?.includes("direct_beach_access"))
     amenities.push({ name: "Direct beach access", value: true });
-  if (meta_box.special_features?.includes("hot_tub"))
+  if (meta_box.pool_other?.includes("hot_tub"))
     amenities.push({ name: "Hot tub", value: true });
-  if (meta_box.special_features?.includes("sauna"))
+  if (meta_box.pool_other?.includes("jaccuzi"))
+    amenities.push({ name: "Jacuzzi", value: true });
+  if (meta_box.pool_other?.includes("sauna"))
     amenities.push({ name: "Sauna", value: true });
+  if (meta_box.tv?.length) amenities.push({ name: "TV", value: true });
 
   return amenities.map((amenity) => ({
     "@type": "LocationFeatureSpecification",
@@ -151,7 +154,6 @@ export function buildPropertySchema(property: PropertyProps) {
   const { title, meta_box } = property;
   const url = `${SITE_URL}/properties/${meta_box.property_id}`;
   const amenities = buildAmenities(meta_box);
-  const floorSize = Number(meta_box.size_square_meters ?? "0");
 
   return {
     "@context": "https://schema.org",
@@ -174,15 +176,6 @@ export function buildPropertySchema(property: PropertyProps) {
       "@type": "Place",
       name: `${getAreaLabel(meta_box.area)}, Plettenberg Bay`,
     },
-    ...(floorSize > 0
-      ? {
-          floorSize: {
-            "@type": "QuantitativeValue",
-            value: floorSize,
-            unitCode: "MTK",
-          },
-        }
-      : {}),
     ...(amenities.length > 0 ? { amenityFeature: amenities } : {}),
     provider: { "@id": ORGANISATION_ID },
     potentialAction: {

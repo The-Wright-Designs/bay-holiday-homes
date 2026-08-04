@@ -18,11 +18,9 @@ export interface PropertyProps {
     beds: string;
     baths: string;
     total_living_areas?: string;
-    total_lounges: string;
     lounge_type?: ("open_plan" | "outside" | "standard")[];
     price_from: string;
     price_to: string;
-    size_square_meters?: string;
     description: string;
     gallery: { full_url: string }[];
     bookable_dates: [string, string][] | null;
@@ -32,25 +30,28 @@ export interface PropertyProps {
           | "pet_friendly"
           | "wheel_chair_friendly"
           | "direct_beach_access"
-          | "hot_tub"
-          | "sauna"
         )[]
       | null;
-    view: ("ocean" | "mountain" | "lagoon" | "fynbos")[] | null;
+    view: ("ocean" | "mountain" | "lagoon" | "garden")[] | null;
     pool_number_of?: string;
-    pool?: ("indoor" | "outdoor")[] | null;
-    braai?: ("gas" | "weber" | "built_in" | "pizza_oven")[] | null;
-    fireplace?: ("wood" | "gas")[] | null;
+    pool?: ("private" | "communal")[] | null;
+    pool_other?: ("hot_tub" | "jaccuzi" | "sauna")[] | null;
+    braai?: ("weber" | "weber_gas" | "pizza_oven")[] | null;
+    built_in_braai?: "none" | "gas" | "wood" | null;
+    fireplace?: ("wood" | "gas" | "fire_pit")[] | null;
     parking_garage?: string;
     parking_undercover?: string;
     parking_street?: string;
     wifi_type?: "fibre" | "basic" | null;
     wifi_tenant_pays?: string | null;
+    tv?: ("smart" | "standard")[] | null;
+    streaming_service?: ("dstv" | "netflix")[] | null;
     security_property?:
       | ("alarm" | "internal" | "external_beams" | "electric_fence" | "other")[]
       | null;
     security_service?:
       | ("service_adt" | "service_smhart" | "service_other")[]
+      | ""
       | null;
   };
 }

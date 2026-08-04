@@ -11,8 +11,7 @@ export default function HeroComponent() {
           <Image
             src="/images/_MG_0420.jpg"
             alt="Bay Holiday Homes Plettenberg Bay coastal view"
-            width={1280}
-            height={700}
+            fill
             className="object-cover"
             priority
           />

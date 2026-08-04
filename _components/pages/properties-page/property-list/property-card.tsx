@@ -36,12 +36,12 @@ export default function PropertyCard({
     (meta_box.special_features?.includes("child_friendly") ? 1 : 0) +
     (meta_box.special_features?.includes("pet_friendly") ? 1 : 0) +
     (meta_box.special_features?.includes("wheel_chair_friendly") ? 1 : 0) +
-    (meta_box.special_features?.includes("hot_tub") ? 1 : 0) +
-    (meta_box.special_features?.includes("sauna") ? 1 : 0) +
+    (meta_box.pool_other?.includes("hot_tub") ? 1 : 0) +
+    (meta_box.pool_other?.includes("sauna") ? 1 : 0) +
     (meta_box.view?.includes("ocean") ? 1 : 0) +
     (meta_box.view?.includes("mountain") ? 1 : 0) +
     (meta_box.view?.includes("lagoon") ? 1 : 0) +
-    (meta_box.view?.includes("fynbos") ? 1 : 0);
+    (meta_box.view?.includes("garden") ? 1 : 0);
 
   const formatPrice = (price: string) => {
     return new Intl.NumberFormat("en-ZA").format(Number(price));
@@ -170,7 +170,7 @@ export default function PropertyCard({
             </div>
           )}
 
-          {meta_box.special_features?.includes("hot_tub") && (
+          {meta_box.pool_other?.includes("hot_tub") && (
             <div className="flex gap-1.5 items-center">
               <Image
                 src="/icons/listings/hot-tub.svg"
@@ -182,7 +182,7 @@ export default function PropertyCard({
             </div>
           )}
 
-          {meta_box.special_features?.includes("sauna") && (
+          {meta_box.pool_other?.includes("sauna") && (
             <div className="flex gap-1.5 items-center">
               <Image
                 src="/icons/listings/sauna.svg"
@@ -230,10 +230,10 @@ export default function PropertyCard({
             </div>
           )}
 
-          {meta_box.view?.includes("fynbos") && (
+          {meta_box.view?.includes("garden") && (
             <div className="flex gap-1.5 items-center">
               <Shrub size={20} color="#4AB5BB" />
-              <p className="text-[14px] font-light">Fynbos view</p>
+              <p className="text-[14px] font-light">Garden view</p>
             </div>
           )}
         </div>

@@ -20,6 +20,52 @@ const PropertyDetailedInfoComponent = ({ meta_box }: Props) => {
         .join(" & ")
     : null;
 
+  const braaiLabel = [
+    meta_box.braai?.includes("weber") && "Weber",
+    meta_box.braai?.includes("weber_gas") && "Weber (gas)",
+    meta_box.braai?.includes("pizza_oven") && "Pizza oven",
+    meta_box.built_in_braai === "gas" && "Built-in (gas)",
+    meta_box.built_in_braai === "wood" && "Built-in (wood)",
+  ]
+    .filter(Boolean)
+    .join(" & ");
+
+  const fireplaceLabel = [
+    meta_box.fireplace?.includes("wood") && "Wood burning (indoor)",
+    meta_box.fireplace?.includes("gas") && "Gas burning (indoor)",
+    meta_box.fireplace?.includes("fire_pit") && "Fire pit (outdoor)",
+  ]
+    .filter(Boolean)
+    .join(" & ");
+
+  const poolCount = Number(meta_box.pool_number_of ?? "0");
+
+  const poolTypes = [
+    meta_box.pool?.includes("private") && "Private",
+    meta_box.pool?.includes("communal") && "Communal",
+  ]
+    .filter(Boolean)
+    .join(" & ");
+
+  const poolLabel =
+    poolCount > 0
+      ? `${poolCount}${poolTypes ? ` (${poolTypes})` : ""}`
+      : poolTypes;
+
+  const tvLabel = [
+    meta_box.tv?.includes("smart") && "Smart TV",
+    meta_box.tv?.includes("standard") && "Standard TV",
+  ]
+    .filter(Boolean)
+    .join(" & ");
+
+  const streamingLabel = [
+    meta_box.streaming_service?.includes("dstv") && "DSTV",
+    meta_box.streaming_service?.includes("netflix") && "Netflix",
+  ]
+    .filter(Boolean)
+    .join(" & ");
+
   const securityLabel = meta_box.security_property?.length
     ? [
         meta_box.security_property.includes("electric_fence") && "Electric fencing",
@@ -35,22 +81,13 @@ const PropertyDetailedInfoComponent = ({ meta_box }: Props) => {
   return (
     <div className="flex flex-col gap-3">
       <h2 className="text-subheading">Detailed Information:</h2>
-      {meta_box.size_square_meters && (
-        <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
-          <p>Size:</p>
-          <p>{meta_box.size_square_meters}m²</p>
-        </div>
-      )}
       {meta_box.total_living_areas && (
         <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
           <p>Living Areas:</p>
-          <p>{meta_box.total_living_areas}</p>
-        </div>
-      )}
-      {meta_box.total_lounges && meta_box.total_lounges !== "0" && (
-        <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
-          <p>Lounges:</p>
-          <p>{meta_box.total_lounges}{loungeLabel ? ` (${loungeLabel})` : ""}</p>
+          <p>
+            {meta_box.total_living_areas}
+            {loungeLabel ? ` (${loungeLabel})` : ""}
+          </p>
         </div>
       )}
       {totalParking !== null && totalParking > 0 && (
@@ -65,10 +102,40 @@ const PropertyDetailedInfoComponent = ({ meta_box }: Props) => {
           <p>{securityLabel}</p>
         </div>
       )}
+      {poolLabel && (
+        <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
+          <p>Pool:</p>
+          <p>{poolLabel}</p>
+        </div>
+      )}
+      {braaiLabel && (
+        <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
+          <p>Braai:</p>
+          <p>{braaiLabel}</p>
+        </div>
+      )}
+      {fireplaceLabel && (
+        <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
+          <p>Fireplace:</p>
+          <p>{fireplaceLabel}</p>
+        </div>
+      )}
       {meta_box.wifi_type && (
         <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
           <p>WiFi:</p>
           <p>{meta_box.wifi_type === "fibre" ? "High speed fibre" : "Basic WiFi"}</p>
+        </div>
+      )}
+      {tvLabel && (
+        <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
+          <p>TV:</p>
+          <p>{tvLabel}</p>
+        </div>
+      )}
+      {streamingLabel && (
+        <div className="grid gap-10 grid-cols-2 min-[500px]:grid-cols-[200px_1fr] min-[500px]:gap-0">
+          <p>Streaming:</p>
+          <p>{streamingLabel}</p>
         </div>
       )}
     </div>

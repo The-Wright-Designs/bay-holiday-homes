@@ -6,6 +6,7 @@ import {
   Accessibility,
   WavesLadder,
   Shrub,
+  Flame,
 } from "lucide-react";
 import {
   SurfingIcon,
@@ -25,7 +26,7 @@ interface Props {
 }
 
 const PropertySummaryComponent = ({ meta_box }: Props) => {
-  const hasPool = meta_box.pool_number_of && meta_box.pool_number_of !== "0";
+  const poolCount = Number(meta_box.pool_number_of ?? "0");
 
   return (
     <div className="flex flex-col gap-3">
@@ -61,10 +62,10 @@ const PropertySummaryComponent = ({ meta_box }: Props) => {
             <p>Wheelchair friendly</p>
           </div>
         )}
-        {hasPool && (
+        {poolCount > 0 && (
           <div className="flex items-center gap-2">
             <WavesLadder color={TEAL} size={ICON_SIZE} />
-            <p>Pool</p>
+            <p>{poolCount > 1 ? `${poolCount} pools` : "Pool"}</p>
           </div>
         )}
         {meta_box.special_features?.includes("direct_beach_access") && (
@@ -91,22 +92,34 @@ const PropertySummaryComponent = ({ meta_box }: Props) => {
             <p>Lagoon view</p>
           </div>
         )}
-        {meta_box.view?.includes("fynbos") && (
+        {meta_box.view?.includes("garden") && (
           <div className="flex items-center gap-2">
             <Shrub size={ICON_SIZE} color={TEAL} />
-            <p>Fynbos view</p>
+            <p>Garden view</p>
           </div>
         )}
-        {meta_box.special_features?.includes("hot_tub") && (
+        {meta_box.pool_other?.includes("hot_tub") && (
           <div className="flex items-center gap-2">
             <HotTubIcon color={TEAL} size={ICON_SIZE} />
             <p>Hot tub</p>
           </div>
         )}
-        {meta_box.special_features?.includes("sauna") && (
+        {meta_box.pool_other?.includes("jaccuzi") && (
+          <div className="flex items-center gap-2">
+            <HotTubIcon color={TEAL} size={ICON_SIZE} />
+            <p>Jacuzzi</p>
+          </div>
+        )}
+        {meta_box.pool_other?.includes("sauna") && (
           <div className="flex items-center gap-2">
             <SaunaIcon color={TEAL} size={ICON_SIZE} />
             <p>Sauna</p>
+          </div>
+        )}
+        {meta_box.fireplace?.includes("fire_pit") && (
+          <div className="flex items-center gap-2">
+            <Flame size={ICON_SIZE} color={TEAL} />
+            <p>Fire pit</p>
           </div>
         )}
       </div>
