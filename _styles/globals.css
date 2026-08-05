@@ -193,6 +193,27 @@
   border: 0;
 }
 
+@supports not selector(::-webkit-scrollbar) {
+  .scrollbar-visible {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(61, 61, 61, 0.4) transparent;
+  }
+}
+
+.scrollbar-visible::-webkit-scrollbar {
+  width: 8px;
+  -webkit-appearance: none;
+}
+
+.scrollbar-visible::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-visible::-webkit-scrollbar-thumb {
+  background-color: rgba(61, 61, 61, 0.4);
+  border-radius: 4px;
+}
+
 .grecaptcha-badge {
   visibility: hidden;
 }

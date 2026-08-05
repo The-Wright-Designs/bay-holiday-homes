@@ -86,21 +86,13 @@
     }
   ],
   "ourTeam": [
-    {
-      "name": "Simone",
-      "role": "Head of Bay Holiday Homes",
-      "column": 1,
-      "row": 1
-    },
-    { "name": "Mandy", "role": "Head of Rentals", "column": 1, "row": 3 },
-    { "name": "Lisa", "role": "Ops Manager", "column": null, "row": null },
-    { "name": "Laura", "role": "Ops Manager", "column": null, "row": null },
-    {
-      "name": "Luan",
-      "role": "Head of Operations",
-      "column": 1,
-      "row": 2
-    }
+    { "name": "Simone", "role": "Director", "column": 1, "row": 1 },
+    { "name": "Jo", "role": "Accounts Department", "column": 1, "row": 2 },
+    { "name": "Mandy", "role": "Rental Agent", "column": 1, "row": 3 },
+    { "name": "Luan", "role": "Head of Operations", "column": 2, "row": 1 },
+    { "name": "Lisa", "role": "Operations Manager", "column": 2, "row": 2 },
+    { "name": "Kerry", "role": "Operations Manager", "column": 2, "row": 3 },
+    { "name": "Laura", "role": "Office Admin", "column": 2, "row": 4 }
   ],
   "ourServices": {
     "managing": [

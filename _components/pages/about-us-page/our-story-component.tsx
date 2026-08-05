@@ -3,7 +3,9 @@ import Image from "next/image";
 const OurStoryComponent = () => {
   return (
     <section className="flex flex-col gap-10 items-center py-15">
-      <h1 className="text-[40px] font-light uppercase text-center">Our Story</h1>
+      <h1 className="text-[40px] font-light uppercase text-center">
+        Our Story
+      </h1>
       <div className="flex flex-col items-center gap-10 w-full">
         <div className="flex flex-col gap-[20px] w-full">
           <p className="text-paragraph font-semibold text-center">
@@ -49,6 +51,7 @@ const OurStoryComponent = () => {
             src="/images/our-story/old-plett-photo.jpeg"
             alt="Historic Plettenberg Bay photo from 1965"
             fill
+            priority
             sizes="(max-width: 800px) 100vw, 50vw"
             className="object-cover"
           />

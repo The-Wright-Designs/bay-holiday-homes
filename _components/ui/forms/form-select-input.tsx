@@ -33,7 +33,9 @@ const FormSelectInput = ({
   multiple = false,
   mobileFilter = false,
 }: FormSelectInputProps) => {
-  const resolvedPlaceholder = mobileFilter ? label : (placeholder ?? "Select an option");
+  const resolvedPlaceholder = mobileFilter
+    ? label
+    : (placeholder ?? "Select an option");
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValues, setSelectedValues] = useState<string[]>(
@@ -173,7 +175,7 @@ const FormSelectInput = ({
   );
 
   const dropdownClasses = classNames(
-    "absolute left-0 right-0 top-full mt-3 bg-white rounded-[2px] max-h-[200px] overflow-y-auto z-50",
+    "absolute left-0 right-0 top-full mt-3 bg-white rounded-[2px] max-h-[200px] overflow-y-auto scrollbar-visible z-50 border border-black/50",
     {
       hidden: !isOpen,
     },
