@@ -10,17 +10,17 @@ import PropertyListPagination from "./property-list-pagination";
 import { PropertyProps } from "@/_types/property-types";
 import { filterProperties } from "@/_lib/utils/property-filter-utils";
 
+const PER_PAGE = 12;
+
 interface PropertyListComponentProps {
   cssClasses?: string;
   properties: PropertyProps[];
-  totalPages: number;
   currentPage: number;
 }
 
 export default function PropertyListComponent({
   cssClasses,
   properties,
-  totalPages,
   currentPage,
 }: PropertyListComponentProps) {
   const searchParams = useSearchParams();
@@ -92,6 +92,13 @@ export default function PropertyListComponent({
     return 0;
   });
 
+  const totalPages = Math.ceil(sortedProperties.length / PER_PAGE);
+  const activePage = Math.min(currentPage, Math.max(totalPages, 1));
+  const paginatedProperties = sortedProperties.slice(
+    (activePage - 1) * PER_PAGE,
+    activePage * PER_PAGE,
+  );
+
   return (
     <div className="flex flex-col gap-10 pt-15">
       <div className="flex flex-wrap gap-5 items-end">
@@ -118,7 +125,7 @@ export default function PropertyListComponent({
         <div
           className={classNames("grid gap-10 tablet:grid-cols-2", cssClasses)}
         >
-          {sortedProperties.map((property) => (
+          {paginatedProperties.map((property) => (
             <PropertyCard
               key={property.id}
               id={property.meta_box.property_id}
@@ -129,7 +136,7 @@ export default function PropertyListComponent({
       )}
       {sortedProperties.length > 0 && (
         <PropertyListPagination
-          currentPage={currentPage}
+          currentPage={activePage}
           totalPages={totalPages}
         />
       )}

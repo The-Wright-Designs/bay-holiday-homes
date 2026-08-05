@@ -5,14 +5,12 @@ import { PropertyProps } from "@/_types/property-types";
 interface PropertyListSuspenseWrapperProps {
   cssClasses?: string;
   properties: PropertyProps[];
-  totalPages: number;
   currentPage: number;
 }
 
 export default function PropertyListSuspenseWrapper({
   cssClasses,
   properties,
-  totalPages,
   currentPage,
 }: PropertyListSuspenseWrapperProps) {
   return (
@@ -26,7 +24,6 @@ export default function PropertyListSuspenseWrapper({
       <PropertyListComponent
         cssClasses={cssClasses}
         properties={properties}
-        totalPages={totalPages}
         currentPage={currentPage}
       />
     </Suspense>

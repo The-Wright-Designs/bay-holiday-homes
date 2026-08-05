@@ -77,7 +77,7 @@ export const filterProperties = (
 
     if (bedrooms && !matchesBedrooms(meta_box.beds, bedrooms)) return false;
 
-    if (extras.length && !extras.some((e) => matchesExtra(e, property))) return false;
+    if (extras.length && !extras.every((e) => matchesExtra(e, property))) return false;
 
     return true;
   });

@@ -47,7 +47,7 @@ export async function generateMetadata({
 const PropertiesPage = async ({ searchParams }: PropertiesPageProps) => {
   const params = await searchParams;
   const currentPage = Number(params.page ?? 1);
-  const { properties, totalPages } = await fetchProperties(currentPage, 12);
+  const { properties } = await fetchProperties(1, 100);
 
   return (
     <div>
@@ -64,7 +64,6 @@ const PropertiesPage = async ({ searchParams }: PropertiesPageProps) => {
       <PageWrapper>
         <PropertyListSuspenseWrapper
           properties={properties}
-          totalPages={totalPages}
           currentPage={currentPage}
         />
       </PageWrapper>
