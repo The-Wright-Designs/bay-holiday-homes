@@ -36,7 +36,7 @@ export interface PropertyProps {
     pool_number_of?: string;
     pool?: ("private" | "communal")[] | null;
     pool_other?: ("hot_tub" | "jaccuzi" | "sauna")[] | null;
-    braai?: ("weber" | "weber_gas" | "pizza_oven")[] | null;
+    braai?: ("braai" | "weber" | "weber_gas" | "pizza_oven")[] | null;
     built_in_braai?: "none" | "gas" | "wood" | null;
     fireplace?: ("wood" | "gas" | "fire_pit")[] | null;
     parking_garage?: string;

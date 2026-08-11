@@ -27,6 +27,7 @@ const PropertyDetailedInfoComponent = ({ meta_box }: Props) => {
     : null;
 
   const braaiLabel = [
+    meta_box.braai?.includes("braai") && "Wood braai",
     meta_box.braai?.includes("weber") && "Weber",
     meta_box.braai?.includes("weber_gas") && "Weber (gas)",
     meta_box.braai?.includes("pizza_oven") && "Pizza oven",

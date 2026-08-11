@@ -16,6 +16,18 @@ const PropertyRatesAvailabilityComponent = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const parseDate = (value: string) => {
+    const [day, month, year] = value.split(" ");
+    return new Date(`${month} ${day}, ${year}`);
+  };
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const currentDates = availableDates?.filter(
+    (date) => parseDate(date[1]) >= today,
+  );
+
   return (
     <div className="w-full flex flex-col gap-7 desktop:gap-3">
       <div className="w-full flex flex-wrap gap-y-5 items-center gap-x-10 desktop:justify-between">
@@ -65,9 +77,9 @@ const PropertyRatesAvailabilityComponent = ({
                 <X color="#FFFFFF" size={24} />
               </button>
             </div>
-            {availableDates && availableDates.length > 0 ? (
+            {currentDates && currentDates.length > 0 ? (
               <ul className="flex flex-col gap-2">
-                {availableDates.map((date, index) => (
+                {currentDates.map((date, index) => (
                   <li
                     key={index}
                     className="border-b border-white/15 pb-2 last:border-none last:pb-0"
@@ -79,7 +91,7 @@ const PropertyRatesAvailabilityComponent = ({
                 ))}
               </ul>
             ) : (
-              <p>No bookable dates currently available.</p>
+              <p className="text-white">No bookable dates currently available.</p>
             )}
           </div>
         </div>
