@@ -9,6 +9,7 @@ import generalData from "@/_data/general-data.json";
 import classNames from "classnames";
 import {
   buildFilterUrl,
+  getFiltersFromSearchParams,
   PropertyFilterState,
 } from "@/_lib/utils/property-filter-utils";
 import { X } from "lucide-react";
@@ -28,24 +29,16 @@ const PropertySearchFilter = ({ cssClasses }: PropertySearchFilterProps) => {
   const bedroomsOptions = propertySearch.bedrooms;
   const extrasOptions = propertySearch.extras;
 
-  const [filters, setFilters] = useState<PropertyFilterState>({
-    propertyType: searchParams.getAll("propertyType"),
-    area: searchParams.getAll("area"),
-    budget: searchParams.get("budget") || "",
-    bedrooms: searchParams.get("bedrooms") || "",
-    extras: searchParams.getAll("extras"),
-  });
+  const [filters, setFilters] = useState<PropertyFilterState>(() =>
+    getFiltersFromSearchParams(searchParams),
+  );
   const [isLoading, setIsLoading] = useState(false);
+  const [prevSearchParams, setPrevSearchParams] = useState(searchParams);
 
-  useEffect(() => {
-    setFilters({
-      propertyType: searchParams.getAll("propertyType"),
-      area: searchParams.getAll("area"),
-      budget: searchParams.get("budget") || "",
-      bedrooms: searchParams.get("bedrooms") || "",
-      extras: searchParams.getAll("extras"),
-    });
-  }, [searchParams]);
+  if (searchParams !== prevSearchParams) {
+    setPrevSearchParams(searchParams);
+    setFilters(getFiltersFromSearchParams(searchParams));
+  }
 
   useEffect(() => {
     return () => {

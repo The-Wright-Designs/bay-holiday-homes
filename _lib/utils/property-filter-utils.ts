@@ -8,6 +8,16 @@ export interface PropertyFilterState {
   extras: string[];
 }
 
+export const getFiltersFromSearchParams = (
+  searchParams: URLSearchParams,
+): PropertyFilterState => ({
+  propertyType: searchParams.getAll("propertyType"),
+  area: searchParams.getAll("area"),
+  budget: searchParams.get("budget") || "",
+  bedrooms: searchParams.get("bedrooms") || "",
+  extras: searchParams.getAll("extras"),
+});
+
 export const buildFilterUrl = (filters: PropertyFilterState): string => {
   const params = new URLSearchParams();
 

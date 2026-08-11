@@ -38,9 +38,10 @@ const FormSelectInput = ({
     : (placeholder ?? "Select an option");
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValues, setSelectedValues] = useState<string[]>(
-    value || defaultValue || [],
+  const [internalValues, setInternalValues] = useState<string[]>(
+    defaultValue || [],
   );
+  const selectedValues = value ?? internalValues;
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,12 +57,6 @@ const FormSelectInput = ({
     }
     return `${selectedValues.length} selected`;
   };
-
-  useEffect(() => {
-    if (value !== undefined) {
-      setSelectedValues(value);
-    }
-  }, [value]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -105,7 +100,7 @@ const FormSelectInput = ({
       setIsOpen(false);
       setFocusedIndex(-1);
     }
-    setSelectedValues(next);
+    setInternalValues(next);
     if (onChange) {
       onChange(next);
     }
@@ -276,7 +271,7 @@ const FormSelectInput = ({
               e.target.selectedOptions,
               (o) => o.value,
             );
-            setSelectedValues(selected);
+            setInternalValues(selected);
             if (onChange) onChange(selected);
           }}
           required={required}

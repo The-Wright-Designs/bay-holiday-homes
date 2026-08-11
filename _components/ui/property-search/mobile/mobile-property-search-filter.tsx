@@ -10,6 +10,7 @@ import MobileFilterBlockContainer from "./mobile-filter-block-container";
 import generalData from "@/_data/general-data.json";
 import {
   buildFilterUrl,
+  getFiltersFromSearchParams,
   PropertyFilterState,
 } from "@/_lib/utils/property-filter-utils";
 import { X } from "lucide-react";
@@ -54,23 +55,15 @@ const MobilePropertySearchFilter = ({
   const [activeFilter, setActiveFilter] = useState<SimpleFilterKey | null>(
     null,
   );
-  const [filters, setFilters] = useState<PropertyFilterState>({
-    propertyType: searchParams.getAll("propertyType"),
-    area: searchParams.getAll("area"),
-    budget: searchParams.get("budget") || "",
-    bedrooms: searchParams.get("bedrooms") || "",
-    extras: searchParams.getAll("extras"),
-  });
+  const [filters, setFilters] = useState<PropertyFilterState>(() =>
+    getFiltersFromSearchParams(searchParams),
+  );
+  const [prevSearchParams, setPrevSearchParams] = useState(searchParams);
 
-  useEffect(() => {
-    setFilters({
-      propertyType: searchParams.getAll("propertyType"),
-      area: searchParams.getAll("area"),
-      budget: searchParams.get("budget") || "",
-      bedrooms: searchParams.get("bedrooms") || "",
-      extras: searchParams.getAll("extras"),
-    });
-  }, [searchParams]);
+  if (searchParams !== prevSearchParams) {
+    setPrevSearchParams(searchParams);
+    setFilters(getFiltersFromSearchParams(searchParams));
+  }
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
