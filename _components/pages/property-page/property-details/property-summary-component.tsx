@@ -1,6 +1,7 @@
 import {
   BedDouble,
   Bath,
+  Users,
   Baby,
   PawPrint,
   Accessibility,
@@ -32,18 +33,26 @@ const PropertySummaryComponent = ({ meta_box }: Props) => {
     <div className="flex flex-col gap-3">
       <h2 className="text-subheading">Summary:</h2>
       <div className="grid min-[500px]:grid-cols-2 gap-3 tablet:grid-cols-3">
-        <div className="flex items-center gap-2">
-          <BedDouble size={ICON_SIZE} color={TEAL} />
-          <p>
-            {meta_box.beds} bedroom{meta_box.beds === "1" ? "" : "s"}
-          </p>
-        </div>
+        {meta_box.bedrooms && (
+          <div className="flex items-center gap-2">
+            <BedDouble size={ICON_SIZE} color={TEAL} />
+            <p>
+              {meta_box.bedrooms} bedroom{meta_box.bedrooms === "1" ? "" : "s"}
+            </p>
+          </div>
+        )}
         <div className="flex items-center gap-2">
           <Bath size={ICON_SIZE} color={TEAL} />
           <p>
             {meta_box.baths} bathroom{meta_box.baths === "1" ? "" : "s"}
           </p>
         </div>
+        {meta_box.sleeps && (
+          <div className="flex items-center gap-2">
+            <Users size={ICON_SIZE} color={TEAL} />
+            <p>Sleeps {meta_box.sleeps}</p>
+          </div>
+        )}
         {meta_box.special_features?.includes("child_friendly") && (
           <div className="flex items-center gap-2">
             <Baby size={ICON_SIZE} color={TEAL} />
@@ -56,10 +65,10 @@ const PropertySummaryComponent = ({ meta_box }: Props) => {
             <p>Pet friendly</p>
           </div>
         )}
-        {meta_box.special_features?.includes("wheel_chair_friendly") && (
+        {meta_box.special_features?.includes("easy_access") && (
           <div className="flex items-center gap-2">
             <Accessibility size={ICON_SIZE} color={TEAL} />
-            <p>Wheelchair friendly</p>
+            <p>One level (easy access)</p>
           </div>
         )}
         {poolCount > 0 && (

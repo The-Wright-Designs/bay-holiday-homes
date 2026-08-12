@@ -78,7 +78,6 @@ export async function fetchProperties(
         p.meta_box?.gallery?.length > 0 &&
         p.meta_box?.type &&
         p.meta_box?.area &&
-        p.meta_box?.beds &&
         p.meta_box?.baths &&
         p.meta_box?.price_from
     )
@@ -116,7 +115,6 @@ export async function fetchPropertyById(
     !property.meta_box?.gallery?.length ||
     !property.meta_box?.type ||
     !property.meta_box?.area ||
-    !property.meta_box?.beds ||
     !property.meta_box?.baths ||
     !property.meta_box?.price_from ||
     !property.meta_box?.description ||

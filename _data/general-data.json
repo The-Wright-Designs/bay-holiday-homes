@@ -36,7 +36,7 @@
     "extras": [
       { "value": "childFriendly", "label": "Child Friendly" },
       { "value": "petFriendly", "label": "Pet Friendly" },
-      { "value": "wheelChairFriendly", "label": "Wheelchair Friendly" },
+      { "value": "easyAccess", "label": "One Level (Easy Access)" },
       { "value": "directBeachAccess", "label": "Direct Beach Access" },
       { "value": "pool", "label": "Pool" },
       { "value": "hotTub", "label": "Hot Tub" },

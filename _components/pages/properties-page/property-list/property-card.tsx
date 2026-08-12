@@ -10,6 +10,7 @@ import {
   PawPrint,
   Accessibility,
   Shrub,
+  Users,
 } from "lucide-react";
 import { PropertyProps } from "@/_types/property-types";
 import { getAreaLabel } from "@/_lib/utils/area-label-utils";
@@ -30,12 +31,14 @@ export default function PropertyCard({
   const { meta_box, title } = property;
 
   const featureCount =
-    2 +
+    1 +
+    (meta_box.bedrooms ? 1 : 0) +
+    (meta_box.sleeps ? 1 : 0) +
     (meta_box.special_features?.includes("direct_beach_access") ? 1 : 0) +
     (Number(meta_box.pool_number_of ?? "0") > 0 ? 1 : 0) +
     (meta_box.special_features?.includes("child_friendly") ? 1 : 0) +
     (meta_box.special_features?.includes("pet_friendly") ? 1 : 0) +
-    (meta_box.special_features?.includes("wheel_chair_friendly") ? 1 : 0) +
+    (meta_box.special_features?.includes("easy_access") ? 1 : 0) +
     (meta_box.pool_other?.includes("hot_tub") ? 1 : 0) +
     (meta_box.pool_other?.includes("sauna") ? 1 : 0) +
     (meta_box.view?.includes("ocean") ? 1 : 0) +
@@ -104,18 +107,20 @@ export default function PropertyCard({
             "desktop:grid-cols-3": featureCount > 4,
           })}
         >
-          <div className="flex gap-1.5 items-center">
-            <Image
-              src="/icons/listings/bed.svg"
-              alt="Bedrooms"
-              width={20}
-              height={20}
-            />
-            <p className="text-[14px] font-light">
-              {meta_box.beds}{" "}
-              {Number(meta_box.beds) === 1 ? "bedroom" : "bedrooms"}
-            </p>
-          </div>
+          {meta_box.bedrooms && (
+            <div className="flex gap-1.5 items-center">
+              <Image
+                src="/icons/listings/bed.svg"
+                alt="Bedrooms"
+                width={20}
+                height={20}
+              />
+              <p className="text-[14px] font-light">
+                {meta_box.bedrooms}{" "}
+                {Number(meta_box.bedrooms) === 1 ? "bedroom" : "bedrooms"}
+              </p>
+            </div>
+          )}
 
           <div className="flex gap-1.5 items-center">
             <Image
@@ -129,6 +134,15 @@ export default function PropertyCard({
               {Number(meta_box.baths) === 1 ? "bathroom" : "bathrooms"}
             </p>
           </div>
+
+          {meta_box.sleeps && (
+            <div className="flex gap-1.5 items-center">
+              <Users size={20} color="#4AB5BB" />
+              <p className="text-[14px] font-light">
+                Sleeps {meta_box.sleeps}
+              </p>
+            </div>
+          )}
 
           {meta_box.special_features?.includes("direct_beach_access") && (
             <div className="flex gap-1.5 items-center">
@@ -163,10 +177,10 @@ export default function PropertyCard({
             </div>
           )}
 
-          {meta_box.special_features?.includes("wheel_chair_friendly") && (
+          {meta_box.special_features?.includes("easy_access") && (
             <div className="flex gap-1.5 items-center">
               <Accessibility size={20} color="#4AB5BB" />
-              <p className="text-[14px] font-light">Wheelchair accessible</p>
+              <p className="text-[14px] font-light">One level (easy access)</p>
             </div>
           )}
 

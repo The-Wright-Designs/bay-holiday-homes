@@ -132,8 +132,8 @@ function buildAmenities(meta_box: PropertyProps["meta_box"]) {
     amenities.push({ name: "Child friendly", value: true });
   if (meta_box.special_features?.includes("pet_friendly"))
     amenities.push({ name: "Pet friendly", value: true });
-  if (meta_box.special_features?.includes("wheel_chair_friendly"))
-    amenities.push({ name: "Wheelchair accessible", value: true });
+  if (meta_box.special_features?.includes("easy_access"))
+    amenities.push({ name: "One level (easy access)", value: true });
   if (meta_box.special_features?.includes("direct_beach_access"))
     amenities.push({ name: "Direct beach access", value: true });
   if (meta_box.pool_other?.includes("hot_tub"))
@@ -163,7 +163,17 @@ export function buildPropertySchema(property: PropertyProps) {
     description: meta_box.description,
     url,
     accommodationCategory: getTypeLabel(meta_box.type),
-    numberOfBedrooms: Number(meta_box.beds),
+    ...(meta_box.bedrooms
+      ? { numberOfBedrooms: Number(meta_box.bedrooms) }
+      : {}),
+    ...(meta_box.sleeps
+      ? {
+          occupancy: {
+            "@type": "QuantitativeValue",
+            maxValue: Number(meta_box.sleeps),
+          },
+        }
+      : {}),
     numberOfBathroomsTotal: Number(meta_box.baths),
     image: meta_box.gallery.map((image) => image.full_url),
     address: {

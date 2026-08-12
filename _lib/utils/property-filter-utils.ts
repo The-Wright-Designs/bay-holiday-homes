@@ -41,8 +41,8 @@ const matchesBudget = (priceFrom: string, budgetRange: string): boolean => {
   return true;
 };
 
-const matchesBedrooms = (beds: string, bedroomRange: string): boolean => {
-  const count = Number(beds);
+const matchesBedrooms = (bedrooms: string, bedroomRange: string): boolean => {
+  const count = Number(bedrooms);
   if (bedroomRange === "1-2") return count >= 1 && count <= 2;
   if (bedroomRange === "3-4") return count >= 3 && count <= 4;
   if (bedroomRange === "5+") return count >= 5;
@@ -54,7 +54,7 @@ const matchesExtra = (extra: string, property: PropertyProps): boolean => {
   if (!meta_box) return false;
   if (extra === "childFriendly") return meta_box.special_features?.includes("child_friendly") ?? false;
   if (extra === "petFriendly") return meta_box.special_features?.includes("pet_friendly") ?? false;
-  if (extra === "wheelChairFriendly") return meta_box.special_features?.includes("wheel_chair_friendly") ?? false;
+  if (extra === "easyAccess") return meta_box.special_features?.includes("easy_access") ?? false;
   if (extra === "directBeachAccess") return meta_box.special_features?.includes("direct_beach_access") ?? false;
   if (extra === "pool") return Number(meta_box.pool_number_of ?? "0") > 0;
   if (extra === "hotTub") return meta_box.pool_other?.includes("hot_tub") ?? false;
@@ -85,7 +85,7 @@ export const filterProperties = (
 
     if (budget && !matchesBudget(meta_box.price_from, budget)) return false;
 
-    if (bedrooms && !matchesBedrooms(meta_box.beds, bedrooms)) return false;
+    if (bedrooms && !matchesBedrooms(meta_box.bedrooms, bedrooms)) return false;
 
     if (extras.length && !extras.every((e) => matchesExtra(e, property))) return false;
 

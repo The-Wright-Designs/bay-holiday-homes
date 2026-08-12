@@ -50,7 +50,7 @@ const iconMap: Record<string, (color: string) => ReactNode> = {
   "Robberg & Longships": (c) => <RobbergIcon color={c} size={36} />,
   childFriendly: (c) => <Baby size={32} color={c} />,
   petFriendly: (c) => <PawPrint size={32} color={c} />,
-  wheelChairFriendly: (c) => <Accessibility size={32} color={c} />,
+  easyAccess: (c) => <Accessibility size={32} color={c} />,
   directBeachAccess: (c) => <SurfingIcon color={c} size={36} />,
   pool: (c) => <WavesLadder size={32} color={c} />,
   hotTub: (c) => <HotTubIcon color={c} size={36} />,

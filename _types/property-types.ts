@@ -15,7 +15,8 @@ export interface PropertyProps {
       | "town-area"
       | "robberg-longships";
     type: "house" | "flat-apartment" | "townhouse";
-    beds: string;
+    bedrooms: string;
+    sleeps?: string;
     baths: string;
     total_living_areas?: string;
     lounge_type?: ("open_plan" | "outside" | "standard")[];
@@ -28,7 +29,7 @@ export interface PropertyProps {
       | (
           | "child_friendly"
           | "pet_friendly"
-          | "wheel_chair_friendly"
+          | "easy_access"
           | "direct_beach_access"
         )[]
       | null;

@@ -26,7 +26,8 @@ export async function generateMetadata({
   if (!property) return {};
 
   const { title, meta_box } = property;
-  const description = `${meta_box.beds} bed, ${meta_box.baths} bath ${getTypeLabel(meta_box.type).toLowerCase()} in ${getAreaLabel(meta_box.area)} — from R${meta_box.price_from}/night. Book your Plettenberg Bay getaway.`;
+  const bedroomPrefix = meta_box.bedrooms ? `${meta_box.bedrooms} bed, ` : "";
+  const description = `${bedroomPrefix}${meta_box.baths} bath ${getTypeLabel(meta_box.type).toLowerCase()} in ${getAreaLabel(meta_box.area)} — from R${meta_box.price_from}/night. Book your Plettenberg Bay getaway.`;
   const canonical = `/properties/${meta_box.property_id}`;
   const images = meta_box.gallery[0]
     ? [
