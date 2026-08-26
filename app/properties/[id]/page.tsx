@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { fetchPropertyById } from "@/_lib/utils/wordpress-api";
+import {
+  fetchAllProperties,
+  fetchPropertyById,
+} from "@/_lib/utils/wordpress-api";
 import { getAreaLabel } from "@/_lib/utils/area-label-utils";
 import JsonLd from "@/_components/seo/json-ld";
 import {
@@ -9,13 +12,21 @@ import {
   getTypeLabel,
   sharedOpenGraph,
   sharedTwitter,
+  truncate,
 } from "@/_lib/utils/structured-data";
 import PropertyLightboxSliderComponent from "@/_components/pages/property-page/property-lightbox-slider-component";
 import PropertyDetailsComponent from "@/_components/pages/property-page/property-details-component";
 import PropertyEnquiryFormWrapper from "@/_components/pages/property-page/property-enquiry-form-wrapper";
 
+const META_DESCRIPTION_MAX = 155;
+
 interface PropertyPageProps {
   params: Promise<{ id: string }>;
+}
+
+export async function generateStaticParams() {
+  const properties = await fetchAllProperties();
+  return properties.map((property) => ({ id: property.meta_box.property_id }));
 }
 
 export async function generateMetadata({
@@ -27,7 +38,11 @@ export async function generateMetadata({
 
   const { title, meta_box } = property;
   const bedroomPrefix = meta_box.bedrooms ? `${meta_box.bedrooms} bed, ` : "";
-  const description = `${bedroomPrefix}${meta_box.baths} bath ${getTypeLabel(meta_box.type).toLowerCase()} in ${getAreaLabel(meta_box.area)} — from R${meta_box.price_from}/night. Book your Plettenberg Bay getaway.`;
+  const specLine = `${bedroomPrefix}${meta_box.baths} bath ${getTypeLabel(meta_box.type).toLowerCase()} in ${getAreaLabel(meta_box.area)} — from R${meta_box.price_from}/night.`;
+  const description = truncate(
+    `${specLine} ${meta_box.description}`,
+    META_DESCRIPTION_MAX,
+  );
   const canonical = `/properties/${meta_box.property_id}`;
   const images = meta_box.gallery[0]
     ? [
@@ -95,7 +110,10 @@ const PropertyPage = async ({ params }: PropertyPageProps) => {
           area={property.meta_box.area}
           meta_box={property.meta_box}
         />
-        <PropertyEnquiryFormWrapper propertyName={property.title.rendered} propertyId={String(property.id)} />
+        <PropertyEnquiryFormWrapper
+          propertyName={property.title.rendered}
+          propertyId={String(property.id)}
+        />
       </div>
     </div>
   );

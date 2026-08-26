@@ -22,7 +22,7 @@ const OurTeamComponent = () => {
         <div className="relative w-full aspect-[4/3] overflow-hidden min-[1000px]:aspect-auto">
           <Image
             src="/images/our-team/bay-holiday-homes-ops-team.jpg"
-            alt="Bay Holiday Homes team photo showing the entire team"
+            alt="Bay Holiday Homes operations team photo"
             fill
             className="w-full h-full object-cover"
             sizes="(max-width: 1280px) 100vw, 1280px"

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import navData from "@/_data/nav-data.json";
+import generalData from "@/_data/general-data.json";
 
 const Footer = () => {
   return (
@@ -39,7 +40,7 @@ const Footer = () => {
                 />
               </Link>
               <Link
-                href="#"
+                href={generalData.contact.social.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-opacity duration-300 desktop:hover:opacity-80 desktop:hover:cursor-pointer"

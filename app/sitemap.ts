@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { fetchProperties } from "@/_lib/utils/wordpress-api";
+import { fetchAllProperties } from "@/_lib/utils/wordpress-api";
 
 export const revalidate = 900;
 
@@ -16,16 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  const allProperties = [];
-  let page = 1;
-  let totalPages = 1;
-
-  do {
-    const { properties, totalPages: pages } = await fetchProperties(page, 20);
-    allProperties.push(...properties);
-    totalPages = pages;
-    page++;
-  } while (page <= totalPages);
+  const allProperties = await fetchAllProperties();
 
   const propertyRoutes: MetadataRoute.Sitemap = allProperties.map((p) => ({
     url: `${BASE_URL}/properties/${p.meta_box.property_id}`,

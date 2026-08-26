@@ -8,9 +8,10 @@ import PropertyListSorting from "./property-list-sorting";
 import PropertyListSearch from "./property-list-search";
 import PropertyListPagination from "./property-list-pagination";
 import { PropertyProps } from "@/_types/property-types";
-import { filterProperties } from "@/_lib/utils/property-filter-utils";
-
-const PER_PAGE = 12;
+import {
+  filterProperties,
+  PER_PAGE,
+} from "@/_lib/utils/property-filter-utils";
 
 interface PropertyListComponentProps {
   cssClasses?: string;

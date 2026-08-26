@@ -20,7 +20,7 @@ export default function ContactSectionComponent({ cssClasses }: Props) {
     >
       <div
         className={classNames(
-          "grid gap-10 w-full pt-15 scroll-mt-20 tablet:scrol-mt-28 desktop:scroll-mt-32 desktop:grid-cols-2",
+          "grid gap-10 w-full pt-15 scroll-mt-20 tablet:scroll-mt-28 desktop:scroll-mt-32 desktop:grid-cols-2",
           cssClasses,
         )}
         id="contact"

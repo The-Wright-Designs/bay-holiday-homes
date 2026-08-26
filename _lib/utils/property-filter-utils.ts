@@ -1,5 +1,15 @@
 import { PropertyProps } from "@/_types/property-types";
 
+export const PER_PAGE = 12;
+
+export const FILTER_PARAM_KEYS = [
+  "propertyType",
+  "area",
+  "budget",
+  "bedrooms",
+  "extras",
+] as const;
+
 export interface PropertyFilterState {
   propertyType: string[];
   area: string[];

@@ -127,7 +127,7 @@ export default function PropertyLightboxSliderComponent({
         >
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute -m2 p-2 top-5.5 right-4.5 z-10 desktop:hidden"
+            className="absolute -m-2 p-2 top-5.5 right-4.5 z-10 desktop:hidden"
             aria-label="Close gallery"
           >
             <X size={32} color="#FFFFFF" />

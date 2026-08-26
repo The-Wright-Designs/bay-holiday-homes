@@ -40,7 +40,7 @@ const ShowPhoneNumber = ({ buttonClasses, linkClasses }: showContactProps) => {
       <button
         onClick={() => handleShowPhoneNumbers()}
         className={classNames(
-          "px-2 text-left text-link-blue self-start -mx-2 text-paragraph text-yellow py-3 -my-3 hover:tablet:opacity-80 hover:cursor-pointer desktop:p-0 desktop:m-0 italic",
+          "px-2 text-left text-link-blue self-start -mx-2 text-paragraph py-3 -my-3 tablet:hover:opacity-80 hover:cursor-pointer desktop:p-0 desktop:m-0 italic",
           buttonClasses,
         )}
         aria-label="Show phone number"

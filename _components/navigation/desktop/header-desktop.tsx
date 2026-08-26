@@ -32,7 +32,7 @@ const HeaderDesktop = ({ cssClasses }: DesktopHeaderProps) => {
             >
               <Image
                 src="/logos/choice-logo.jpg"
-                alt="Bay Holiday Homes Logo"
+                alt="Choice Logo"
                 width={70}
                 height={20}
                 priority
@@ -44,7 +44,7 @@ const HeaderDesktop = ({ cssClasses }: DesktopHeaderProps) => {
           {navData.map((item) => (
             <Link
               key={item.title}
-              className="text-navy text-base font-light desktop:hover:text-teal desktop:hover:cursor-pointer duration-200"
+              className="text-navy font-light desktop:hover:text-teal desktop:hover:cursor-pointer duration-200"
               href={item.url}
             >
               {item.title}

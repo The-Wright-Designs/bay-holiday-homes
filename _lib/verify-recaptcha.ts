@@ -18,11 +18,18 @@ export async function verifyRecaptchaToken(
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: `secret=${secretKey}&response=${token}`,
+        body: new URLSearchParams({ secret: secretKey, response: token }),
       }
     );
 
-    const data = await response.json();
+    if (!response.ok) {
+      return {
+        success: false,
+        error: "reCAPTCHA verification service unavailable",
+      };
+    }
+
+    const data: { success?: boolean; score?: number } = await response.json();
 
     if (!data.success) {
       return {
@@ -31,7 +38,7 @@ export async function verifyRecaptchaToken(
       };
     }
 
-    if (data.score < 0.6) {
+    if (typeof data.score !== "number" || data.score < 0.6) {
       return {
         success: false,
         score: data.score,

@@ -112,7 +112,7 @@ const ContactFormComponent = () => {
                 id="phoneNumber"
                 name="phone"
                 className="bg-white px-4 py-3 rounded font-light text-black/75 border-none h-10"
-                autoComplete="phone"
+                autoComplete="tel"
               />
             </label>
 
@@ -139,8 +139,8 @@ const ContactFormComponent = () => {
                   ></textarea>
                 </label>
                 {error && (
-                  <div className="bg-red/10 border border-red/50 rounded-[2px] p-3">
-                    <p className="text-[14px] text-red">{error}</p>
+                  <div className="bg-[#B3261E]/10 border border-[#B3261E]/50 rounded-[2px] p-3">
+                    <p className="text-[14px] text-[#B3261E]">{error}</p>
                   </div>
                 )}
                 <div className="flex flex-col gap-4">

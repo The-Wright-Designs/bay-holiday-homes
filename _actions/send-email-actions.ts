@@ -51,6 +51,10 @@ export async function sendEmail(
         };
       }
 
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return { success: false, error: "Invalid email address" };
+      }
+
       const emailHtmlContent = contactEmailTemplate({
         name,
         email,

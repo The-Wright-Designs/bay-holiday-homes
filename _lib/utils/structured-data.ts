@@ -36,6 +36,18 @@ const businessAddress = {
   addressCountry: "ZA",
 };
 
+export const truncate = (text: string, max: number): string => {
+  const collapsed = text.replace(/\s+/g, " ").trim();
+  if (collapsed.length <= max) return collapsed;
+
+  const clipped = collapsed.slice(0, max - 1);
+  const lastSpace = clipped.lastIndexOf(" ");
+  const trimmed = (lastSpace > 0 ? clipped.slice(0, lastSpace) : clipped)
+    .replace(/[\s.,;:—–-]+$/, "");
+
+  return `${trimmed}…`;
+};
+
 export const getTypeLabel = (typeValue: string): string =>
   generalData.propertySearch.propertyType.find((t) => t.value === typeValue)
     ?.label ?? typeValue;
@@ -155,6 +167,9 @@ export function buildPropertySchema(property: PropertyProps) {
   const url = `${SITE_URL}/properties/${meta_box.property_id}`;
   const amenities = buildAmenities(meta_box);
 
+  const priceValidUntil = new Date();
+  priceValidUntil.setFullYear(priceValidUntil.getFullYear() + 1);
+
   return {
     "@context": "https://schema.org",
     "@type": "Accommodation",
@@ -206,6 +221,7 @@ export function buildPropertySchema(property: PropertyProps) {
         unitCode: "DAY",
       },
       availability: "https://schema.org/InStock",
+      priceValidUntil: priceValidUntil.toISOString().split("T")[0],
       url,
     },
   };
@@ -226,7 +242,10 @@ export function buildBreadcrumbSchema(
   };
 }
 
-export function buildPropertyListSchema(properties: PropertyProps[]) {
+export function buildPropertyListSchema(
+  properties: PropertyProps[],
+  startPosition = 1
+) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -234,7 +253,7 @@ export function buildPropertyListSchema(properties: PropertyProps[]) {
     numberOfItems: properties.length,
     itemListElement: properties.map((property, index) => ({
       "@type": "ListItem",
-      position: index + 1,
+      position: startPosition + index,
       url: `${SITE_URL}/properties/${property.meta_box.property_id}`,
       name: property.title.rendered,
     })),

@@ -21,11 +21,6 @@ const childrenOptions = Array.from({ length: 8 }, (_, i) => ({
   label: String(i),
 }));
 
-const petsOptions = Array.from({ length: 6 }, (_, i) => ({
-  value: String(i),
-  label: String(i),
-}));
-
 interface PropertyEnquiryFormProps {
   propertyName: string;
   propertyId: string;
@@ -79,7 +74,7 @@ const PropertyEnquiryForm = ({
   return (
     <div
       ref={containerRef}
-      className="bg-teal rounded-[2px] flex flex-col gap-10 p-5 scroll-mt-24 tablet:scroll-mt-28 tablet:p-10 desktop:p-7"
+      className="bg-teal rounded-[2px] flex flex-col gap-10 px-5 py-7 scroll-mt-24 tablet:scroll-mt-28 tablet:p-10 desktop:p-7 desktop:self-start"
       id="enquire"
     >
       <div
@@ -191,11 +186,6 @@ const PropertyEnquiryForm = ({
                 cssClasses="flex-1 min-w-0"
               />
             </div>
-            <EnquiryFormSelectInput
-              label="Number of pets:"
-              name="pets"
-              options={petsOptions}
-            />
             <EnquiryFormTextareaInput
               label="Additional notes:"
               name="notes"

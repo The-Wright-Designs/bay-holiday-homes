@@ -1,3 +1,5 @@
+import { escapeHtml } from "@/_lib/utils/email-templates/escape-html";
+
 interface EnquiryEmailTemplateProps {
   property: string;
   propertyId: string;
@@ -8,7 +10,6 @@ interface EnquiryEmailTemplateProps {
   children: string;
   checkIn?: string;
   checkOut?: string;
-  pets?: string;
   notes?: string;
 }
 
@@ -22,9 +23,19 @@ export const enquiryEmailTemplate = ({
   children,
   checkIn,
   checkOut,
-  pets,
   notes,
 }: EnquiryEmailTemplateProps) => {
+  property = escapeHtml(property);
+  propertyId = escapeHtml(propertyId);
+  name = escapeHtml(name);
+  email = escapeHtml(email);
+  phone = phone && escapeHtml(phone);
+  adults = escapeHtml(adults);
+  children = escapeHtml(children);
+  checkIn = checkIn && escapeHtml(checkIn);
+  checkOut = checkOut && escapeHtml(checkOut);
+  notes = notes && escapeHtml(notes);
+
   return `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,7 +69,6 @@ export const enquiryEmailTemplate = ({
         <div class="field"><span class="label">Number of children: </span><span class="value">${children}</span></div>
         ${checkIn ? `<div class="field"><span class="label">Preferred check-in date: </span><span class="value">${checkIn}</span></div>` : ""}
         ${checkOut ? `<div class="field"><span class="label">Preferred check-out date: </span><span class="value">${checkOut}</span></div>` : ""}
-        ${pets ? `<div class="field"><span class="label">Number of pets: </span><span class="value">${pets}</span></div>` : ""}
         ${notes ? `<div class="field"><span class="label">Additional notes: </span><br /><span class="value">${notes}</span></div>` : ""}
       </div>
     </div>

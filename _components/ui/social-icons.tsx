@@ -21,7 +21,7 @@ const SocialIcons = ({ cssClasses, small, social }: Props) => {
           <Link
             href={social?.facebook || ""}
             target="_blank"
-            className="tablet:tablet:hover:opacity-80 ease-in-out duration-200"
+            className="tablet:hover:opacity-80 ease-in-out duration-200"
             aria-label="View our Facebook page"
           >
             <Image
@@ -36,7 +36,7 @@ const SocialIcons = ({ cssClasses, small, social }: Props) => {
           <Link
             href={social?.whatsapp || ""}
             target="_blank"
-            className="tablet:tablet:hover:opacity-80 ease-in-out duration-200"
+            className="tablet:hover:opacity-80 ease-in-out duration-200"
             aria-label="Get in touch on WhatsApp"
           >
             <Image

@@ -33,11 +33,14 @@ export async function sendEnquiry(
       const children = formData.get("children")?.toString() || "";
       const checkIn = formData.get("checkIn")?.toString() || "";
       const checkOut = formData.get("checkOut")?.toString() || "";
-      const pets = formData.get("pets")?.toString() || "";
       const notes = formData.get("notes")?.toString() || "";
 
       if (!name.trim() || !email.trim() || !adults.trim() || !children.trim()) {
         return { success: false, error: "All required fields must be filled" };
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return { success: false, error: "Invalid email address" };
       }
 
       const emailHtmlContent = enquiryEmailTemplate({
@@ -50,7 +53,6 @@ export async function sendEnquiry(
         children,
         checkIn: checkIn || undefined,
         checkOut: checkOut || undefined,
-        pets: pets || undefined,
         notes: notes || undefined,
       });
 

@@ -24,7 +24,6 @@ const MosaicGalleryItem = ({
   return (
     <Link
       href={`/properties?area=${areaId}`}
-      aria-label=""
       className={classNames(
         "group relative w-full h-full overflow-hidden desktop:hover:cursor-pointer",
         cssClasses,

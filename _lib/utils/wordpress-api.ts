@@ -86,6 +86,21 @@ export async function fetchProperties(
   return { properties, totalPages };
 }
 
+export async function fetchAllProperties(): Promise<PropertyProps[]> {
+  const allProperties: PropertyProps[] = [];
+  let page = 1;
+  let totalPages = 1;
+
+  do {
+    const { properties, totalPages: pages } = await fetchProperties(page, 100);
+    allProperties.push(...properties);
+    totalPages = pages;
+    page++;
+  } while (page <= totalPages);
+
+  return allProperties;
+}
+
 export async function fetchPropertyById(
   id: string
 ): Promise<PropertyProps | null> {

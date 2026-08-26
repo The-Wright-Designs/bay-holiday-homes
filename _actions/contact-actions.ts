@@ -4,35 +4,30 @@ import contactData from "@/_data/general-data.json";
 import { verifyRecaptchaToken } from "@/_lib/verify-recaptcha";
 
 const {
-  contact: { email, phone, afterHoursPhone },
+  contact: { email, phone, cell },
 } = contactData;
 
-export const fetchEmail = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const recaptchaResult = await verifyRecaptchaToken(recaptchaToken);
-    if (!recaptchaResult.success) {
-      throw new Error(recaptchaResult.error || "reCAPTCHA verification failed");
-    }
+const requireRecaptcha = async (recaptchaToken?: string) => {
+  if (!recaptchaToken) {
+    throw new Error("reCAPTCHA token required");
   }
+  const recaptchaResult = await verifyRecaptchaToken(recaptchaToken);
+  if (!recaptchaResult.success) {
+    throw new Error(recaptchaResult.error || "reCAPTCHA verification failed");
+  }
+};
+
+export const fetchEmail = async (recaptchaToken?: string) => {
+  await requireRecaptcha(recaptchaToken);
   return email;
 };
 
 export const fetchPhone = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const recaptchaResult = await verifyRecaptchaToken(recaptchaToken);
-    if (!recaptchaResult.success) {
-      throw new Error(recaptchaResult.error || "reCAPTCHA verification failed");
-    }
-  }
+  await requireRecaptcha(recaptchaToken);
   return phone;
 };
 
-export const fetchAfterHoursPhone = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const recaptchaResult = await verifyRecaptchaToken(recaptchaToken);
-    if (!recaptchaResult.success) {
-      throw new Error(recaptchaResult.error || "reCAPTCHA verification failed");
-    }
-  }
-  return afterHoursPhone;
+export const fetchCell = async (recaptchaToken?: string) => {
+  await requireRecaptcha(recaptchaToken);
+  return cell;
 };

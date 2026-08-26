@@ -1,3 +1,5 @@
+import { escapeHtml } from "@/_lib/utils/email-templates/escape-html";
+
 interface EmailTemplateProps {
   name: string;
   email: string;
@@ -11,6 +13,11 @@ export const contactEmailTemplate = ({
   phone,
   message,
 }: EmailTemplateProps) => {
+  name = escapeHtml(name);
+  email = escapeHtml(email);
+  phone = phone && escapeHtml(phone);
+  message = escapeHtml(message);
+
   return `<!DOCTYPE html>
 <html lang="en">
   <head>

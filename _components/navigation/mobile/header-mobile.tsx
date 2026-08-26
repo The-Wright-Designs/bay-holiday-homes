@@ -51,7 +51,7 @@ export function HeaderMobile({ cssClasses }: MobileHeaderProps) {
             >
               <Image
                 src="/logos/choice-logo.jpg"
-                alt="Bay Holiday Homes Logo"
+                alt="Choice Logo"
                 width={60}
                 height={20}
                 priority

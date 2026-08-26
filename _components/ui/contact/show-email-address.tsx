@@ -40,7 +40,7 @@ const ShowEmailAddress = ({ buttonClasses, linkClasses }: showContactProps) => {
       <button
         onClick={() => handleShowEmailAddress()}
         className={classNames(
-          "px-2 text-left -mx-2 text-link-blue text-paragraph text-yellow py-3 self-start -my-3 hover:tablet:opacity-80 hover:cursor-pointer desktop:p-0 desktop:m-0 italic",
+          "px-2 text-left -mx-2 text-link-blue text-paragraph py-3 self-start -my-3 tablet:hover:opacity-80 hover:cursor-pointer desktop:p-0 desktop:m-0 italic",
           buttonClasses,
         )}
         aria-label="Show email address"
