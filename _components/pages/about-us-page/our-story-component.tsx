@@ -16,16 +16,6 @@ const OurStoryComponent = () => {
             Street.
           </p>
         </div>
-        <div className="rotate-[2deg] bg-white/90 p-2 rounded-full drop-shadow-md size-[190px] desktop:hidden">
-          <Image
-            src="/images/our-story/60-years-stamp.png"
-            alt="60 Years Anniversary Badge"
-            width={190}
-            height={190}
-            className="w-full h-full object-cover"
-            sizes="190px"
-          />
-        </div>
       </div>
       <div className="hidden text-center tablet:block">
         <p className="text-[24px]">
@@ -58,7 +48,7 @@ const OurStoryComponent = () => {
           <div className="absolute left-0 bottom-0 bg-white/90 px-[8px] py-[4px]">
             <p className="text-paragraph font-semibold text-center">Then</p>
           </div>
-          <div className="hidden absolute -top-10 -right-5 rotate-[5deg] bg-white/90 p-2 rounded-full drop-shadow-md size-[190px] desktop:block">
+          <div className="absolute size-[150px] -top-10 -left-5 rotate-[-5deg] bg-white/90 p-2 rounded-full shadow-md tablet:size-[130px] tablet:-right-5 desktop:size-[190px]">
             <Image
               src="/images/our-story/60-years-stamp.png"
               alt="60 Years Anniversary Badge"

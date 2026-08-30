@@ -56,7 +56,7 @@ export default function PropertyCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={classNames(
-        "flex flex-col h-full overflow-clip rounded-[2px] drop-shadow-md desktop:hover:cursor-pointer",
+        "flex flex-col h-full overflow-clip rounded-[2px] shadow-md desktop:hover:cursor-pointer",
         cssClasses,
       )}
     >
@@ -82,19 +82,19 @@ export default function PropertyCard({
           isHovered ? "desktop:bg-navy/5" : "bg-white",
         )}
       >
-        <div className="flex gap-3 items-center w-full">
-          <div className="flex flex-col flex-1 min-w-0">
-            <h2 className="text-[18px] font-semibold">
+        <div className="grid grid-cols-[1fr_0.75fr] gap-3 items-center w-full tablet:grid-cols-2 tablet:items-start tablet:gap-5">
+          <div className="flex flex-col min-w-0">
+            <p className="text-[18px] font-semibold">
+              {title.rendered.replace(/\b\w/g, (c) => c.toUpperCase())}
+            </p>
+            <h2 className="text-[14px] font-light">
               {meta_box.type
                 .replace(/-/g, "/")
                 .replace(/\b\w/g, (c) => c.toUpperCase())}
             </h2>
-            <p className="text-[14px] font-light">
-              {title.rendered.replace(/\b\w/g, (c) => c.toUpperCase())}
-            </p>
           </div>
 
-          <div className="flex flex-col flex-1 min-w-0 items-end tablet:items-start">
+          <div className="flex flex-col min-w-0 items-end tablet:items-start">
             <p className="font-light text-[14px]">Starting from:</p>
             <p className="font-semibold text-[14px]">
               R{formatPrice(meta_box.price_from)} / night
@@ -138,9 +138,7 @@ export default function PropertyCard({
           {meta_box.sleeps && (
             <div className="flex gap-1.5 items-center">
               <Users size={20} color="#4AB5BB" />
-              <p className="text-[14px] font-light">
-                Sleeps {meta_box.sleeps}
-              </p>
+              <p className="text-[14px] font-light">Sleeps {meta_box.sleeps}</p>
             </div>
           )}
 
