@@ -99,7 +99,7 @@ const PropertyPage = async ({ params }: PropertyPageProps) => {
         ]}
       />
       <PropertyLightboxSliderComponent
-        images={property.meta_box.gallery.map((img) => img.full_url)}
+        images={property.meta_box.gallery}
         propertyName={property.title.rendered}
         cssClasses="max-w-[1280px] mx-auto"
       />

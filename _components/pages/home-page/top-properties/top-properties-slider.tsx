@@ -6,6 +6,10 @@ import { SquareArrowLeft, SquareArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { TopPropertiesSliderProps } from "@/_types/top-properties-types";
+import {
+  wordpressImageSrc,
+  wordpressImageLoader,
+} from "@/_lib/utils/wordpress-image-utils";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -66,7 +70,8 @@ export default function TopPropertiesSlider({
                 className="group relative flex flex-col items-center justify-center aspect-square w-full overflow-hidden desktop:hover:cursor-pointer"
               >
                 <Image
-                  src={property.meta_box.image.full_url}
+                  src={wordpressImageSrc(property.meta_box.image)}
+                  loader={wordpressImageLoader}
                   alt={
                     property.meta_box.title ||
                     `Bay Holiday Homes - Top Property ${index + 1}`

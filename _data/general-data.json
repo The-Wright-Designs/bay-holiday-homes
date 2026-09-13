@@ -98,7 +98,7 @@
     "managing": [
       {
         "id": "managing-homes",
-        "image": "/images/services/managing-homes.png",
+        "image": "/images/services/managing-homes.jpg",
         "heading": "Managing Homes",
         "paragraph": "",
         "flipImage": false,
@@ -106,7 +106,7 @@
       },
       {
         "id": "managing-rentals",
-        "image": "/images/services/managing-rentals.png",
+        "image": "/images/services/managing-rentals.jpg",
         "heading": "Managing Rentals",
         "paragraph": "",
         "flipImage": false,

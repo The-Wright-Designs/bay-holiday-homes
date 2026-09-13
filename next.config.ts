@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
+    loader: "custom",
+    loaderFile: "./_lib/utils/local-image-loader.ts",
     deviceSizes: [425, 800, 1280],
     minimumCacheTTL: 86400,
     remotePatterns: [

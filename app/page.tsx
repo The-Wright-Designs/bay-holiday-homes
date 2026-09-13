@@ -22,7 +22,7 @@ const homeDescription =
   "Holiday home rentals and property management in Plettenberg Bay. Browse beachside houses, apartments and townhouses for your coastal getaway.";
 
 export const metadata: Metadata = {
-  title: "Holiday Home Rentals in Plettenberg Bay",
+  title: "Bay Holiday Homes - Holiday Rentals in Plettenberg Bay",
   description: homeDescription,
   alternates: { canonical: "/" },
   openGraph: {

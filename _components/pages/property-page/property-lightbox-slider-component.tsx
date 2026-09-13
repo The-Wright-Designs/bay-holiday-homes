@@ -6,13 +6,18 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { X, SquareArrowLeft, SquareArrowRight } from "lucide-react";
+import type { WordpressImage } from "@/_types/property-types";
+import {
+  wordpressImageSrc,
+  wordpressImageLoader,
+} from "@/_lib/utils/wordpress-image-utils";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 interface PropertyLightboxSliderProps {
-  images: string[];
+  images: WordpressImage[];
   propertyName: string;
   cssClasses?: string;
 }
@@ -50,7 +55,8 @@ export default function PropertyLightboxSliderComponent({
           className="relative aspect-[16/8] w-full overflow-hidden col-span-2 tablet:h-[40vh] desktop:col-span-1 desktop:row-span-2 desktop:aspect-auto desktop:h-full desktop:hover:cursor-pointer"
         >
           <Image
-            src={images[0]}
+            src={wordpressImageSrc(images[0])}
+            loader={wordpressImageLoader}
             alt={propertyName}
             fill
             className="object-cover desktop:hover:scale-105 ease-in-out duration-500 delay-75"
@@ -64,7 +70,8 @@ export default function PropertyLightboxSliderComponent({
           className="relative flex-1 w-full aspect-[3.25/4] overflow-hidden tablet:h-[35vh] desktop:aspect-auto desktop:h-full desktop:hover:cursor-pointer"
         >
           <Image
-            src={images[1] ?? images[0]}
+            src={wordpressImageSrc(images[1] ?? images[0])}
+            loader={wordpressImageLoader}
             alt={propertyName}
             fill
             className="object-cover desktop:hover:scale-105 ease-in-out duration-500 delay-75"
@@ -76,7 +83,8 @@ export default function PropertyLightboxSliderComponent({
           className="relative flex-1 w-full aspect-[3.25/4] overflow-hidden tablet:h-[35vh] desktop:aspect-auto desktop:h-full desktop:hover:cursor-pointer"
         >
           <Image
-            src={images[2] ?? images[0]}
+            src={wordpressImageSrc(images[2] ?? images[0])}
+            loader={wordpressImageLoader}
             alt={propertyName}
             fill
             className="object-cover desktop:hover:scale-105 ease-in-out duration-500 delay-75"
@@ -156,13 +164,14 @@ export default function PropertyLightboxSliderComponent({
                 } as React.CSSProperties
               }
             >
-              {images.map((src, index) => (
+              {images.map((image, index) => (
                 <SwiperSlide key={index} className="pb-10">
                   <div className="relative aspect-square tablet:aspect-video w-full">
                     <Image
-                      src={src}
+                      src={image.full_url}
                       alt={`${propertyName} — photo ${index + 1}`}
                       fill
+                      unoptimized
                       className="object-contain"
                       sizes="(max-width:1280px) 100vw, 1280px"
                     />

@@ -1,3 +1,16 @@
+export interface WordpressImageSize {
+  file: string;
+  width: number;
+  height: number;
+  url: string;
+}
+
+export interface WordpressImage {
+  full_url: string;
+  alt?: string;
+  sizes?: Record<string, WordpressImageSize>;
+}
+
 export interface PropertyProps {
   id: number;
   title: {
@@ -23,7 +36,7 @@ export interface PropertyProps {
     price_from: string;
     price_to: string;
     description: string;
-    gallery: { full_url: string }[];
+    gallery: WordpressImage[];
     bookable_dates: [string, string][] | null;
     special_features:
       | (

@@ -1,10 +1,10 @@
+import { WordpressImage } from "@/_types/property-types";
+
 export interface TopProperty {
   meta_box: {
     top_property_id: string;
     title: string;
-    image: {
-      full_url: string;
-    };
+    image: WordpressImage;
   };
 }
 

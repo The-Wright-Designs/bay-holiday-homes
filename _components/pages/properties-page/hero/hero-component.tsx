@@ -12,6 +12,7 @@ export default function HeroComponent() {
             src="/images/_MG_0420.jpg"
             alt="Bay Holiday Homes Plettenberg Bay coastal view"
             fill
+            sizes="(max-width: 1280px) 100vw, 1280px"
             className="object-cover"
             priority
           />

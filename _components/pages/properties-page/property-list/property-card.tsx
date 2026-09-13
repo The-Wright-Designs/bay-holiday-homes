@@ -5,6 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
 import {
+  wordpressImageSrc,
+  wordpressImageLoader,
+} from "@/_lib/utils/wordpress-image-utils";
+import {
   WavesLadder,
   Baby,
   PawPrint,
@@ -62,7 +66,8 @@ export default function PropertyCard({
     >
       <div className="relative aspect-[4/2.6] w-full h-auto shrink-0 overflow-hidden desktop:aspect-[4/2.25]">
         <Image
-          src={meta_box.gallery[0].full_url}
+          src={wordpressImageSrc(meta_box.gallery[0])}
+          loader={wordpressImageLoader}
           alt={title.rendered}
           fill
           className={classNames(
