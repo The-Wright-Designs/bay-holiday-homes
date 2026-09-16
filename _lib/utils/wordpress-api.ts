@@ -63,10 +63,12 @@ export async function fetchProperties(
     { next: { revalidate: 900 } }
   );
 
-  if (!res.ok)
+  if (!res.ok) {
+    console.error(`WordPress properties request failed with status ${res.status} (${res.url})`);
     throw new Error(
       `WordPress properties request failed with status ${res.status}`
     );
+  }
 
   const totalPages = Number(res.headers.get("X-WP-TotalPages") ?? 1);
   const data: PropertyProps[] = await res.json();
@@ -113,10 +115,12 @@ export async function fetchPropertyById(
       next: { revalidate: 900 },
     });
 
-    if (!res.ok)
+    if (!res.ok) {
+      console.error(`WordPress property request failed with status ${res.status} (${res.url})`);
       throw new Error(
         `WordPress property request failed with status ${res.status}`
       );
+    }
 
     totalPages = Number(res.headers.get("X-WP-TotalPages") ?? 1);
     const data: PropertyProps[] = await res.json();
@@ -144,10 +148,12 @@ export async function fetchTopProperties(): Promise<TopProperty[]> {
     "https://wordpress.bayholidays.co.za/wp-json/wp/v2/top_property",
     { next: { revalidate: 900 } }
   );
-  if (!res.ok)
+  if (!res.ok) {
+    console.error(`WordPress top properties request failed with status ${res.status} (${res.url})`);
     throw new Error(
       `WordPress top properties request failed with status ${res.status}`
     );
+  }
   const data: TopProperty[] = await res.json();
   return data
     .filter(
@@ -167,10 +173,12 @@ export async function fetchTestimonials(): Promise<Testimonial[]> {
     "https://wordpress.bayholidays.co.za/wp-json/wp/v2/testimonial",
     { next: { revalidate: 900 } }
   );
-  if (!res.ok)
+  if (!res.ok) {
+    console.error(`WordPress testimonials request failed with status ${res.status} (${res.url})`);
     throw new Error(
       `WordPress testimonials request failed with status ${res.status}`
     );
+  }
   const data: Testimonial[] = await res.json();
   return data
     .filter(

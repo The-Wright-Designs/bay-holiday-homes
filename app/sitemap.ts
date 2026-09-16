@@ -16,7 +16,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  const allProperties = await fetchAllProperties();
+  let allProperties: Awaited<ReturnType<typeof fetchAllProperties>> = [];
+  try {
+    allProperties = await fetchAllProperties();
+  } catch (error) {
+    console.error("Failed to fetch properties for sitemap", error);
+  }
 
   const propertyRoutes: MetadataRoute.Sitemap = allProperties.map((p) => ({
     url: `${BASE_URL}/properties/${p.meta_box.property_id}`,

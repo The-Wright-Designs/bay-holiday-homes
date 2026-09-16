@@ -25,8 +25,13 @@ interface PropertyPageProps {
 }
 
 export async function generateStaticParams() {
-  const properties = await fetchAllProperties();
-  return properties.map((property) => ({ id: property.meta_box.property_id }));
+  try {
+    const properties = await fetchAllProperties();
+    return properties.map((property) => ({ id: property.meta_box.property_id }));
+  } catch (error) {
+    console.error("Failed to fetch properties for generateStaticParams", error);
+    return [];
+  }
 }
 
 export async function generateMetadata({
